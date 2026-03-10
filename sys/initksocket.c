@@ -68,13 +68,18 @@ socket_table_t *init_socktable(int shmid, size_t size) {
 
 int destroy_socktable(const char *name, socket_table_t *socktable,
                       size_t size) {
+  sem_destroy(&socktable->mtx);
+  INFO("shm: destroy table mutex");
+
   if (munmap(socktable, size) == -1) {
     return -1;
   }
+  INFO("shm: dettach from memory");
 
   if (shm_unlink(name) == -1) {
     return -1;
   }
+  INFO("shm: destroy shm segment");
 
   return 0;
 }
@@ -116,7 +121,8 @@ int main(void) {
     goto exit_1;
   }
 
-  INFO("shm: initialised socket table");
+  INFO("shm: initialised socket table with %lu sockets currently active",
+       socktable->count);
 
   pthread_t R, S, G;
   pthread_create(&R, NULL, recv_routine, NULL);
