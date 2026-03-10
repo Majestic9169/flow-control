@@ -4,5 +4,6 @@ var annotated_dup =
     [ "__k_socket_t", "struct____k__socket__t.html", "struct____k__socket__t" ],
     [ "__ktp_header", "struct____ktp__header.html", "struct____ktp__header" ],
     [ "__rwnd_t", "struct____rwnd__t.html", "struct____rwnd__t" ],
-    [ "__swnd_t", "struct____swnd__t.html", "struct____swnd__t" ]
+    [ "__swnd_t", "struct____swnd__t.html", "struct____swnd__t" ],
+    [ "socket_table_t", "structsocket__table__t.html", "structsocket__table__t" ]
 ];

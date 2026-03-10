@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nospace_0',['nospace',['../struct____k__socket__t.html#ad5015629622742261785356ea0ff0a54',1,'__k_socket_t']]]
+  ['mtx_0',['mtx',['../structsocket__table__t.html#aac3265d0bf7f9688c65bc865d17b0725',1,'socket_table_t']]]
 ];

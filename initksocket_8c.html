@@ -105,8 +105,10 @@ $(document).ready(function(){initNavTree('initksocket_8c.html',''); initResizabl
 <code>#include &lt;bits/pthreadtypes.h&gt;</code><br />
 <code>#include &lt;fcntl.h&gt;</code><br />
 <code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;semaphore.h&gt;</code><br />
 <code>#include &lt;signal.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;sys/mman.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
@@ -119,12 +121,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sigint_handler</b> (i
 <tr class="memitem:a6cdb683c75364634e2be929f890193c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#a6cdb683c75364634e2be929f890193c5">create_socktable</a> (const char *name, int flags)</td></tr>
 <tr class="memdesc:a6cdb683c75364634e2be929f890193c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">create the socket table  <br /></td></tr>
 <tr class="separator:a6cdb683c75364634e2be929f890193c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdcb3609f057c6667df829031363621c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#afdcb3609f057c6667df829031363621c">init_socktable</a> (int shmid, size_t size)</td></tr>
-<tr class="memdesc:afdcb3609f057c6667df829031363621c"><td class="mdescLeft">&#160;</td><td class="mdescRight">attach and init the socktable  <br /></td></tr>
-<tr class="separator:afdcb3609f057c6667df829031363621c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a18b7a711d13290f74af772212d6a8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#a3a18b7a711d13290f74af772212d6a8e">destroy_socktable</a> (const char *name, <a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> *socktable, size_t size)</td></tr>
-<tr class="memdesc:a3a18b7a711d13290f74af772212d6a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">cleanup shared memory  <br /></td></tr>
-<tr class="separator:a3a18b7a711d13290f74af772212d6a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7497d4ab0efe563e05a136f3b4ba07e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsocket__table__t.html">socket_table_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#a7497d4ab0efe563e05a136f3b4ba07e3">init_socktable</a> (int shmid, size_t size)</td></tr>
+<tr class="memdesc:a7497d4ab0efe563e05a136f3b4ba07e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">attach and init the socktable  <br /></td></tr>
+<tr class="separator:a7497d4ab0efe563e05a136f3b4ba07e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1dbf92483d40d0475bf00a795e57b7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#ae1dbf92483d40d0475bf00a795e57b7f">destroy_socktable</a> (const char *name, <a class="el" href="structsocket__table__t.html">socket_table_t</a> *socktable, size_t size)</td></tr>
+<tr class="memdesc:ae1dbf92483d40d0475bf00a795e57b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">cleanup shared memory  <br /></td></tr>
+<tr class="separator:ae1dbf92483d40d0475bf00a795e57b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac368490e0a6f6689f7b7620772c8b990"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#ac368490e0a6f6689f7b7620772c8b990">recv_routine</a> (void *args)</td></tr>
 <tr class="memdesc:ac368490e0a6f6689f7b7620772c8b990"><td class="mdescLeft">&#160;</td><td class="mdescRight">the receiver thread routine  <br /></td></tr>
 <tr class="separator:ac368490e0a6f6689f7b7620772c8b990"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,8 +189,8 @@ volatile sig_atomic_t&#160;</td><td class="memItemRight" valign="bottom"><b>is_e
 
 </div>
 </div>
-<a id="a3a18b7a711d13290f74af772212d6a8e" name="a3a18b7a711d13290f74af772212d6a8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a18b7a711d13290f74af772212d6a8e">&#9670;&#160;</a></span>destroy_socktable()</h2>
+<a id="ae1dbf92483d40d0475bf00a795e57b7f" name="ae1dbf92483d40d0475bf00a795e57b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1dbf92483d40d0475bf00a795e57b7f">&#9670;&#160;</a></span>destroy_socktable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +204,7 @@ volatile sig_atomic_t&#160;</td><td class="memItemRight" valign="bottom"><b>is_e
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structsocket__table__t.html">socket_table_t</a> *&#160;</td>
           <td class="paramname"><em>socktable</em>, </td>
         </tr>
         <tr>
@@ -253,14 +255,14 @@ volatile sig_atomic_t&#160;</td><td class="memItemRight" valign="bottom"><b>is_e
 
 </div>
 </div>
-<a id="afdcb3609f057c6667df829031363621c" name="afdcb3609f057c6667df829031363621c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdcb3609f057c6667df829031363621c">&#9670;&#160;</a></span>init_socktable()</h2>
+<a id="a7497d4ab0efe563e05a136f3b4ba07e3" name="a7497d4ab0efe563e05a136f3b4ba07e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7497d4ab0efe563e05a136f3b4ba07e3">&#9670;&#160;</a></span>init_socktable()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> * init_socktable </td>
+          <td class="memname"><a class="el" href="structsocket__table__t.html">socket_table_t</a> * init_socktable </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>shmid</em>, </td>

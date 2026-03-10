@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['recv_5fbuf_0',['recv_buf',['../struct____k__socket__t.html#a92c3c4105145fb34558823c07031845a',1,'__k_socket_t']]],
-  ['recv_5froutine_1',['recv_routine',['../initksocket_8c.html#ac368490e0a6f6689f7b7620772c8b990',1,'recv_routine(void *args):&#160;initksocket.c'],['../initksocket_8h.html#ac368490e0a6f6689f7b7620772c8b990',1,'recv_routine(void *args):&#160;initksocket.c']]],
-  ['right_2',['right',['../struct____buf__t.html#a750502fe51cb018e9609c6db451e9917',1,'__buf_t']]],
-  ['rwnd_3',['rwnd',['../struct____k__socket__t.html#a0766fd7419f0874c761c4f4940be7e02',1,'__k_socket_t']]]
+  ['parent_5fprocess_0',['parent_process',['../struct____k__socket__t.html#ae719efc7517dd3417e0f8e027637b01b',1,'__k_socket_t']]],
+  ['pop_5fbuf_1',['pop_buf',['../kinternal_8h.html#a79bfdc45892f2e0f76593d6ae3d8b0c8',1,'kinternal.h']]],
+  ['push_5fbuf_2',['push_buf',['../kinternal_8h.html#a0c230ea1c8ae9626f1ebe7c840e5121c',1,'kinternal.h']]]
 ];
