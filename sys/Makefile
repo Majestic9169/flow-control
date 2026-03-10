@@ -9,6 +9,9 @@ CFLAGS := -Wall -g \
 
 all: sys_net
 
+run: sys_net
+	./$<
+
 sys_net: ./initksocket.c ./initksocket.h ../lib/kinternal.h ../lib/ksocket.h
 	${CC} ${CFLAGS} $< -o $@
 

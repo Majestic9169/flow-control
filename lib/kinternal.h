@@ -93,12 +93,7 @@ typedef struct {
 /** @brief init circular buffer
  * @param buf buffer to init
  */
-void init_buf(__buf_t *buf) {
-  memset(buf->buffer, 0, sizeof(buf->buffer));
-  buf->left = 0;
-  buf->right = 0;
-  buf->count = 0;
-}
+void init_buf(__buf_t *buf) { memset(buf, 0, sizeof(__buf_t)); }
 
 /** @brief push to circular buffer
  *

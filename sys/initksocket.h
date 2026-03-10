@@ -15,6 +15,7 @@
 
 #include "../lib/kinternal.h"
 #include <pthread.h>
+#include <semaphore.h>
 #include <stddef.h>
 #include <sys/select.h>
 #include <sys/types.h>
@@ -23,9 +24,10 @@
 #define MAX_SOCKETS 128
 
 /** @brief information logging macros for the init process
+ * @anchor custom_log
+ * @name Logging Macros
  * @{
  */
-
 #define LOG_TIME()                                                             \
   {                                                                            \
     time_t now = time(NULL);                                                   \
@@ -48,14 +50,17 @@
            (unsigned long)pthread_self(), ##__VA_ARGS__, __FILE__, __LINE__);  \
     fflush(stdout);                                                            \
   } while (0)
-
 /**
  * @}
  */
 
-/** @brief array of sock_ktp sockets available to the system
+/** @brief the global state table of KTP sockets
  */
-typedef __k_socket_t socket_table[MAX_SOCKETS];
+typedef struct {
+  __k_socket_t sockets[MAX_SOCKETS]; ///< array of ksockets
+  sem_t mtx;                         ///< mutex to protect table access
+  size_t count;                      ///< current active sockets
+} socket_table_t;
 
 /** @brief create the socket table
  *
@@ -77,7 +82,7 @@ int create_socktable(const char *name, int flags);
  *
  * @return NULL on any error with errno describing the error
  */
-socket_table *init_socktable(int shmid, size_t size);
+socket_table_t *init_socktable(int shmid, size_t size);
 
 /** @brief cleanup shared memory
  *
@@ -87,7 +92,7 @@ socket_table *init_socktable(int shmid, size_t size);
  *
  * @return -1 on any error
  */
-int destroy_socktable(const char *name, socket_table *socktable, size_t size);
+int destroy_socktable(const char *name, socket_table_t *socktable, size_t size);
 
 /** @brief the receiver thread routine
  *

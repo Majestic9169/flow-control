@@ -9,8 +9,10 @@
 #include <bits/pthreadtypes.h>
 #include <fcntl.h>
 #include <pthread.h>
+#include <semaphore.h>
 #include <signal.h>
 #include <stdio.h>
+#include <string.h>
 #include <sys/mman.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -32,22 +34,40 @@ int create_socktable(const char *name, int flags) {
   return shmid;
 }
 
-socket_table *init_socktable(int shmid, size_t size) {
-  socket_table *ptr;
+socket_table_t *init_socktable(int shmid, size_t size) {
+  socket_table_t *ptr;
 
   if (ftruncate(shmid, size) == -1) {
     return NULL;
   }
+  INFO("shm: resized shm segment");
 
   ptr = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, shmid, 0);
   if (ptr == MAP_FAILED) {
     return NULL;
   }
+  INFO("shm: attached to shm segment");
+
+  if (sem_init(&ptr->mtx, 1, 1) == -1) {
+    return NULL;
+  }
+  INFO("shm: initialised table mutex");
+
+  sem_wait(&ptr->mtx);
+
+  memset(ptr, 0, sizeof(socket_table_t));
+  for (size_t i = 0; i < MAX_SOCKETS; i++) {
+    ptr->sockets[i].is_free = 1;
+    init_buf(&(ptr->sockets[i].recv_buf));
+    init_buf(&(ptr->sockets[i].send_buf));
+  }
+  sem_post(&ptr->mtx);
 
   return ptr;
 }
 
-int destroy_socktable(const char *name, socket_table *socktable, size_t size) {
+int destroy_socktable(const char *name, socket_table_t *socktable,
+                      size_t size) {
   if (munmap(socktable, size) == -1) {
     return -1;
   }
@@ -90,8 +110,8 @@ int main(void) {
 
   INFO("shm: created shm segment %s", SOCKTABLE_NAME);
 
-  socket_table *socktable;
-  if ((socktable = init_socktable(shmid, sizeof(socket_table))) == NULL) {
+  socket_table_t *socktable;
+  if ((socktable = init_socktable(shmid, sizeof(socket_table_t))) == NULL) {
     ERROR("init_socktable: %s", k_strerr(errno));
     goto exit_1;
   }
@@ -111,7 +131,7 @@ int main(void) {
   pthread_join(S, NULL);
   pthread_join(G, NULL);
 
-  if (destroy_socktable(SOCKTABLE_NAME, socktable, sizeof(socket_table)) ==
+  if (destroy_socktable(SOCKTABLE_NAME, socktable, sizeof(socket_table_t)) ==
       -1) {
     ERROR("destroy_socktable: %s", k_strerr(errno));
   }
