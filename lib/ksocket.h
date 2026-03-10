@@ -7,6 +7,7 @@
 #define KSOCKET_H
 
 #include <stddef.h>
+#include <string.h>
 #include <sys/socket.h>
 #include <sys/types.h>
 
@@ -35,7 +36,18 @@
  *
  * @param err the global error number variable to check (errno)
  */
-const char *k_strerr(int err);
+const char *k_strerr(int err) {
+  switch (err) {
+  case ENOSPACE:
+    return "No space available in memory";
+  case ENOTBOUND:
+    return "The requested destination address is not bound to the socket";
+  case ENOMESSAGE:
+    return "No message is available in the message buffer";
+  default:
+    return strerror(err);
+  }
+}
 
 /**@brief create a KTP socket
  *

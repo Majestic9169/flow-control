@@ -14,6 +14,7 @@
 #include <time.h>
 
 #define WIN_SIZE 10
+#define SOCKTABLE_NAME "/ktp_socket_table"
 
 /** @brief simple circular buffer for sending and receiving buffers
  */
@@ -127,7 +128,7 @@ int push_buf(__buf_t *buf, char *msg) {
 int pop_buf(__buf_t *buf, char *dst) {
   if (buf->count <= 0) {
     errno = ENOMESSAGE;
-    return NULL;
+    return -1;
   }
 
   memcpy(dst, &buf->buffer[buf->left * MSG_SIZE], MSG_SIZE);
