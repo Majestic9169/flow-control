@@ -1,0 +1,39 @@
+\doxysection{ksocket.\+h}
+\hypertarget{ksocket_8h_source}{}\label{ksocket_8h_source}\index{lib/ksocket.h@{lib/ksocket.h}}
+\doxymbox{\hyperlink{ksocket_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ KSOCKET\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ KSOCKET\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <sys/socket.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ SOCK\_KTP}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ MSG\_SIZE\ 512}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ ENOSPACE\ 200\ \ \ }}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ ENOTBOUND\ 201\ \ }}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ ENOMESSAGE\ 202\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\doxymbox{\hyperlink{ksocket_8h_af8df4af1df48d62aaa7daf89d481bce4}{k\_strerr}}(\textcolor{keywordtype}{int}\ err);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{ksocket_8h_a5dd94f29c195c659a0cb63a138389214}{k\_socket}}(\textcolor{keywordtype}{int}\ domain,\ \textcolor{keywordtype}{int}\ type,\ \textcolor{keywordtype}{int}\ protocol);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{ksocket_8h_ac3fc6713af0ddafe05416f1008428f13}{k\_bind}}(\textcolor{keywordtype}{int}\ sockfd,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ sockaddr\ *src\_addr,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ socklen\_t\ src\_addr\_len,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ sockaddr\ *dst\_addr,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ socklen\_t\ dst\_addr\_len);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00091\ ssize\_t\ \doxymbox{\hyperlink{ksocket_8h_a517531ef1ba157d1a3ba061f774cddbb}{k\_sendto}}(\textcolor{keywordtype}{int}\ socket,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *message,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{int}\ flags,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ sockaddr\ *dest\_addr,\ socklen\_t\ dest\_len);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00107\ ssize\_t\ \doxymbox{\hyperlink{ksocket_8h_ab5f32ef6031ca16aba6b8bb438cd0236}{k\_recvfrom}}(\textcolor{keywordtype}{int}\ socket,\ \textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{int}\ flags,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ sockaddr\ *address,\ socklen\_t\ address\_len);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{ksocket_8h_a9ecd38dc6f3a9721ab53ff9a815b5480}{k\_close}}(\textcolor{keywordtype}{int}\ fd);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,205 @@
+\doxysection{lib/\+ksocket.h File Reference}
+\hypertarget{ksocket_8h}{}\label{ksocket_8h}\index{lib/ksocket.h@{lib/ksocket.h}}
+
+
+The interface for the libksocket.\+a library.  
+
+
+{\ttfamily \+\#include $<$stddef.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+socket.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+types.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ksocket_8h_ae473a4a04bb7a378b91db89b7a8ac702}\label{ksocket_8h_ae473a4a04bb7a378b91db89b7a8ac702} 
+\+\#define {\bfseries SOCK\+\_\+\+KTP}
+\item 
+\Hypertarget{ksocket_8h_ad4d025ecf1bdbf8b244ca688df8e478d}\label{ksocket_8h_ad4d025ecf1bdbf8b244ca688df8e478d} 
+\+\#define {\bfseries MSG\+\_\+\+SIZE}~512
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ custom KTP errors}\par
+{\em custom error codes \label{ksocket_8h_custom_err}%
+\Hypertarget{ksocket_8h_custom_err}%
+ These start at 200 to avoid system error overlaps (those go upto \texorpdfstring{$\sim$}{\string~}133) }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ksocket_8h_a0bf3e9d049a9238dc4639ec4f9999e4a}\label{ksocket_8h_a0bf3e9d049a9238dc4639ec4f9999e4a} 
+\+\#define {\bfseries ENOSPACE}~200
+\begin{DoxyCompactList}\small\item\em No free space available in the required buffer. \end{DoxyCompactList}\item 
+\Hypertarget{ksocket_8h_ab46e1dbfd4cc439ee767cbde32091e8d}\label{ksocket_8h_ab46e1dbfd4cc439ee767cbde32091e8d} 
+\+\#define {\bfseries ENOTBOUND}~201
+\begin{DoxyCompactList}\small\item\em The queried address is not bound to the socket. \end{DoxyCompactList}\item 
+\Hypertarget{ksocket_8h_a2f035de1c8bc89b23d638297fcd891df}\label{ksocket_8h_a2f035de1c8bc89b23d638297fcd891df} 
+\+\#define {\bfseries ENOMESSAGE}~202
+\begin{DoxyCompactList}\small\item\em No message is available in the message buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{ksocket_8h_af8df4af1df48d62aaa7daf89d481bce4}{k\+\_\+strerr}} (int err)
+\begin{DoxyCompactList}\small\item\em return error messages for custom error codes \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{ksocket_8h_a5dd94f29c195c659a0cb63a138389214}{k\+\_\+socket}} (int domain, int type, int protocol)
+\begin{DoxyCompactList}\small\item\em create a KTP socket \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{ksocket_8h_ac3fc6713af0ddafe05416f1008428f13}{k\+\_\+bind}} (int sockfd, const struct sockaddr \texorpdfstring{$\ast$}{*}src\+\_\+addr, const socklen\+\_\+t src\+\_\+addr\+\_\+len, const struct sockaddr \texorpdfstring{$\ast$}{*}dst\+\_\+addr, const socklen\+\_\+t dst\+\_\+addr\+\_\+len)
+\begin{DoxyCompactList}\small\item\em bind the socket to a client and server address \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{ksocket_8h_a517531ef1ba157d1a3ba061f774cddbb}{k\+\_\+sendto}} (int socket, const void \texorpdfstring{$\ast$}{*}message, size\+\_\+t length, int flags, const struct sockaddr \texorpdfstring{$\ast$}{*}dest\+\_\+addr, socklen\+\_\+t dest\+\_\+len)
+\begin{DoxyCompactList}\small\item\em send msg to server buffer \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{ksocket_8h_ab5f32ef6031ca16aba6b8bb438cd0236}{k\+\_\+recvfrom}} (int socket, void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t length, int flags, const struct sockaddr \texorpdfstring{$\ast$}{*}address, socklen\+\_\+t address\+\_\+len)
+\begin{DoxyCompactList}\small\item\em read message from received messages \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{ksocket_8h_a9ecd38dc6f3a9721ab53ff9a815b5480}{k\+\_\+close}} (int fd)
+\begin{DoxyCompactList}\small\item\em close KTP socket \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The interface for the libksocket.\+a library. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{ksocket_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{ksocket_8h_ac3fc6713af0ddafe05416f1008428f13}\index{ksocket.h@{ksocket.h}!k\_bind@{k\_bind}}
+\index{k\_bind@{k\_bind}!ksocket.h@{ksocket.h}}
+\doxysubsubsection{\texorpdfstring{k\_bind()}{k\_bind()}}
+{\footnotesize\ttfamily \label{ksocket_8h_ac3fc6713af0ddafe05416f1008428f13} 
+int k\+\_\+bind (\begin{DoxyParamCaption}\item[{int}]{sockfd}{, }\item[{const struct sockaddr \texorpdfstring{$\ast$}{*}}]{src\+\_\+addr}{, }\item[{const socklen\+\_\+t}]{src\+\_\+addr\+\_\+len}{, }\item[{const struct sockaddr \texorpdfstring{$\ast$}{*}}]{dst\+\_\+addr}{, }\item[{const socklen\+\_\+t}]{dst\+\_\+addr\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+bind the socket to a client and server address 
+
+Binds the UDP socket with the source IP and source port, and updates the corresponding system shared memory with the destination IP and destination port The sockaddr\textquotesingle{}s will be pointers to sockaddr\+\_\+in\textquotesingle{}s and therefore should contain port data as well
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & The KTP socket \\
+\hline
+{\em src\+\_\+addr} & sockaddr to source IP address \\
+\hline
+{\em src\+\_\+addr\+\_\+len} & socklen\+\_\+t of source address \\
+\hline
+{\em dst\+\_\+addr} & sockaddr to destination IP address \\
+\hline
+{\em dst\+\_\+addr\+\_\+len} & socklen\+\_\+t of destination IP address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on error 
+\end{DoxyReturn}
+\Hypertarget{ksocket_8h_a9ecd38dc6f3a9721ab53ff9a815b5480}\index{ksocket.h@{ksocket.h}!k\_close@{k\_close}}
+\index{k\_close@{k\_close}!ksocket.h@{ksocket.h}}
+\doxysubsubsection{\texorpdfstring{k\_close()}{k\_close()}}
+{\footnotesize\ttfamily \label{ksocket_8h_a9ecd38dc6f3a9721ab53ff9a815b5480} 
+int k\+\_\+close (\begin{DoxyParamCaption}\item[{int}]{fd}{}\end{DoxyParamCaption})}
+
+
+
+close KTP socket 
+
+close KTP socket and clean up its system shared memory entry
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & file descriptor of KTP socket \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ksocket_8h_ab5f32ef6031ca16aba6b8bb438cd0236}\index{ksocket.h@{ksocket.h}!k\_recvfrom@{k\_recvfrom}}
+\index{k\_recvfrom@{k\_recvfrom}!ksocket.h@{ksocket.h}}
+\doxysubsubsection{\texorpdfstring{k\_recvfrom()}{k\_recvfrom()}}
+{\footnotesize\ttfamily \label{ksocket_8h_ab5f32ef6031ca16aba6b8bb438cd0236} 
+ssize\+\_\+t k\+\_\+recvfrom (\begin{DoxyParamCaption}\item[{int}]{socket}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{length}{, }\item[{int}]{flags}{, }\item[{const struct sockaddr \texorpdfstring{$\ast$}{*}}]{address}{, }\item[{socklen\+\_\+t}]{address\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+read message from received messages 
+
+pop top message from receiver buffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & KTP socket \\
+\hline
+{\em buffer} & pointer to your recv buffer \\
+\hline
+{\em length} & message length (512 bytes) \\
+\hline
+{\em flags} & usually 0, could be MSG\+\_\+\+PEEK, MSG\+\_\+\+OOB, MSG\+\_\+\+WAITALL \\
+\hline
+{\em address} & source address \\
+\hline
+{\em address\+\_\+len} & source address length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on error, due to no message in buffer is ENOMESSAGE 
+\end{DoxyReturn}
+\Hypertarget{ksocket_8h_a517531ef1ba157d1a3ba061f774cddbb}\index{ksocket.h@{ksocket.h}!k\_sendto@{k\_sendto}}
+\index{k\_sendto@{k\_sendto}!ksocket.h@{ksocket.h}}
+\doxysubsubsection{\texorpdfstring{k\_sendto()}{k\_sendto()}}
+{\footnotesize\ttfamily \label{ksocket_8h_a517531ef1ba157d1a3ba061f774cddbb} 
+ssize\+\_\+t k\+\_\+sendto (\begin{DoxyParamCaption}\item[{int}]{socket}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{message}{, }\item[{size\+\_\+t}]{length}{, }\item[{int}]{flags}{, }\item[{const struct sockaddr \texorpdfstring{$\ast$}{*}}]{dest\+\_\+addr}{, }\item[{socklen\+\_\+t}]{dest\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+send msg to server buffer 
+
+on match of destination address to bound destination address. Encapsulate the message with the KTP header. The msg is written to the server\textquotesingle{}s recv buffer. Drops message on failure
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & KTP socket \\
+\hline
+{\em message} & pointer to your 512 byte message \\
+\hline
+{\em length} & message length (512 bytes) \\
+\hline
+{\em flags} & usually 0, could be MSG\+\_\+\+EOR, MSG\+\_\+\+OOB, MSG\+\_\+\+NOSIGNAL \\
+\hline
+{\em dest\+\_\+addr} & destination address \\
+\hline
+{\em dest\+\_\+len} & destination address length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on failure due to addr mismatch (ENOTBOUND) or insufficient space (ENOSPACE) 
+\end{DoxyReturn}
+\Hypertarget{ksocket_8h_a5dd94f29c195c659a0cb63a138389214}\index{ksocket.h@{ksocket.h}!k\_socket@{k\_socket}}
+\index{k\_socket@{k\_socket}!ksocket.h@{ksocket.h}}
+\doxysubsubsection{\texorpdfstring{k\_socket()}{k\_socket()}}
+{\footnotesize\ttfamily \label{ksocket_8h_a5dd94f29c195c659a0cb63a138389214} 
+int k\+\_\+socket (\begin{DoxyParamCaption}\item[{int}]{domain}{, }\item[{int}]{type}{, }\item[{int}]{protocol}{}\end{DoxyParamCaption})}
+
+
+
+create a KTP socket 
+
+open a udp socket with SOCK\+\_\+\+KTP type and create an entry for it in the system shared memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & The protocol "{}family"{} for communication. Should be AF\+\_\+\+INET or AF\+\_\+\+INET6 \\
+\hline
+{\em type} & The type of socket, should be SOCKET\+\_\+\+KTP \\
+\hline
+{\em protocol} & The protocol to be used with the socket, SOCKET\+\_\+\+KTP has an established protocol and thus this should be 0\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on error (errno = ENOSPACE or others) 
+\end{DoxyReturn}
+\Hypertarget{ksocket_8h_af8df4af1df48d62aaa7daf89d481bce4}\index{ksocket.h@{ksocket.h}!k\_strerr@{k\_strerr}}
+\index{k\_strerr@{k\_strerr}!ksocket.h@{ksocket.h}}
+\doxysubsubsection{\texorpdfstring{k\_strerr()}{k\_strerr()}}
+{\footnotesize\ttfamily \label{ksocket_8h_af8df4af1df48d62aaa7daf89d481bce4} 
+const char \texorpdfstring{$\ast$}{*} k\+\_\+strerr (\begin{DoxyParamCaption}\item[{int}]{err}{}\end{DoxyParamCaption})}
+
+
+
+return error messages for custom error codes 
+
+get the string description for the custom errors defined for KTP \doxylink{ksocket_8h_custom_err}{custom\+\_\+err}
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & the global error number variable to check (errno) \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,33 @@
+\doxysection{initksocket.\+h}
+\hypertarget{initksocket_8h_source}{}\label{initksocket_8h_source}\index{sys/initksocket.h@{sys/initksocket.h}}
+\doxymbox{\hyperlink{initksocket_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ INITKSOCKET\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ INITKSOCKET\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{kinternal_8h}{../lib/kinternal.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <pthread.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <sys/select.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ MAX\_SOCKETS\ 128}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \doxymbox{\hyperlink{struct____k__socket__t}{\_\_k\_socket\_t}}\ \doxymbox{\hyperlink{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}{socket\_table}}[MAX\_SOCKETS];}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{initksocket_8h_a5b40f655480fecf587477442d3289049}{create\_socktable}}(key\_t\ key);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \doxymbox{\hyperlink{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}{socket\_table}}\ *\doxymbox{\hyperlink{initksocket_8h_a74e543df99c41ede30da97fc2a4f309f}{init\_socktable}}(\textcolor{keywordtype}{int}\ shmid);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{initksocket_8h_a74c582bf05d8832b1a6a30e8b48419f7}{destroy\_socktable}}(\doxymbox{\hyperlink{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}{socket\_table}}\ *socktable,\ \textcolor{keywordtype}{int}\ shmid);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ *\doxymbox{\hyperlink{initksocket_8h_ac368490e0a6f6689f7b7620772c8b990}{recv\_routine}}(\textcolor{keywordtype}{void}\ *args);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ *\doxymbox{\hyperlink{initksocket_8h_ab0cf9049c30573885bcf36ca0f281133}{send\_routine}}(\textcolor{keywordtype}{void}\ *args);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ *\doxymbox{\hyperlink{initksocket_8h_ae1a3acb17ba66b930323abbfd017fdd3}{garbage\_collector}}(\textcolor{keywordtype}{void}\ *args);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

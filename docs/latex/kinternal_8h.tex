@@ -1,0 +1,106 @@
+\doxysection{lib/\+kinternal.h File Reference}
+\hypertarget{kinternal_8h}{}\label{kinternal_8h}\index{lib/kinternal.h@{lib/kinternal.h}}
+
+
+internal definitions that should not be exposed to the user  
+
+
+{\ttfamily \+\#include "{}ksocket.\+h"{}}\newline
+{\ttfamily \+\#include $<$errno.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+socket.\+h$>$}\newline
+{\ttfamily \+\#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct____buf__t}{\+\_\+\+\_\+buf\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em simple circular buffer for sending and receiving buffers \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct____swnd__t}{\+\_\+\+\_\+swnd\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Internal data structure for the sender window. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct____rwnd__t}{\+\_\+\+\_\+rwnd\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Internal data structure for the receiver window. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct____k__socket__t}{\+\_\+\+\_\+k\+\_\+socket\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Internal data stored for each created socket. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct____ktp__header}{\+\_\+\+\_\+ktp\+\_\+header}}
+\begin{DoxyCompactList}\small\item\em Structure of the KTP Header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{kinternal_8h_a362eaf67a7c349b6cc82a95b866561ab}\label{kinternal_8h_a362eaf67a7c349b6cc82a95b866561ab} 
+\+\#define {\bfseries WIN\+\_\+\+SIZE}~10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{kinternal_8h_a64c4c6c846e9c7c2845d83492e26814b}{init\+\_\+buf}} (\doxymbox{\hyperlink{struct____buf__t}{\+\_\+\+\_\+buf\+\_\+t}} \texorpdfstring{$\ast$}{*}buf)
+\begin{DoxyCompactList}\small\item\em init circular buffer \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{kinternal_8h_a0c230ea1c8ae9626f1ebe7c840e5121c}{push\+\_\+buf}} (\doxymbox{\hyperlink{struct____buf__t}{\+\_\+\+\_\+buf\+\_\+t}} \texorpdfstring{$\ast$}{*}buf, char \texorpdfstring{$\ast$}{*}msg)
+\begin{DoxyCompactList}\small\item\em push to circular buffer \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{kinternal_8h_a79bfdc45892f2e0f76593d6ae3d8b0c8}{pop\+\_\+buf}} (\doxymbox{\hyperlink{struct____buf__t}{\+\_\+\+\_\+buf\+\_\+t}} \texorpdfstring{$\ast$}{*}buf, char \texorpdfstring{$\ast$}{*}dst)
+\begin{DoxyCompactList}\small\item\em pop from circular buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+internal definitions that should not be exposed to the user 
+
+
+
+\label{doc-func-members}
+\Hypertarget{kinternal_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{kinternal_8h_a64c4c6c846e9c7c2845d83492e26814b}\index{kinternal.h@{kinternal.h}!init\_buf@{init\_buf}}
+\index{init\_buf@{init\_buf}!kinternal.h@{kinternal.h}}
+\doxysubsubsection{\texorpdfstring{init\_buf()}{init\_buf()}}
+{\footnotesize\ttfamily \label{kinternal_8h_a64c4c6c846e9c7c2845d83492e26814b} 
+void init\+\_\+buf (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct____buf__t}{\+\_\+\+\_\+buf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buf}{}\end{DoxyParamCaption})}
+
+
+
+init circular buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buffer to init \\
+\hline
+\end{DoxyParams}
+\Hypertarget{kinternal_8h_a79bfdc45892f2e0f76593d6ae3d8b0c8}\index{kinternal.h@{kinternal.h}!pop\_buf@{pop\_buf}}
+\index{pop\_buf@{pop\_buf}!kinternal.h@{kinternal.h}}
+\doxysubsubsection{\texorpdfstring{pop\_buf()}{pop\_buf()}}
+{\footnotesize\ttfamily \label{kinternal_8h_a79bfdc45892f2e0f76593d6ae3d8b0c8} 
+int pop\+\_\+buf (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct____buf__t}{\+\_\+\+\_\+buf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{dst}{}\end{DoxyParamCaption})}
+
+
+
+pop from circular buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buffer to pop from \\
+\hline
+{\em dst} & buffer to copy msg into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on error, 0 on success 
+\end{DoxyReturn}
+\Hypertarget{kinternal_8h_a0c230ea1c8ae9626f1ebe7c840e5121c}\index{kinternal.h@{kinternal.h}!push\_buf@{push\_buf}}
+\index{push\_buf@{push\_buf}!kinternal.h@{kinternal.h}}
+\doxysubsubsection{\texorpdfstring{push\_buf()}{push\_buf()}}
+{\footnotesize\ttfamily \label{kinternal_8h_a0c230ea1c8ae9626f1ebe7c840e5121c} 
+int push\+\_\+buf (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct____buf__t}{\+\_\+\+\_\+buf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+push to circular buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buffer to push to \\
+\hline
+{\em num} & sequence number to push to window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 and set errno on ENOSPACE, 0 on success 
+\end{DoxyReturn}

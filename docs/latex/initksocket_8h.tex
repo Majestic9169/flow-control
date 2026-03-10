@@ -1,0 +1,145 @@
+\doxysection{sys/\+initksocket.h File Reference}
+\hypertarget{initksocket_8h}{}\label{initksocket_8h}\index{sys/initksocket.h@{sys/initksocket.h}}
+
+
+simulates the "{}kernel"{} and services ktp operation calls  
+
+
+{\ttfamily \+\#include "{}../\+lib/\+kinternal.\+h"{}}\newline
+{\ttfamily \+\#include $<$pthread.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+select.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+types.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{initksocket_8h_ab54cda52ee639aa3c47cfa330904e776}\label{initksocket_8h_ab54cda52ee639aa3c47cfa330904e776} 
+\+\#define {\bfseries MAX\+\_\+\+SOCKETS}~128
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}\label{initksocket_8h_adf161e64455d03106133bf0c40ae4e80} 
+typedef \doxymbox{\hyperlink{struct____k__socket__t}{\+\_\+\+\_\+k\+\_\+socket\+\_\+t}} {\bfseries socket\+\_\+table}\+[MAX\+\_\+\+SOCKETS]\+
+\begin{DoxyCompactList}\small\item\em array of sock\+\_\+ktp sockets available to the system \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{initksocket_8h_a5b40f655480fecf587477442d3289049}{create\+\_\+socktable}} (key\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em create the socket table \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}{socket\+\_\+table}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{initksocket_8h_a74e543df99c41ede30da97fc2a4f309f}{init\+\_\+socktable}} (int shmid)
+\begin{DoxyCompactList}\small\item\em attach and init the socktable \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{initksocket_8h_a74c582bf05d8832b1a6a30e8b48419f7}{destroy\+\_\+socktable}} (\doxymbox{\hyperlink{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}{socket\+\_\+table}} \texorpdfstring{$\ast$}{*}socktable, int shmid)
+\begin{DoxyCompactList}\small\item\em cleanup shared memory \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{initksocket_8h_ac368490e0a6f6689f7b7620772c8b990}{recv\+\_\+routine}} (void \texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em the receiver thread routine \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{initksocket_8h_ab0cf9049c30573885bcf36ca0f281133}{send\+\_\+routine}} (void \texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em the sender thread routine \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{initksocket_8h_ae1a3acb17ba66b930323abbfd017fdd3}{garbage\+\_\+collector}} (void \texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em garbage collector routine \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+simulates the "{}kernel"{} and services ktp operation calls 
+
+initializes R and S threads to handle receive and send calls.
+
+Initializes shared memory for details regarding SOCK\+\_\+\+KTP sockets.
+
+Creates a garbage collector thread to clean up SOCK\+\_\+\+KTP sockets when their parent process dies 
+
+\label{doc-func-members}
+\Hypertarget{initksocket_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{initksocket_8h_a5b40f655480fecf587477442d3289049}\index{initksocket.h@{initksocket.h}!create\_socktable@{create\_socktable}}
+\index{create\_socktable@{create\_socktable}!initksocket.h@{initksocket.h}}
+\doxysubsubsection{\texorpdfstring{create\_socktable()}{create\_socktable()}}
+{\footnotesize\ttfamily \label{initksocket_8h_a5b40f655480fecf587477442d3289049} 
+int create\+\_\+socktable (\begin{DoxyParamCaption}\item[{key\+\_\+t}]{key}{}\end{DoxyParamCaption})}
+
+
+
+create the socket table 
+
+exclusively create a shared memory segment
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key created by ftok to identify the segment (should not be IPC\+\_\+\+PRIVATE, that will prevent the library functions from attach to it since they are not spawned by the init process)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on any sort of error with errno describing the error 
+\end{DoxyReturn}
+\Hypertarget{initksocket_8h_a74c582bf05d8832b1a6a30e8b48419f7}\index{initksocket.h@{initksocket.h}!destroy\_socktable@{destroy\_socktable}}
+\index{destroy\_socktable@{destroy\_socktable}!initksocket.h@{initksocket.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_socktable()}{destroy\_socktable()}}
+{\footnotesize\ttfamily \label{initksocket_8h_a74c582bf05d8832b1a6a30e8b48419f7} 
+int destroy\+\_\+socktable (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}{socket\+\_\+table}} \texorpdfstring{$\ast$}{*}}]{socktable}{, }\item[{int}]{shmid}{}\end{DoxyParamCaption})}
+
+
+
+cleanup shared memory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socktable} & pointer to shared memory \\
+\hline
+{\em shmid} & id of shm segment\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on any error 
+\end{DoxyReturn}
+\Hypertarget{initksocket_8h_ae1a3acb17ba66b930323abbfd017fdd3}\index{initksocket.h@{initksocket.h}!garbage\_collector@{garbage\_collector}}
+\index{garbage\_collector@{garbage\_collector}!initksocket.h@{initksocket.h}}
+\doxysubsubsection{\texorpdfstring{garbage\_collector()}{garbage\_collector()}}
+{\footnotesize\ttfamily \label{initksocket_8h_ae1a3acb17ba66b930323abbfd017fdd3} 
+void \texorpdfstring{$\ast$}{*} garbage\+\_\+collector (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+garbage collector routine 
+
+empty up unterminated sockets once their parent processes are killed \Hypertarget{initksocket_8h_a74e543df99c41ede30da97fc2a4f309f}\index{initksocket.h@{initksocket.h}!init\_socktable@{init\_socktable}}
+\index{init\_socktable@{init\_socktable}!initksocket.h@{initksocket.h}}
+\doxysubsubsection{\texorpdfstring{init\_socktable()}{init\_socktable()}}
+{\footnotesize\ttfamily \label{initksocket_8h_a74e543df99c41ede30da97fc2a4f309f} 
+\doxymbox{\hyperlink{initksocket_8h_adf161e64455d03106133bf0c40ae4e80}{socket\+\_\+table}} \texorpdfstring{$\ast$}{*} init\+\_\+socktable (\begin{DoxyParamCaption}\item[{int}]{shmid}{}\end{DoxyParamCaption})}
+
+
+
+attach and init the socktable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shmid} & shmid returned by create\+\_\+socktable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL on any error with errno describing the error 
+\end{DoxyReturn}
+\Hypertarget{initksocket_8h_ac368490e0a6f6689f7b7620772c8b990}\index{initksocket.h@{initksocket.h}!recv\_routine@{recv\_routine}}
+\index{recv\_routine@{recv\_routine}!initksocket.h@{initksocket.h}}
+\doxysubsubsection{\texorpdfstring{recv\_routine()}{recv\_routine()}}
+{\footnotesize\ttfamily \label{initksocket_8h_ac368490e0a6f6689f7b7620772c8b990} 
+void \texorpdfstring{$\ast$}{*} recv\+\_\+routine (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+the receiver thread routine 
+
+waits for message to come in a recvfrom() call from {\itshape any} of the UDP sockets (using select()). When received, append the message to the receive buffer of the corresponding socket and sends the corresponding ACK
+
+updates windows \Hypertarget{initksocket_8h_ab0cf9049c30573885bcf36ca0f281133}\index{initksocket.h@{initksocket.h}!send\_routine@{send\_routine}}
+\index{send\_routine@{send\_routine}!initksocket.h@{initksocket.h}}
+\doxysubsubsection{\texorpdfstring{send\_routine()}{send\_routine()}}
+{\footnotesize\ttfamily \label{initksocket_8h_ab0cf9049c30573885bcf36ca0f281133} 
+void \texorpdfstring{$\ast$}{*} send\+\_\+routine (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+the sender thread routine 
+
+sleeps for time T/\+2 and wakes up periodically.
+
+if message timeout period is over, retransmits swnd of the socket 

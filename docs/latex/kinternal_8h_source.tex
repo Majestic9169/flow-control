@@ -1,0 +1,96 @@
+\doxysection{kinternal.\+h}
+\hypertarget{kinternal_8h_source}{}\label{kinternal_8h_source}\index{lib/kinternal.h@{lib/kinternal.h}}
+\doxymbox{\hyperlink{kinternal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ K\_INTERNAL\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ K\_INTERNAL\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ksocket_8h}{ksocket.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <errno.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <sys/socket.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ WIN\_SIZE\ 10}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{char}\ \doxymbox{\hyperlink{struct____buf__t_afba8700fb46f225bc3c4e333a7d24c5d}{buffer}}[WIN\_SIZE\ *\ MSG\_SIZE];\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct____buf__t_a4a25792a23f5d118bf884b1658f3fd28}{left}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct____buf__t_a750502fe51cb018e9609c6db451e9917}{right}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct____buf__t_aa5ad362104955d01d607a985473a848a}{count}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \}\ \doxymbox{\hyperlink{struct____buf__t}{\_\_buf\_t}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{struct____swnd__t_ab07e6138073f2d5e2496105e54c01529}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____swnd__t_a2b5c8d6529f2c4ed7cd307da5fc62078}{unacked}}[WIN\_SIZE];\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{struct\ }timeval\ \doxymbox{\hyperlink{struct____swnd__t_a92a4ad7dcd99ff53d8106fac21bfbe40}{last\_sent}};\ \ }
+\DoxyCodeLine{00035\ \}\ \doxymbox{\hyperlink{struct____swnd__t}{\_\_swnd\_t}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{struct____rwnd__t_ac137a813ad49f35e9f8ca96f7032b3be}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____rwnd__t_a39cb62ccd4c459c2b9ee77b3f757a68b}{expected}}[WIN\_SIZE];\ }
+\DoxyCodeLine{00044\ \}\ \doxymbox{\hyperlink{struct____rwnd__t}{\_\_rwnd\_t}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct____k__socket__t_ad5c55e8391e2e4481ba2693da81f1105}{is\_free}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ pid\_t\ \doxymbox{\hyperlink{struct____k__socket__t_ae719efc7517dd3417e0f8e027637b01b}{parent\_process}};\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct____k__socket__t_a6bbeeefbfba9530329b49772fa25f5a3}{udp\_sockfd}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{struct\ }sockaddr\_storage\ \doxymbox{\hyperlink{struct____k__socket__t_a4ce453a63d84b2fb4784d3c0091cd870}{dst\_addr}};\ }
+\DoxyCodeLine{00056\ \ \ \doxymbox{\hyperlink{struct____buf__t}{\_\_buf\_t}}\ \doxymbox{\hyperlink{struct____k__socket__t_a747f88216f7dab62e48c9180b0005155}{send\_buf}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \doxymbox{\hyperlink{struct____buf__t}{\_\_buf\_t}}\ \doxymbox{\hyperlink{struct____k__socket__t_a92c3c4105145fb34558823c07031845a}{recv\_buf}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \doxymbox{\hyperlink{struct____swnd__t}{\_\_swnd\_t}}\ \doxymbox{\hyperlink{struct____k__socket__t_a26f516b2a7d92299302c77f6b0499d5c}{swnd}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \doxymbox{\hyperlink{struct____rwnd__t}{\_\_rwnd\_t}}\ \doxymbox{\hyperlink{struct____k__socket__t_a0766fd7419f0874c761c4f4940be7e02}{rwnd}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____k__socket__t_ad5015629622742261785356ea0ff0a54}{nospace}};\ }
+\DoxyCodeLine{00062\ \}\ \doxymbox{\hyperlink{struct____k__socket__t}{\_\_k\_socket\_t}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00082\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct____ktp__header_a702b839d4c5250e5024aa7f5e43e6c22}{src\_port}};\ }
+\DoxyCodeLine{00083\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct____ktp__header_a2753525f0f8776ba7ef702c663a75403}{dst\_port}};\ }
+\DoxyCodeLine{00084\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____ktp__header_a8471838bc9353642ad9e8cae9c19dd9b}{seq\_num}};\ \ \ }
+\DoxyCodeLine{00085\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____ktp__header_abfb02b0febcf078cdec54d60bc7cc4b3}{ack\_num}};\ \ \ }
+\DoxyCodeLine{00086\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____ktp__header_a3d310d7a8730d8f086be37e039efe225}{frsvd}}\ :\ 6;\ }
+\DoxyCodeLine{00087\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____ktp__header_a6168ebc431ddc07c1fb68140a3772f84}{f\_ack}}\ :\ 1;\ }
+\DoxyCodeLine{00088\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____ktp__header_ac7658c74291db5de2a707d0b1889a2d1}{f\_syn}}\ :\ 1;\ }
+\DoxyCodeLine{00089\ \ \ uint8\_t\ \doxymbox{\hyperlink{struct____ktp__header_a71818a3e6fd08719b94f63f7b2ca0670}{window}};\ \ \ \ }
+\DoxyCodeLine{00090\ \}\ \doxymbox{\hyperlink{struct____ktp__header}{\_\_ktp\_header}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{kinternal_8h_a64c4c6c846e9c7c2845d83492e26814b}{init\_buf}}(\doxymbox{\hyperlink{struct____buf__t}{\_\_buf\_t}}\ *buf)\ \{}
+\DoxyCodeLine{00096\ \ \ memset(buf-\/>\doxymbox{\hyperlink{struct____buf__t_afba8700fb46f225bc3c4e333a7d24c5d}{buffer}},\ 0,\ \textcolor{keyword}{sizeof}(buf-\/>\doxymbox{\hyperlink{struct____buf__t_afba8700fb46f225bc3c4e333a7d24c5d}{buffer}}));}
+\DoxyCodeLine{00097\ \ \ buf-\/>\doxymbox{\hyperlink{struct____buf__t_a4a25792a23f5d118bf884b1658f3fd28}{left}}\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ buf-\/>\doxymbox{\hyperlink{struct____buf__t_a750502fe51cb018e9609c6db451e9917}{right}}\ =\ 0;}
+\DoxyCodeLine{00099\ \ \ buf-\/>\doxymbox{\hyperlink{struct____buf__t_aa5ad362104955d01d607a985473a848a}{count}}\ =\ 0;}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{kinternal_8h_a0c230ea1c8ae9626f1ebe7c840e5121c}{push\_buf}}(\doxymbox{\hyperlink{struct____buf__t}{\_\_buf\_t}}\ *buf,\ \textcolor{keywordtype}{char}\ *msg)\ \{}
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordflow}{if}\ (buf-\/>\doxymbox{\hyperlink{struct____buf__t_aa5ad362104955d01d607a985473a848a}{count}}\ >=\ WIN\_SIZE)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ errno\ =\ \doxymbox{\hyperlink{ksocket_8h_a0bf3e9d049a9238dc4639ec4f9999e4a}{ENOSPACE}};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00113\ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ memcpy(\&buf-\/>\doxymbox{\hyperlink{struct____buf__t_afba8700fb46f225bc3c4e333a7d24c5d}{buffer}}[buf-\/>\doxymbox{\hyperlink{struct____buf__t_a750502fe51cb018e9609c6db451e9917}{right}}\ *\ MSG\_SIZE],\ msg,\ MSG\_SIZE);}
+\DoxyCodeLine{00116\ \ \ buf-\/>\doxymbox{\hyperlink{struct____buf__t_a750502fe51cb018e9609c6db451e9917}{right}}\ =\ (buf-\/>\doxymbox{\hyperlink{struct____buf__t_a750502fe51cb018e9609c6db451e9917}{right}}\ +\ 1)\ \%\ WIN\_SIZE;}
+\DoxyCodeLine{00117\ \ \ buf-\/>\doxymbox{\hyperlink{struct____buf__t_aa5ad362104955d01d607a985473a848a}{count}}++;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{kinternal_8h_a79bfdc45892f2e0f76593d6ae3d8b0c8}{pop\_buf}}(\doxymbox{\hyperlink{struct____buf__t}{\_\_buf\_t}}\ *buf,\ \textcolor{keywordtype}{char}\ *dst)\ \{}
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordflow}{if}\ (buf-\/>\doxymbox{\hyperlink{struct____buf__t_aa5ad362104955d01d607a985473a848a}{count}}\ <=\ 0)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ errno\ =\ \doxymbox{\hyperlink{ksocket_8h_a2f035de1c8bc89b23d638297fcd891df}{ENOMESSAGE}};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00131\ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ memcpy(dst,\ \&buf-\/>\doxymbox{\hyperlink{struct____buf__t_afba8700fb46f225bc3c4e333a7d24c5d}{buffer}}[buf-\/>\doxymbox{\hyperlink{struct____buf__t_a4a25792a23f5d118bf884b1658f3fd28}{left}}\ *\ MSG\_SIZE],\ MSG\_SIZE);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ buf-\/>\doxymbox{\hyperlink{struct____buf__t_a4a25792a23f5d118bf884b1658f3fd28}{left}}\ =\ (buf-\/>\doxymbox{\hyperlink{struct____buf__t_a4a25792a23f5d118bf884b1658f3fd28}{left}}\ +\ 1)\ \%\ WIN\_SIZE;}
+\DoxyCodeLine{00136\ \ \ buf-\/>\doxymbox{\hyperlink{struct____buf__t_aa5ad362104955d01d607a985473a848a}{count}}-\/-\/;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00139\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

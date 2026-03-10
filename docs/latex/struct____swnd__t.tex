@@ -1,0 +1,41 @@
+\doxysection{\+\_\+\+\_\+swnd\+\_\+t Struct Reference}
+\hypertarget{struct____swnd__t}{}\label{struct____swnd__t}\index{\_\_swnd\_t@{\_\_swnd\_t}}
+
+
+Internal data structure for the sender window.  
+
+
+
+
+{\ttfamily \+\#include $<$kinternal.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct____swnd__t_ab07e6138073f2d5e2496105e54c01529}\label{struct____swnd__t_ab07e6138073f2d5e2496105e54c01529} 
+size\+\_\+t {\bfseries size}
+\begin{DoxyCompactList}\small\item\em max unacked packets that can be sent \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{struct____swnd__t_a2b5c8d6529f2c4ed7cd307da5fc62078}{unacked}} \+[WIN\+\_\+\+SIZE]\+
+\item 
+\Hypertarget{struct____swnd__t_a92a4ad7dcd99ff53d8106fac21bfbe40}\label{struct____swnd__t_a92a4ad7dcd99ff53d8106fac21bfbe40} 
+struct timeval {\bfseries last\+\_\+sent}
+\begin{DoxyCompactList}\small\item\em time stamp of the oldest unacked message \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Internal data structure for the sender window. 
+
+\label{doc-variable-members}
+\Hypertarget{struct____swnd__t_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct____swnd__t_a2b5c8d6529f2c4ed7cd307da5fc62078}\index{\_\_swnd\_t@{\_\_swnd\_t}!unacked@{unacked}}
+\index{unacked@{unacked}!\_\_swnd\_t@{\_\_swnd\_t}}
+\doxysubsubsection{\texorpdfstring{unacked}{unacked}}
+{\footnotesize\ttfamily \label{struct____swnd__t_a2b5c8d6529f2c4ed7cd307da5fc62078} 
+uint8\+\_\+t \+\_\+\+\_\+swnd\+\_\+t::\+unacked\+[WIN\+\_\+\+SIZE]\+}
+
+sequence numbers of all currently unacknowledged messages (circular buffer) 
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+lib/\+\doxymbox{\hyperlink{kinternal_8h}{kinternal.\+h}}\end{DoxyCompactItemize}
