@@ -11,7 +11,7 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 
-#define SOCK_KTP
+#define SOCK_KTP 42
 #define MSG_SIZE 512
 
 /**

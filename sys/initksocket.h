@@ -13,15 +13,12 @@
 #ifndef INITKSOCKET_H
 #define INITKSOCKET_H
 
-#include "../lib/kinternal.h"
+#include "kinternal.h"
 #include <pthread.h>
-#include <semaphore.h>
 #include <stddef.h>
 #include <sys/select.h>
 #include <sys/types.h>
 #include <time.h>
-
-#define MAX_SOCKETS 128
 
 /** @brief information logging macros for the init process
  * @anchor custom_log
@@ -53,14 +50,6 @@
 /**
  * @}
  */
-
-/** @brief the global state table of KTP sockets
- */
-typedef struct {
-  __k_socket_t sockets[MAX_SOCKETS]; ///< array of ksockets
-  sem_t mtx;                         ///< mutex to protect table access
-  size_t count;                      ///< current active sockets
-} socket_table_t;
 
 /** @brief create the socket table
  *

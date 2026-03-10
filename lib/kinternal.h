@@ -7,13 +7,21 @@
 #define K_INTERNAL_H
 
 #include "ksocket.h"
+#include <arpa/inet.h>
 #include <errno.h>
+#include <fcntl.h>
+#include <netinet/in.h>
+#include <semaphore.h>
 #include <stdint.h>
 #include <string.h>
+#include <sys/mman.h>
 #include <sys/socket.h>
 #include <time.h>
+#include <unistd.h>
 
 #define WIN_SIZE 10
+#define MAX_SOCKETS 128
+
 #define SOCKTABLE_NAME "/ktp_socket_table"
 
 /** @brief simple circular buffer for sending and receiving buffers
@@ -49,18 +57,27 @@ typedef struct {
  * @details This structure tracks the state, buffers, and addressing for each
  * socket
  */
+// TODO: sequence and ack numbers?
 typedef struct {
   int is_free;          ///< availability flag
   pid_t parent_process; ///< pid of process that created the socket
   int udp_sockfd;       ///< socket file descriptor of underlying udp socket
-  struct sockaddr_storage dst_addr; ///< destination address information
-  __buf_t send_buf;                 ///< internal transmission buffer
-  __buf_t recv_buf;                 ///< internal reception buffer
-  __swnd_t swnd;                    ///< sending window
-  __rwnd_t rwnd;                    ///< receiving window
+  struct sockaddr_in dst_addr; ///< destination address information
+  __buf_t send_buf;            ///< internal transmission buffer
+  __buf_t recv_buf;            ///< internal reception buffer
+  __swnd_t swnd;               ///< sending window
+  __rwnd_t rwnd;               ///< receiving window
   uint8_t nospace; ///< indicate whether space is available in the recv
                    ///< buf or not
 } __k_socket_t;
+
+/** @brief the global state table of KTP sockets
+ */
+typedef struct {
+  __k_socket_t sockets[MAX_SOCKETS]; ///< array of ksockets
+  sem_t mtx;                         ///< mutex to protect table access
+  size_t count;                      ///< current active sockets
+} socket_table_t;
 
 /** @brief Structure of the KTP Header
  * @details Defines the exact structure for the KTP Header
@@ -102,7 +119,7 @@ void init_buf(__buf_t *buf) { memset(buf, 0, sizeof(__buf_t)); }
  *
  * @return -1 and set errno on ENOSPACE, 0 on success
  */
-int push_buf(__buf_t *buf, char *msg) {
+int push_buf(__buf_t *buf, const char *msg) {
   if (buf->count >= WIN_SIZE) {
     errno = ENOSPACE;
     return -1;
@@ -132,6 +149,30 @@ int pop_buf(__buf_t *buf, char *dst) {
   buf->count--;
 
   return 0;
+}
+
+/** @brief attach to socktable
+ *
+ * @param name name of the shm file
+ * @param mode permissions with which to open the file
+ *
+ * @return NULL on errors
+ */
+socket_table_t *attach_table(const char *name, int mode) {
+  int shmid;
+  socket_table_t *t;
+
+  if ((shmid = shm_open(name, O_RDWR, mode)) == -1) {
+    return NULL;
+  }
+
+  if ((t = mmap(0, sizeof(socket_table_t), PROT_WRITE | PROT_READ, MAP_SHARED,
+                shmid, 0)) == MAP_FAILED) {
+    return NULL;
+  }
+
+  close(shmid);
+  return t;
 }
 
 #endif
