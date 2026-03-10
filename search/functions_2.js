@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['garbage_5fcollector_0',['garbage_collector',['../initksocket_8c.html#ae1a3acb17ba66b930323abbfd017fdd3',1,'garbage_collector(void *args):&#160;initksocket.c'],['../initksocket_8h.html#ae1a3acb17ba66b930323abbfd017fdd3',1,'garbage_collector(void *args):&#160;initksocket.c']]]
+  ['destroy_5fsocktable_0',['destroy_socktable',['../initksocket_8c.html#ae1dbf92483d40d0475bf00a795e57b7f',1,'destroy_socktable(const char *name, socket_table_t *socktable, size_t size):&#160;initksocket.c'],['../initksocket_8h.html#ae1dbf92483d40d0475bf00a795e57b7f',1,'destroy_socktable(const char *name, socket_table_t *socktable, size_t size):&#160;initksocket.c']]]
 ];

@@ -101,11 +101,17 @@ $(document).ready(function(){initNavTree('kinternal_8h.html',''); initResizable(
 <p>internal definitions that should not be exposed to the user  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ksocket_8h_source.html">ksocket.h</a>&quot;</code><br />
+<code>#include &lt;arpa/inet.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;semaphore.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/mman.h&gt;</code><br />
 <code>#include &lt;sys/socket.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
 </div>
 <p><a href="kinternal_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -123,6 +129,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____k__socket__t.html">__k_socket_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal data stored for each created socket.  <a href="struct____k__socket__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsocket__table__t.html">socket_table_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the global state table of KTP sockets  <a href="structsocket__table__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ktp__header.html">__ktp_header</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of the KTP Header.  <a href="struct____ktp__header.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +141,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a362eaf67a7c349b6cc82a95b866561ab"><td class="memItemLeft" align="right" valign="top"><a id="a362eaf67a7c349b6cc82a95b866561ab" name="a362eaf67a7c349b6cc82a95b866561ab"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WIN_SIZE</b>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a362eaf67a7c349b6cc82a95b866561ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54cda52ee639aa3c47cfa330904e776"><td class="memItemLeft" align="right" valign="top"><a id="ab54cda52ee639aa3c47cfa330904e776" name="ab54cda52ee639aa3c47cfa330904e776"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_SOCKETS</b>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:ab54cda52ee639aa3c47cfa330904e776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90b0906fe9feacbddc99a329ba89e2da"><td class="memItemLeft" align="right" valign="top"><a id="a90b0906fe9feacbddc99a329ba89e2da" name="a90b0906fe9feacbddc99a329ba89e2da"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SOCKTABLE_NAME</b>&#160;&#160;&#160;&quot;/ktp_socket_table&quot;</td></tr>
 <tr class="separator:a90b0906fe9feacbddc99a329ba89e2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,16 +153,57 @@ Functions</h2></td></tr>
 <tr class="memitem:a64c4c6c846e9c7c2845d83492e26814b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kinternal_8h.html#a64c4c6c846e9c7c2845d83492e26814b">init_buf</a> (<a class="el" href="struct____buf__t.html">__buf_t</a> *buf)</td></tr>
 <tr class="memdesc:a64c4c6c846e9c7c2845d83492e26814b"><td class="mdescLeft">&#160;</td><td class="mdescRight">init circular buffer  <br /></td></tr>
 <tr class="separator:a64c4c6c846e9c7c2845d83492e26814b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c230ea1c8ae9626f1ebe7c840e5121c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kinternal_8h.html#a0c230ea1c8ae9626f1ebe7c840e5121c">push_buf</a> (<a class="el" href="struct____buf__t.html">__buf_t</a> *buf, char *msg)</td></tr>
-<tr class="memdesc:a0c230ea1c8ae9626f1ebe7c840e5121c"><td class="mdescLeft">&#160;</td><td class="mdescRight">push to circular buffer  <br /></td></tr>
-<tr class="separator:a0c230ea1c8ae9626f1ebe7c840e5121c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73dd4c091e22dd585684dfb861460900"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kinternal_8h.html#a73dd4c091e22dd585684dfb861460900">push_buf</a> (<a class="el" href="struct____buf__t.html">__buf_t</a> *buf, const char *msg)</td></tr>
+<tr class="memdesc:a73dd4c091e22dd585684dfb861460900"><td class="mdescLeft">&#160;</td><td class="mdescRight">push to circular buffer  <br /></td></tr>
+<tr class="separator:a73dd4c091e22dd585684dfb861460900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79bfdc45892f2e0f76593d6ae3d8b0c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kinternal_8h.html#a79bfdc45892f2e0f76593d6ae3d8b0c8">pop_buf</a> (<a class="el" href="struct____buf__t.html">__buf_t</a> *buf, char *dst)</td></tr>
 <tr class="memdesc:a79bfdc45892f2e0f76593d6ae3d8b0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">pop from circular buffer  <br /></td></tr>
 <tr class="separator:a79bfdc45892f2e0f76593d6ae3d8b0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f23d7f40c70150a30f5ca9006dd6fba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsocket__table__t.html">socket_table_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kinternal_8h.html#a9f23d7f40c70150a30f5ca9006dd6fba">attach_table</a> (const char *name, int mode)</td></tr>
+<tr class="memdesc:a9f23d7f40c70150a30f5ca9006dd6fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">attach to socktable  <br /></td></tr>
+<tr class="separator:a9f23d7f40c70150a30f5ca9006dd6fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>internal definitions that should not be exposed to the user </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a9f23d7f40c70150a30f5ca9006dd6fba" name="a9f23d7f40c70150a30f5ca9006dd6fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f23d7f40c70150a30f5ca9006dd6fba">&#9670;&#160;</a></span>attach_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsocket__table__t.html">socket_table_t</a> * attach_table </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>attach to socktable </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>name of the shm file </td></tr>
+    <tr><td class="paramname">mode</td><td>permissions with which to open the file</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL on errors </dd></dl>
+
+</div>
+</div>
 <a id="a64c4c6c846e9c7c2845d83492e26814b" name="a64c4c6c846e9c7c2845d83492e26814b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64c4c6c846e9c7c2845d83492e26814b">&#9670;&#160;</a></span>init_buf()</h2>
 
@@ -215,8 +268,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0c230ea1c8ae9626f1ebe7c840e5121c" name="a0c230ea1c8ae9626f1ebe7c840e5121c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c230ea1c8ae9626f1ebe7c840e5121c">&#9670;&#160;</a></span>push_buf()</h2>
+<a id="a73dd4c091e22dd585684dfb861460900" name="a73dd4c091e22dd585684dfb861460900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73dd4c091e22dd585684dfb861460900">&#9670;&#160;</a></span>push_buf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +283,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>msg</em>&#160;</td>
         </tr>
         <tr>

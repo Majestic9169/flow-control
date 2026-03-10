@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['recv_5froutine_0',['recv_routine',['../initksocket_8c.html#ac368490e0a6f6689f7b7620772c8b990',1,'recv_routine(void *args):&#160;initksocket.c'],['../initksocket_8h.html#ac368490e0a6f6689f7b7620772c8b990',1,'recv_routine(void *args):&#160;initksocket.c']]]
+  ['pop_5fbuf_0',['pop_buf',['../kinternal_8h.html#a79bfdc45892f2e0f76593d6ae3d8b0c8',1,'kinternal.h']]],
+  ['push_5fbuf_1',['push_buf',['../kinternal_8h.html#a73dd4c091e22dd585684dfb861460900',1,'kinternal.h']]]
 ];

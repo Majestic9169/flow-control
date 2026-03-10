@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('ksocket_8c.html',''); initResizable();
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">ksocket.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -97,9 +99,208 @@ $(document).ready(function(){initNavTree('ksocket_8c.html',''); initResizable();
 <p>The source code for the libksocket.a library.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ksocket_8h_source.html">ksocket.h</a>&quot;</code><br />
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<code>#include &quot;<a class="el" href="kinternal_8h_source.html">kinternal.h</a>&quot;</code><br />
+<code>#include &lt;asm-generic/errno.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;semaphore.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/mman.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5dd94f29c195c659a0cb63a138389214"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#a5dd94f29c195c659a0cb63a138389214">k_socket</a> (int domain, int type, int protocol)</td></tr>
+<tr class="memdesc:a5dd94f29c195c659a0cb63a138389214"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a KTP socket  <br /></td></tr>
+<tr class="separator:a5dd94f29c195c659a0cb63a138389214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3fc6713af0ddafe05416f1008428f13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#ac3fc6713af0ddafe05416f1008428f13">k_bind</a> (int sockfd, const struct sockaddr *src_addr, const socklen_t src_addr_len, const struct sockaddr *dst_addr, const socklen_t dst_addr_len)</td></tr>
+<tr class="memdesc:ac3fc6713af0ddafe05416f1008428f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">bind the socket to a client and server address  <br /></td></tr>
+<tr class="separator:ac3fc6713af0ddafe05416f1008428f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517531ef1ba157d1a3ba061f774cddbb"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#a517531ef1ba157d1a3ba061f774cddbb">k_sendto</a> (int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len)</td></tr>
+<tr class="memdesc:a517531ef1ba157d1a3ba061f774cddbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">send msg to server buffer  <br /></td></tr>
+<tr class="separator:a517531ef1ba157d1a3ba061f774cddbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The source code for the libksocket.a library. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ac3fc6713af0ddafe05416f1008428f13" name="ac3fc6713af0ddafe05416f1008428f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3fc6713af0ddafe05416f1008428f13">&#9670;&#160;</a></span>k_bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int k_bind </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockfd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct sockaddr *&#160;</td>
+          <td class="paramname"><em>src_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const socklen_t&#160;</td>
+          <td class="paramname"><em>src_addr_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct sockaddr *&#160;</td>
+          <td class="paramname"><em>dst_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const socklen_t&#160;</td>
+          <td class="paramname"><em>dst_addr_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bind the socket to a client and server address </p>
+<p>Binds the UDP socket with the source IP and source port, and updates the corresponding system shared memory with the destination IP and destination port The sockaddr's will be pointers to sockaddr_in's and therefore should contain port data as well</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sockfd</td><td>The KTP socket </td></tr>
+    <tr><td class="paramname">src_addr</td><td>sockaddr to source IP address </td></tr>
+    <tr><td class="paramname">src_addr_len</td><td>socklen_t of source address </td></tr>
+    <tr><td class="paramname">dst_addr</td><td>sockaddr to destination IP address </td></tr>
+    <tr><td class="paramname">dst_addr_len</td><td>socklen_t of destination IP address</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on error </dd></dl>
+
+</div>
+</div>
+<a id="a517531ef1ba157d1a3ba061f774cddbb" name="a517531ef1ba157d1a3ba061f774cddbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517531ef1ba157d1a3ba061f774cddbb">&#9670;&#160;</a></span>k_sendto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t k_sendto </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>socket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct sockaddr *&#160;</td>
+          <td class="paramname"><em>dest_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">socklen_t&#160;</td>
+          <td class="paramname"><em>dest_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>send msg to server buffer </p>
+<p>on match of destination address to bound destination address. Encapsulate the message with the KTP header. The msg is written to the server's recv buffer. Drops message on failure</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>KTP socket </td></tr>
+    <tr><td class="paramname">message</td><td>pointer to your 512 byte message </td></tr>
+    <tr><td class="paramname">length</td><td>message length (512 bytes) </td></tr>
+    <tr><td class="paramname">flags</td><td>usually 0, could be MSG_EOR, MSG_OOB, MSG_NOSIGNAL </td></tr>
+    <tr><td class="paramname">dest_addr</td><td>destination address </td></tr>
+    <tr><td class="paramname">dest_len</td><td>destination address length</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on failure due to addr mismatch (ENOTBOUND) or insufficient space (ENOSPACE) </dd></dl>
+
+</div>
+</div>
+<a id="a5dd94f29c195c659a0cb63a138389214" name="a5dd94f29c195c659a0cb63a138389214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd94f29c195c659a0cb63a138389214">&#9670;&#160;</a></span>k_socket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int k_socket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>protocol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>create a KTP socket </p>
+<p>open a udp socket with SOCK_KTP type and create an entry for it in the system shared memory</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">domain</td><td>The protocol "family" for communication. Should be AF_INET or AF_INET6 </td></tr>
+    <tr><td class="paramname">type</td><td>The type of socket, should be SOCKET_KTP </td></tr>
+    <tr><td class="paramname">protocol</td><td>The protocol to be used with the socket, SOCKET_KTP has an established protocol and thus this should be 0</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on error (errno = ENOSPACE or others) </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

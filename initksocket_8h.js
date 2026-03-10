@@ -1,6 +1,5 @@
 var initksocket_8h =
 [
-    [ "socket_table_t", "structsocket__table__t.html", "structsocket__table__t" ],
     [ "create_socktable", "initksocket_8h.html#a6cdb683c75364634e2be929f890193c5", null ],
     [ "destroy_socktable", "initksocket_8h.html#ae1dbf92483d40d0475bf00a795e57b7f", null ],
     [ "garbage_collector", "initksocket_8h.html#ae1a3acb17ba66b930323abbfd017fdd3", null ],
