@@ -90,15 +90,252 @@ $(document).ready(function(){initNavTree('initksocket_8c.html',''); initResizabl
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">initksocket.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>source code for "kernel simulate"  
 <a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="initksocket_8h_source.html">initksocket.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kinternal_8h_source.html">kinternal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ksocket_8h_source.html">ksocket.h</a>&quot;</code><br />
+<code>#include &lt;bits/pthreadtypes.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;sys/mman.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a258e3b580e688a0cf46e4258525aeaf1"><td class="memItemLeft" align="right" valign="top"><a id="a258e3b580e688a0cf46e4258525aeaf1" name="a258e3b580e688a0cf46e4258525aeaf1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sigint_handler</b> (int sig)</td></tr>
+<tr class="separator:a258e3b580e688a0cf46e4258525aeaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cdb683c75364634e2be929f890193c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#a6cdb683c75364634e2be929f890193c5">create_socktable</a> (const char *name, int flags)</td></tr>
+<tr class="memdesc:a6cdb683c75364634e2be929f890193c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">create the socket table  <br /></td></tr>
+<tr class="separator:a6cdb683c75364634e2be929f890193c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdcb3609f057c6667df829031363621c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#afdcb3609f057c6667df829031363621c">init_socktable</a> (int shmid, size_t size)</td></tr>
+<tr class="memdesc:afdcb3609f057c6667df829031363621c"><td class="mdescLeft">&#160;</td><td class="mdescRight">attach and init the socktable  <br /></td></tr>
+<tr class="separator:afdcb3609f057c6667df829031363621c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a18b7a711d13290f74af772212d6a8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#a3a18b7a711d13290f74af772212d6a8e">destroy_socktable</a> (const char *name, <a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> *socktable, size_t size)</td></tr>
+<tr class="memdesc:a3a18b7a711d13290f74af772212d6a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">cleanup shared memory  <br /></td></tr>
+<tr class="separator:a3a18b7a711d13290f74af772212d6a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac368490e0a6f6689f7b7620772c8b990"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#ac368490e0a6f6689f7b7620772c8b990">recv_routine</a> (void *args)</td></tr>
+<tr class="memdesc:ac368490e0a6f6689f7b7620772c8b990"><td class="mdescLeft">&#160;</td><td class="mdescRight">the receiver thread routine  <br /></td></tr>
+<tr class="separator:ac368490e0a6f6689f7b7620772c8b990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0cf9049c30573885bcf36ca0f281133"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#ab0cf9049c30573885bcf36ca0f281133">send_routine</a> (void *args)</td></tr>
+<tr class="memdesc:ab0cf9049c30573885bcf36ca0f281133"><td class="mdescLeft">&#160;</td><td class="mdescRight">the sender thread routine  <br /></td></tr>
+<tr class="separator:ab0cf9049c30573885bcf36ca0f281133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a3acb17ba66b930323abbfd017fdd3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initksocket_8c.html#ae1a3acb17ba66b930323abbfd017fdd3">garbage_collector</a> (void *args)</td></tr>
+<tr class="memdesc:ae1a3acb17ba66b930323abbfd017fdd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">garbage collector routine  <br /></td></tr>
+<tr class="separator:ae1a3acb17ba66b930323abbfd017fdd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top"><a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8586a6e856c41ae3c209b4f8bd3238fc"><td class="memItemLeft" align="right" valign="top"><a id="a8586a6e856c41ae3c209b4f8bd3238fc" name="a8586a6e856c41ae3c209b4f8bd3238fc"></a>
+volatile sig_atomic_t&#160;</td><td class="memItemRight" valign="bottom"><b>is_exit</b> = 0</td></tr>
+<tr class="separator:a8586a6e856c41ae3c209b4f8bd3238fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>source code for "kernel simulate" </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6cdb683c75364634e2be929f890193c5" name="a6cdb683c75364634e2be929f890193c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cdb683c75364634e2be929f890193c5">&#9670;&#160;</a></span>create_socktable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int create_socktable </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>create the socket table </p>
+<p>exclusively create a shared memory segment</p>
+<dl class="section note"><dt>Note</dt><dd>using POSIX shm</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>name to refer to the segment </td></tr>
+    <tr><td class="paramname">flags</td><td>the permissions associated with the shm</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on any sort of error with errno describing the error </dd></dl>
+
+</div>
+</div>
+<a id="a3a18b7a711d13290f74af772212d6a8e" name="a3a18b7a711d13290f74af772212d6a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a18b7a711d13290f74af772212d6a8e">&#9670;&#160;</a></span>destroy_socktable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int destroy_socktable </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> *&#160;</td>
+          <td class="paramname"><em>socktable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cleanup shared memory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>of shm segment </td></tr>
+    <tr><td class="paramname">socktable</td><td>pointer to shared memory </td></tr>
+    <tr><td class="paramname">size</td><td>size of shm segment</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on any error </dd></dl>
+
+</div>
+</div>
+<a id="ae1a3acb17ba66b930323abbfd017fdd3" name="ae1a3acb17ba66b930323abbfd017fdd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1a3acb17ba66b930323abbfd017fdd3">&#9670;&#160;</a></span>garbage_collector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * garbage_collector </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>garbage collector routine </p>
+<p>empty up unterminated sockets once their parent processes are killed </p>
+
+</div>
+</div>
+<a id="afdcb3609f057c6667df829031363621c" name="afdcb3609f057c6667df829031363621c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdcb3609f057c6667df829031363621c">&#9670;&#160;</a></span>init_socktable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="initksocket_8h.html#adf161e64455d03106133bf0c40ae4e80">socket_table</a> * init_socktable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shmid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>attach and init the socktable </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shmid</td><td>shmid returned by create_socktable </td></tr>
+    <tr><td class="paramname">size</td><td>size of shm segment</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL on any error with errno describing the error </dd></dl>
+
+</div>
+</div>
+<a id="ac368490e0a6f6689f7b7620772c8b990" name="ac368490e0a6f6689f7b7620772c8b990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac368490e0a6f6689f7b7620772c8b990">&#9670;&#160;</a></span>recv_routine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * recv_routine </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the receiver thread routine </p>
+<p>waits for message to come in a recvfrom() call from <em>any</em> of the UDP sockets (using select()). When received, append the message to the receive buffer of the corresponding socket and sends the corresponding ACK</p>
+<p>updates windows </p>
+
+</div>
+</div>
+<a id="ab0cf9049c30573885bcf36ca0f281133" name="ab0cf9049c30573885bcf36ca0f281133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0cf9049c30573885bcf36ca0f281133">&#9670;&#160;</a></span>send_routine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * send_routine </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the sender thread routine </p>
+<p>sleeps for time T/2 and wakes up periodically.</p>
+<p>if message timeout period is over, retransmits swnd of the socket </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
