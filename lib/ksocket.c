@@ -17,6 +17,16 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+/**
+ * @details request a socket from the "init" process and populate its entries
+ *
+ * @warning we can not directly call "socket" from this function as the file
+ * desriptor returned will be unique for this process and unuseable by the init
+ * process.
+ *
+ * we will instead request the init process to create an FD for us by signalling
+ * a semaphore, and waiting on another semaphore that tells us when it is ready
+ */
 int k_socket(int domain, int type, int protocol) {
   if (type != SOCK_KTP) {
     errno = ESOCKTNOSUPPORT;
@@ -35,22 +45,23 @@ int k_socket(int domain, int type, int protocol) {
     return -1;
   }
 
-  int sockfd = socket(domain, SOCK_DGRAM, protocol);
-  if (sockfd == -1) {
-    return -1;
-  }
-
   int i;
   for (i = 0; i < MAX_SOCKETS; i++) {
     if (t->sockets[i].is_free) {
-      t->sockets[i].udp_sockfd = sockfd;
       t->sockets[i].is_free = 0;
+      t->sockets[i].type = SOCK_KTP;
+      t->sockets[i].udp_sockfd = -1;
       t->sockets[i].parent_process = getpid();
+      t->sockets[i].domain = domain;
+      t->sockets[i].protocol = protocol;
       t->count++;
       sem_post(&t->mtx);
       break;
     }
   }
+
+  sem_post(&t->sys_sem);
+  sem_wait(&t->lib_sem);
 
   munmap(t, sizeof(socket_table_t));
 

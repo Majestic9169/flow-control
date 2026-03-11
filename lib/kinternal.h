@@ -60,23 +60,29 @@ typedef struct {
 // TODO: sequence and ack numbers?
 typedef struct {
   int is_free;          ///< availability flag
-  pid_t parent_process; ///< pid of process that created the socket
   int udp_sockfd;       ///< socket file descriptor of underlying udp socket
+  uint8_t nospace;      ///< indicate whether space is available in the recv
+                        ///< buf or not
+  pid_t parent_process; ///< pid of process that created the socket
+  int domain;           ///< domain of underlying UDP socket
+  int type;             ///< type of the socket (should exclusively be SOCK_KTP)
+  int protocol;         ///< protocol of the underlying sock type (should be 0)
   struct sockaddr_in dst_addr; ///< destination address information
+  struct sockaddr_in src_addr; ///< source address information
   __buf_t send_buf;            ///< internal transmission buffer
   __buf_t recv_buf;            ///< internal reception buffer
   __swnd_t swnd;               ///< sending window
   __rwnd_t rwnd;               ///< receiving window
-  uint8_t nospace; ///< indicate whether space is available in the recv
-                   ///< buf or not
 } __k_socket_t;
 
 /** @brief the global state table of KTP sockets
  */
 typedef struct {
+  sem_t mtx;     ///< mutex to protect table access
+  sem_t sys_sem; ///< init daemon waits on this semaphore
+  sem_t lib_sem; ///< library functions wait on this semaphore
+  size_t count;  ///< current active sockets
   __k_socket_t sockets[MAX_SOCKETS]; ///< array of ksockets
-  sem_t mtx;                         ///< mutex to protect table access
-  size_t count;                      ///< current active sockets
 } socket_table_t;
 
 /** @brief Structure of the KTP Header

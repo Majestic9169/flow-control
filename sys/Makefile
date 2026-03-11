@@ -7,13 +7,13 @@ CFLAGS := -Wall -g \
 
 .PHONY: all clean run
 
-all: sys_net
+all: ksocketd
 
-run: sys_net
+run: ksocketd
 	./$<
 
-sys_net: ./initksocket.c ./initksocket.h ../lib/kinternal.h ../lib/ksocket.h
+ksocketd: ./initksocket.c ./initksocket.h ../lib/kinternal.h ../lib/ksocket.h
 	${CC} ${CFLAGS} $< -o $@
 
 clean: 
-	rm sys_net 
+	-rm ksocketd

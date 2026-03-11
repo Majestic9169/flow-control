@@ -11,9 +11,11 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <signal.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/mman.h>
+#include <sys/socket.h>
 #include <sys/types.h>
 #include <unistd.h>
 
@@ -53,6 +55,16 @@ socket_table_t *init_socktable(int shmid, size_t size) {
   }
   INFO("shm: initialised table mutex");
 
+  if (sem_init(&ptr->lib_sem, 1, 1) == -1) {
+    return NULL;
+  }
+  INFO("shm: initialised library semaphore");
+
+  if (sem_init(&ptr->sys_sem, 1, 0) == -1) {
+    return NULL;
+  }
+  INFO("shm: initialised daemon semaphore");
+
   sem_wait(&ptr->mtx);
 
   memset(ptr, 0, sizeof(socket_table_t));
@@ -70,6 +82,10 @@ int destroy_socktable(const char *name, socket_table_t *socktable,
                       size_t size) {
   sem_destroy(&socktable->mtx);
   INFO("shm: destroy table mutex");
+  sem_destroy(&socktable->sys_sem);
+  INFO("shm: destroy system semaphore");
+  sem_destroy(&socktable->lib_sem);
+  INFO("shm: destroy library semaphore");
 
   if (munmap(socktable, size) == -1) {
     return -1;
@@ -103,7 +119,18 @@ void *garbage_collector(void *args) {
   return NULL;
 }
 
+/**
+ * @brief Entry point for the ksocket daemon
+ * * inits shared memory and other IPC primitives
+ * * spawns worker threads
+ * * checks for new socket requests
+ */
 int main(void) {
+
+  /** @name Init Phase
+   * setting up IPC resources and signal handlers
+   * @{
+   */
   signal(SIGINT, sigint_handler);
 
   int shmid;
@@ -128,10 +155,46 @@ int main(void) {
   pthread_create(&R, NULL, recv_routine, NULL);
   pthread_create(&S, NULL, send_routine, NULL);
   pthread_create(&G, NULL, garbage_collector, NULL);
+  /**
+   * @}
+   */
 
   while (!is_exit) {
-    pause();
+    if (sem_trywait(&socktable->sys_sem) != -1) {
+      sem_wait(&socktable->mtx);
+      for (int i = 0; i < MAX_SOCKETS; i++) {
+        /* check for new socket request */
+        if (socktable->sockets[i].is_free &&
+            socktable->sockets[i].udp_sockfd == -1) {
+          INFO("socket: request for new socket %d by %d", i,
+               socktable->sockets[i].parent_process);
+          int sockfd = socket(socktable->sockets[i].domain, SOCK_DGRAM,
+                              socktable->sockets[i].protocol);
+
+          if (sockfd == -1) {
+            ERROR("socket: failed to create new socket");
+            perror("socket");
+          }
+
+          socktable->sockets[i].udp_sockfd = sockfd;
+
+          INFO("socket: created new socket %d", i);
+          break;
+        } else { /* check for bind request */
+          // TODO: handle bind request
+        }
+      }
+      sem_post(&socktable->mtx);
+      sem_post(&socktable->lib_sem);
+    } else {
+      sleep(1);
+    }
   }
+
+  /** @name Destroy Phase
+   * safely remove IPC resources
+   * @{
+   */
 
   pthread_join(R, NULL);
   pthread_join(S, NULL);
@@ -144,6 +207,9 @@ int main(void) {
 exit_1:
   shm_unlink(SOCKTABLE_NAME);
   INFO("shm: destroyed socket table shared memory");
+  /**
+   * @}
+   */
 exit_0:
   return 0;
 }
