@@ -108,18 +108,36 @@ Public Attributes</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>is_free</b></td></tr>
 <tr class="memdesc:ad5c55e8391e2e4481ba2693da81f1105"><td class="mdescLeft">&#160;</td><td class="mdescRight">availability flag <br /></td></tr>
 <tr class="separator:ad5c55e8391e2e4481ba2693da81f1105"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae719efc7517dd3417e0f8e027637b01b"><td class="memItemLeft" align="right" valign="top"><a id="ae719efc7517dd3417e0f8e027637b01b" name="ae719efc7517dd3417e0f8e027637b01b"></a>
-pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>parent_process</b></td></tr>
-<tr class="memdesc:ae719efc7517dd3417e0f8e027637b01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">pid of process that created the socket <br /></td></tr>
-<tr class="separator:ae719efc7517dd3417e0f8e027637b01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bbeeefbfba9530329b49772fa25f5a3"><td class="memItemLeft" align="right" valign="top"><a id="a6bbeeefbfba9530329b49772fa25f5a3" name="a6bbeeefbfba9530329b49772fa25f5a3"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>udp_sockfd</b></td></tr>
 <tr class="memdesc:a6bbeeefbfba9530329b49772fa25f5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">socket file descriptor of underlying udp socket <br /></td></tr>
 <tr class="separator:a6bbeeefbfba9530329b49772fa25f5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5015629622742261785356ea0ff0a54"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____k__socket__t.html#ad5015629622742261785356ea0ff0a54">nospace</a></td></tr>
+<tr class="separator:ad5015629622742261785356ea0ff0a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae719efc7517dd3417e0f8e027637b01b"><td class="memItemLeft" align="right" valign="top"><a id="ae719efc7517dd3417e0f8e027637b01b" name="ae719efc7517dd3417e0f8e027637b01b"></a>
+pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>parent_process</b></td></tr>
+<tr class="memdesc:ae719efc7517dd3417e0f8e027637b01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">pid of process that created the socket <br /></td></tr>
+<tr class="separator:ae719efc7517dd3417e0f8e027637b01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f388b4c4397d9cccade039f355aea82"><td class="memItemLeft" align="right" valign="top"><a id="a0f388b4c4397d9cccade039f355aea82" name="a0f388b4c4397d9cccade039f355aea82"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>domain</b></td></tr>
+<tr class="memdesc:a0f388b4c4397d9cccade039f355aea82"><td class="mdescLeft">&#160;</td><td class="mdescRight">domain of underlying UDP socket <br /></td></tr>
+<tr class="separator:a0f388b4c4397d9cccade039f355aea82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287ec8a334ab76f40982f5f7819ee8d9"><td class="memItemLeft" align="right" valign="top"><a id="a287ec8a334ab76f40982f5f7819ee8d9" name="a287ec8a334ab76f40982f5f7819ee8d9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="memdesc:a287ec8a334ab76f40982f5f7819ee8d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of the socket (should exclusively be SOCK_KTP) <br /></td></tr>
+<tr class="separator:a287ec8a334ab76f40982f5f7819ee8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec03ec76928ae064edf3702c23d5326b"><td class="memItemLeft" align="right" valign="top"><a id="aec03ec76928ae064edf3702c23d5326b" name="aec03ec76928ae064edf3702c23d5326b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>protocol</b></td></tr>
+<tr class="memdesc:aec03ec76928ae064edf3702c23d5326b"><td class="mdescLeft">&#160;</td><td class="mdescRight">protocol of the underlying sock type (should be 0) <br /></td></tr>
+<tr class="separator:aec03ec76928ae064edf3702c23d5326b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5eda9c58704624c0e48e83800499a0c"><td class="memItemLeft" align="right" valign="top"><a id="af5eda9c58704624c0e48e83800499a0c" name="af5eda9c58704624c0e48e83800499a0c"></a>
 struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><b>dst_addr</b></td></tr>
 <tr class="memdesc:af5eda9c58704624c0e48e83800499a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">destination address information <br /></td></tr>
 <tr class="separator:af5eda9c58704624c0e48e83800499a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b706f1bd605ea9cc7dd1d0b53302c5c"><td class="memItemLeft" align="right" valign="top"><a id="a1b706f1bd605ea9cc7dd1d0b53302c5c" name="a1b706f1bd605ea9cc7dd1d0b53302c5c"></a>
+struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><b>src_addr</b></td></tr>
+<tr class="memdesc:a1b706f1bd605ea9cc7dd1d0b53302c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">source address information <br /></td></tr>
+<tr class="separator:a1b706f1bd605ea9cc7dd1d0b53302c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a747f88216f7dab62e48c9180b0005155"><td class="memItemLeft" align="right" valign="top"><a id="a747f88216f7dab62e48c9180b0005155" name="a747f88216f7dab62e48c9180b0005155"></a>
 <a class="el" href="struct____buf__t.html">__buf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>send_buf</b></td></tr>
 <tr class="memdesc:a747f88216f7dab62e48c9180b0005155"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal transmission buffer <br /></td></tr>
@@ -136,8 +154,6 @@ struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><b>dst_add
 <a class="el" href="struct____rwnd__t.html">__rwnd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rwnd</b></td></tr>
 <tr class="memdesc:a0766fd7419f0874c761c4f4940be7e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">receiving window <br /></td></tr>
 <tr class="separator:a0766fd7419f0874c761c4f4940be7e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5015629622742261785356ea0ff0a54"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____k__socket__t.html#ad5015629622742261785356ea0ff0a54">nospace</a></td></tr>
-<tr class="separator:ad5015629622742261785356ea0ff0a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal data stored for each created socket. </p>

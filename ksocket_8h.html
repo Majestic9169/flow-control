@@ -417,7 +417,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>-1 on error (errno = ENOSPACE or others) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on error (errno = ENOSPACE or others)</dd></dl>
+<p>request a socket from the "init" process and populate its entries</p>
+<dl class="section warning"><dt>Warning</dt><dd>we can not directly call "socket" from this function as the file desriptor returned will be unique for this process and unuseable by the init process.</dd></dl>
+<p>we will instead request the init process to create an FD for us by signalling a semaphore, and waiting on another semaphore that tells us when it is ready </p>
 
 </div>
 </div>

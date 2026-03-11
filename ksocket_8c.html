@@ -287,16 +287,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>create a KTP socket </p>
-<p>open a udp socket with SOCK_KTP type and create an entry for it in the system shared memory</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">domain</td><td>The protocol "family" for communication. Should be AF_INET or AF_INET6 </td></tr>
-    <tr><td class="paramname">type</td><td>The type of socket, should be SOCKET_KTP </td></tr>
-    <tr><td class="paramname">protocol</td><td>The protocol to be used with the socket, SOCKET_KTP has an established protocol and thus this should be 0</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>-1 on error (errno = ENOSPACE or others) </dd></dl>
+<p>request a socket from the "init" process and populate its entries</p>
+<dl class="section warning"><dt>Warning</dt><dd>we can not directly call "socket" from this function as the file desriptor returned will be unique for this process and unuseable by the init process.</dd></dl>
+<p>we will instead request the init process to create an FD for us by signalling a semaphore, and waiting on another semaphore that tells us when it is ready </p>
 
 </div>
 </div>

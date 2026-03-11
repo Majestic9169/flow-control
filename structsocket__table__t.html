@@ -104,18 +104,26 @@ $(document).ready(function(){initNavTree('structsocket__table__t.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab56ead8a16345c42dfc6f31b59eadfa8"><td class="memItemLeft" align="right" valign="top"><a id="ab56ead8a16345c42dfc6f31b59eadfa8" name="ab56ead8a16345c42dfc6f31b59eadfa8"></a>
-<a class="el" href="struct____k__socket__t.html">__k_socket_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sockets</b> [MAX_SOCKETS]</td></tr>
-<tr class="memdesc:ab56ead8a16345c42dfc6f31b59eadfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of ksockets <br /></td></tr>
-<tr class="separator:ab56ead8a16345c42dfc6f31b59eadfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac3265d0bf7f9688c65bc865d17b0725"><td class="memItemLeft" align="right" valign="top"><a id="aac3265d0bf7f9688c65bc865d17b0725" name="aac3265d0bf7f9688c65bc865d17b0725"></a>
 sem_t&#160;</td><td class="memItemRight" valign="bottom"><b>mtx</b></td></tr>
 <tr class="memdesc:aac3265d0bf7f9688c65bc865d17b0725"><td class="mdescLeft">&#160;</td><td class="mdescRight">mutex to protect table access <br /></td></tr>
 <tr class="separator:aac3265d0bf7f9688c65bc865d17b0725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5d62a945cae002406e8dd3aaafd6a5"><td class="memItemLeft" align="right" valign="top"><a id="a5c5d62a945cae002406e8dd3aaafd6a5" name="a5c5d62a945cae002406e8dd3aaafd6a5"></a>
+sem_t&#160;</td><td class="memItemRight" valign="bottom"><b>sys_sem</b></td></tr>
+<tr class="memdesc:a5c5d62a945cae002406e8dd3aaafd6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">init daemon waits on this semaphore <br /></td></tr>
+<tr class="separator:a5c5d62a945cae002406e8dd3aaafd6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9048a8e58ee3e66d0b462c11e7721961"><td class="memItemLeft" align="right" valign="top"><a id="a9048a8e58ee3e66d0b462c11e7721961" name="a9048a8e58ee3e66d0b462c11e7721961"></a>
+sem_t&#160;</td><td class="memItemRight" valign="bottom"><b>lib_sem</b></td></tr>
+<tr class="memdesc:a9048a8e58ee3e66d0b462c11e7721961"><td class="mdescLeft">&#160;</td><td class="mdescRight">library functions wait on this semaphore <br /></td></tr>
+<tr class="separator:a9048a8e58ee3e66d0b462c11e7721961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a308a0d1e000a148efd9e64f864de81f0"><td class="memItemLeft" align="right" valign="top"><a id="a308a0d1e000a148efd9e64f864de81f0" name="a308a0d1e000a148efd9e64f864de81f0"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>count</b></td></tr>
 <tr class="memdesc:a308a0d1e000a148efd9e64f864de81f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">current active sockets <br /></td></tr>
 <tr class="separator:a308a0d1e000a148efd9e64f864de81f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56ead8a16345c42dfc6f31b59eadfa8"><td class="memItemLeft" align="right" valign="top"><a id="ab56ead8a16345c42dfc6f31b59eadfa8" name="ab56ead8a16345c42dfc6f31b59eadfa8"></a>
+<a class="el" href="struct____k__socket__t.html">__k_socket_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sockets</b> [MAX_SOCKETS]</td></tr>
+<tr class="memdesc:ab56ead8a16345c42dfc6f31b59eadfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of ksockets <br /></td></tr>
+<tr class="separator:ab56ead8a16345c42dfc6f31b59eadfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>the global state table of KTP sockets </p>
