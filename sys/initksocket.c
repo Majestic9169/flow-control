@@ -6,8 +6,11 @@
 #include "initksocket.h"
 #include "kinternal.h"
 #include "ksocket.h"
+#include <arpa/inet.h>
 #include <bits/pthreadtypes.h>
+#include <errno.h>
 #include <fcntl.h>
+#include <netinet/in.h>
 #include <pthread.h>
 #include <semaphore.h>
 #include <signal.h>
@@ -49,13 +52,14 @@ socket_table_t *init_socktable(int shmid, size_t size) {
     return NULL;
   }
   INFO("shm: attached to shm segment");
+  memset(ptr, 0, sizeof(socket_table_t));
 
   if (sem_init(&ptr->mtx, 1, 1) == -1) {
     return NULL;
   }
   INFO("shm: initialised table mutex");
 
-  if (sem_init(&ptr->lib_sem, 1, 1) == -1) {
+  if (sem_init(&ptr->lib_sem, 1, 0) == -1) {
     return NULL;
   }
   INFO("shm: initialised library semaphore");
@@ -67,9 +71,9 @@ socket_table_t *init_socktable(int shmid, size_t size) {
 
   sem_wait(&ptr->mtx);
 
-  memset(ptr, 0, sizeof(socket_table_t));
   for (size_t i = 0; i < MAX_SOCKETS; i++) {
     ptr->sockets[i].is_free = 1;
+    ptr->info[i] = UNUSED;
     init_buf(&(ptr->sockets[i].recv_buf));
     init_buf(&(ptr->sockets[i].send_buf));
   }
@@ -80,6 +84,13 @@ socket_table_t *init_socktable(int shmid, size_t size) {
 
 int destroy_socktable(const char *name, socket_table_t *socktable,
                       size_t size) {
+  for (size_t i = 0; i < MAX_SOCKETS; i++) {
+    if (socktable->sockets[i].is_free == 0) {
+      close(socktable->sockets[i].udp_sockfd);
+    }
+  }
+  INFO("socket: close all open socket fds");
+
   sem_destroy(&socktable->mtx);
   INFO("shm: destroy table mutex");
   sem_destroy(&socktable->sys_sem);
@@ -161,12 +172,10 @@ int main(void) {
 
   while (!is_exit) {
     if (sem_trywait(&socktable->sys_sem) != -1) {
-      sem_wait(&socktable->mtx);
       for (int i = 0; i < MAX_SOCKETS; i++) {
         /* check for new socket request */
-        if (socktable->sockets[i].is_free &&
-            socktable->sockets[i].udp_sockfd == -1) {
-          INFO("socket: request for new socket %d by %d", i,
+        if (socktable->sockets[i].is_free && socktable->info[i] == SOCK_REQ) {
+          INFO("socket: request for new socket %d by pid %d", i,
                socktable->sockets[i].parent_process);
           int sockfd = socket(socktable->sockets[i].domain, SOCK_DGRAM,
                               socktable->sockets[i].protocol);
@@ -174,17 +183,37 @@ int main(void) {
           if (sockfd == -1) {
             ERROR("socket: failed to create new socket");
             perror("socket");
+            break;
           }
 
           socktable->sockets[i].udp_sockfd = sockfd;
+          socktable->sockets[i].is_free = 0;
+          socktable->info[i] = READY;
 
-          INFO("socket: created new socket %d", i);
+          INFO("socket: created new socket %d (udp_sock = %d)", i, sockfd);
+
           break;
         } else { /* check for bind request */
-          // TODO: handle bind request
+          if (socktable->info[i] == BIND_REQ) {
+            char ipstr[INET_ADDRSTRLEN];
+            struct sockaddr_in ipv4 = socktable->sockets[i].src_addr;
+            inet_ntop(AF_INET, &(ipv4.sin_addr), ipstr, sizeof(ipstr));
+            INFO("socket: request to bind socket %d to %s:%d", i, ipstr,
+                 ntohs(ipv4.sin_port));
+
+            if (bind(socktable->sockets[i].udp_sockfd, (struct sockaddr *)&ipv4,
+                     sizeof(ipv4)) == -1) {
+              ERROR("socket: failed to bind socket %d", i);
+              perror("bind");
+              break;
+            }
+
+            socktable->info[i] = READY;
+
+            INFO("socket: bound socket %d", i);
+          }
         }
       }
-      sem_post(&socktable->mtx);
       sem_post(&socktable->lib_sem);
     } else {
       sleep(1);

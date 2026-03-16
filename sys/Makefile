@@ -13,7 +13,7 @@ run: ksocketd
 	./$<
 
 ksocketd: ./initksocket.c ./initksocket.h ../lib/kinternal.h ../lib/ksocket.h
-	${CC} ${CFLAGS} $< -o $@
+	${CC} ${CFLAGS} $< -o $@ -lksocket -L ../lib/
 
 clean: 
 	-rm ksocketd

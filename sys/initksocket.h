@@ -20,6 +20,18 @@
 #include <sys/types.h>
 #include <time.h>
 
+/** @brief ansi codes for prettier terminal formatting
+ * @name ANSI Codes
+ * @{
+ */
+#define BBLU "\033[1;34m"
+#define REDHB "\033[0;101m"
+#define BRED "\033[1;31m"
+#define COLOR_RESET "\033[0m"
+/**
+ * @}
+ */
+
 /** @brief information logging macros for the init process
  * @anchor custom_log
  * @name Logging Macros
@@ -30,7 +42,7 @@
     time_t now = time(NULL);                                                   \
     char buf[20];                                                              \
     strftime(buf, sizeof(buf), "%H:%M:%S", localtime(&now));                   \
-    printf("[%s] ", buf);                                                      \
+    printf("[" BBLU "%s" COLOR_RESET "] ", buf);                               \
   }
 
 #define INFO(fmt, ...)                                                         \
@@ -43,7 +55,7 @@
 #define ERROR(fmt, ...)                                                        \
   do {                                                                         \
     LOG_TIME();                                                                \
-    printf("[%lu] [ERROR] " fmt "\n\t\t%s:%d\n",                               \
+    printf("[%lu] " BRED "[ERROR]" COLOR_RESET " " fmt "    (%s:%d)\n",        \
            (unsigned long)pthread_self(), ##__VA_ARGS__, __FILE__, __LINE__);  \
     fflush(stdout);                                                            \
   } while (0)

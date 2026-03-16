@@ -1,2 +1,5 @@
 docs/**
 ksocketd
+**/*.o
+**/*.out
+**/*.a

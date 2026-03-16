@@ -8,7 +8,6 @@
 
 #include "ksocket.h"
 #include <arpa/inet.h>
-#include <errno.h>
 #include <fcntl.h>
 #include <netinet/in.h>
 #include <semaphore.h>
@@ -23,6 +22,8 @@
 #define MAX_SOCKETS 128
 
 #define SOCKTABLE_NAME "/ktp_socket_table"
+
+typedef enum { UNUSED, SOCK_REQ, BIND_REQ, READY } __k_sock_info;
 
 /** @brief simple circular buffer for sending and receiving buffers
  */
@@ -83,6 +84,7 @@ typedef struct {
   sem_t lib_sem; ///< library functions wait on this semaphore
   size_t count;  ///< current active sockets
   __k_socket_t sockets[MAX_SOCKETS]; ///< array of ksockets
+  __k_sock_info info[MAX_SOCKETS];   ///< array to store info of each socket
 } socket_table_t;
 
 /** @brief Structure of the KTP Header
@@ -116,7 +118,7 @@ typedef struct {
 /** @brief init circular buffer
  * @param buf buffer to init
  */
-void init_buf(__buf_t *buf) { memset(buf, 0, sizeof(__buf_t)); }
+void init_buf(__buf_t *buf);
 
 /** @brief push to circular buffer
  *
@@ -125,37 +127,14 @@ void init_buf(__buf_t *buf) { memset(buf, 0, sizeof(__buf_t)); }
  *
  * @return -1 and set errno on ENOSPACE, 0 on success
  */
-int push_buf(__buf_t *buf, const char *msg) {
-  if (buf->count >= WIN_SIZE) {
-    errno = ENOSPACE;
-    return -1;
-  }
-
-  memcpy(&buf->buffer[buf->right * MSG_SIZE], msg, MSG_SIZE);
-  buf->right = (buf->right + 1) % WIN_SIZE;
-  buf->count++;
-
-  return 0;
-}
+int push_buf(__buf_t *buf, const char *msg);
 
 /** @brief pop from circular buffer
  * @param buf buffer to pop from
  * @param dst buffer to copy msg into
  * @return -1 on error, 0 on success
  */
-int pop_buf(__buf_t *buf, char *dst) {
-  if (buf->count <= 0) {
-    errno = ENOMESSAGE;
-    return -1;
-  }
-
-  memcpy(dst, &buf->buffer[buf->left * MSG_SIZE], MSG_SIZE);
-
-  buf->left = (buf->left + 1) % WIN_SIZE;
-  buf->count--;
-
-  return 0;
-}
+int pop_buf(__buf_t *buf, char *dst);
 
 /** @brief attach to socktable
  *
@@ -164,21 +143,6 @@ int pop_buf(__buf_t *buf, char *dst) {
  *
  * @return NULL on errors
  */
-socket_table_t *attach_table(const char *name, int mode) {
-  int shmid;
-  socket_table_t *t;
-
-  if ((shmid = shm_open(name, O_RDWR, mode)) == -1) {
-    return NULL;
-  }
-
-  if ((t = mmap(0, sizeof(socket_table_t), PROT_WRITE | PROT_READ, MAP_SHARED,
-                shmid, 0)) == MAP_FAILED) {
-    return NULL;
-  }
-
-  close(shmid);
-  return t;
-}
+socket_table_t *attach_table(const char *name, int mode);
 
 #endif
