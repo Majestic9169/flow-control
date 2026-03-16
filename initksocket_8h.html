@@ -109,6 +109,21 @@ $(document).ready(function(){initNavTree('initksocket_8h.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">ANSI Codes</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>ansi codes for prettier terminal formatting </p>
+</div></td></tr>
+<tr class="memitem:a9f40b3c1c240d5513da9f50685d5bf15"><td class="memItemLeft" align="right" valign="top"><a id="a9f40b3c1c240d5513da9f50685d5bf15" name="a9f40b3c1c240d5513da9f50685d5bf15"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BBLU</b>&#160;&#160;&#160;&quot;\033[1;34m&quot;</td></tr>
+<tr class="separator:a9f40b3c1c240d5513da9f50685d5bf15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24688c0b2f50e0f2b7ce64aa5814cf0c"><td class="memItemLeft" align="right" valign="top"><a id="a24688c0b2f50e0f2b7ce64aa5814cf0c" name="a24688c0b2f50e0f2b7ce64aa5814cf0c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>REDHB</b>&#160;&#160;&#160;&quot;\033[0;101m&quot;</td></tr>
+<tr class="separator:a24688c0b2f50e0f2b7ce64aa5814cf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2adb4c9e293ac446897ccfac5a52d6c2"><td class="memItemLeft" align="right" valign="top"><a id="a2adb4c9e293ac446897ccfac5a52d6c2" name="a2adb4c9e293ac446897ccfac5a52d6c2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRED</b>&#160;&#160;&#160;&quot;\033[1;31m&quot;</td></tr>
+<tr class="separator:a2adb4c9e293ac446897ccfac5a52d6c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17f760256046df23dd0ab46602f04d02"><td class="memItemLeft" align="right" valign="top"><a id="a17f760256046df23dd0ab46602f04d02" name="a17f760256046df23dd0ab46602f04d02"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>COLOR_RESET</b>&#160;&#160;&#160;&quot;\033[0m&quot;</td></tr>
+<tr class="separator:a17f760256046df23dd0ab46602f04d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Logging Macros</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>information logging macros for the init process <a class="anchor" id="custom_log"></a></p>
 </div></td></tr>
@@ -173,7 +188,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                                         \</div>
 <div class="line">    LOG_TIME();                                                                \</div>
-<div class="line">    printf(<span class="stringliteral">&quot;[%lu] [ERROR] &quot;</span> fmt <span class="stringliteral">&quot;\n\t\t%s:%d\n&quot;</span>,                               \</div>
+<div class="line">    printf(<span class="stringliteral">&quot;[%lu] &quot;</span> BRED <span class="stringliteral">&quot;[ERROR]&quot;</span> COLOR_RESET <span class="stringliteral">&quot; &quot;</span> fmt <span class="stringliteral">&quot;    (%s:%d)\n&quot;</span>,        \</div>
 <div class="line">           (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)pthread_self(), ##__VA_ARGS__, __FILE__, __LINE__);  \</div>
 <div class="line">    fflush(stdout);                                                            \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
@@ -231,7 +246,7 @@ Functions</h2></td></tr>
 <div class="line">    time_t now = time(NULL);                                                   \</div>
 <div class="line">    <span class="keywordtype">char</span> buf[20];                                                              \</div>
 <div class="line">    strftime(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%H:%M:%S&quot;</span>, localtime(&amp;now));                   \</div>
-<div class="line">    printf(<span class="stringliteral">&quot;[%s] &quot;</span>, buf);                                                      \</div>
+<div class="line">    printf(<span class="stringliteral">&quot;[&quot;</span> BBLU <span class="stringliteral">&quot;%s&quot;</span> COLOR_RESET <span class="stringliteral">&quot;] &quot;</span>, buf);                               \</div>
 <div class="line">  }</div>
 </div><!-- fragment -->
 </div>
