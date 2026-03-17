@@ -188,37 +188,111 @@ int k_bind(int sockfd, const struct sockaddr *src_addr,
   return 0;
 }
 
-/* ssize_t k_sendto(int socket, const void *message, size_t length, int flags,
+/**
+ * @details writes message to the sender-side snd buffer.
+ *
+ * @note doesn't send over UDP directly. Thread S should read
+ * from send_buf, adds the KTP header, and call sendto() itself.
  */
-/*                  const struct sockaddr *dest_addr, socklen_t dest_len) { */
-/**/
-/*   ssize_t n; */
-/*   struct sockaddr_in *ipv4 = (struct sockaddr_in *)dest_addr; */
-/*   socket_table_t *t = attach_table(SOCKTABLE_NAME, 0644); */
-/*   if (t == NULL) { */
-/*     return -1; */
-/*   } */
-/**/
-/*   if (t->sockets[socket].dst_addr.sin_addr.s_addr != ipv4->sin_addr.s_addr ||
+ssize_t k_sendto(int socket, const void *message, size_t length, int flags,
+                 const struct sockaddr *dest_addr, socklen_t dest_len) {
+
+  /* to supress the unused params warning */
+  (void)flags; (void)dest_len;
+
+  struct sockaddr_in *ipv4 = (struct sockaddr_in *)dest_addr;
+
+  /* grab table */
+  socket_table_t *t = attach_table(SOCKTABLE_NAME, 0644);
+  if (t == NULL) {
+    return -1;
+  }
+
+  /* check destination matches bound address */
+  if (t->sockets[socket].dst_addr.sin_addr.s_addr != ipv4->sin_addr.s_addr ||
+      t->sockets[socket].dst_addr.sin_port != ipv4->sin_port) {
+    errno = ENOTBOUND;
+    munmap(t, sizeof(socket_table_t));
+    return -1;
+  }
+
+  /* grab table mutex before touching snd buffer */
+  sem_wait(&t->mtx);
+
+  /* write message to snd buffer and ENOSPACE thing is set by push_buf */
+  if (push_buf(&t->sockets[socket].send_buf, message) == -1) {
+    sem_post(&t->mtx);
+    munmap(t, sizeof(socket_table_t));
+    return -1;
+  }
+
+  sem_post(&t->mtx);
+  munmap(t, sizeof(socket_table_t));
+
+  return (ssize_t)length;
+}
+
+/**
+ * @details pops the oldest message from the recv buffer.
+ * Returns immediately n does not block if no msg available.
  */
-/*       t->sockets[socket].dst_addr.sin_port != ipv4->sin_port) { */
-/*     errno = ENOTBOUND; */
-/*     return -1; */
-/*   } */
-/**/
-/*   if (t->sockets[socket].nospace) { */
-/*     errno = ENOSPACE; */
-/*     return -1; */
-/*   } */
-/**/
-/*   push_buf(&t->sockets[socket].send_buf, message); */
-/**/
-/*   __ktp_header hdr; */
-/*   // TODO: encapsulate message with header */
-/*   // TODO: window operations */
-/*   // TODO: timestamp */
-/**/
-/*   munmap(t, sizeof(socket_table_t)); */
-/**/
-/*   return 0; */
-/* } */
+ssize_t k_recvfrom(int socket, void *buffer, size_t length, int flags,
+                   const struct sockaddr *address, socklen_t address_len) {
+
+  /* to supress the unused params warning */
+  (void)flags; (void)address; (void)address_len;
+
+  /* grab table */
+  socket_table_t *t = attach_table(SOCKTABLE_NAME, 0644);
+  if (t == NULL) {
+    return -1;
+  }
+
+  /* grab mutex before touching recv buffer */
+  sem_wait(&t->mtx);
+
+  /* pop oldest message and pop_buf sets ENOMESSAGE if no msg in our msg buffr */
+  if (pop_buf(&t->sockets[socket].recv_buf, buffer) == -1) {
+    sem_post(&t->mtx);
+    munmap(t, sizeof(socket_table_t));
+    return -1;
+  }
+
+  sem_post(&t->mtx);
+  munmap(t, sizeof(socket_table_t));
+
+  return (ssize_t)length;
+}
+
+/**
+ * @details signals the daemon to close the underlying UDP socket and
+ * free the shared mem for the KTP socket.
+ */
+int k_close(int fd) {
+
+  /* grab table n error checks */
+  socket_table_t *t = attach_table(SOCKTABLE_NAME, 0644);
+  if (t == NULL) {
+    return -1;
+  }
+
+  if (fd < 0 || fd >= MAX_SOCKETS) {
+    errno = ENOTSOCK;
+    munmap(t, sizeof(socket_table_t));
+    return -1;
+  }
+
+  /* grab mutex */
+  sem_wait(&t->mtx);
+
+  /* to signal daemon to close the UDP fd and free the slot */
+  t->info[fd] = CLOSE_REQ;
+
+  sem_post(&t->sys_sem);
+  sem_wait(&t->lib_sem);
+
+  sem_post(&t->mtx);
+  munmap(t, sizeof(socket_table_t));
+
+  return 0;
+}

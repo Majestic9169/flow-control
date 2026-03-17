@@ -15,7 +15,7 @@
 #include <string.h>
 #include <sys/mman.h>
 #include <sys/socket.h>
-#include <time.h>
+#include <sys/time.h>
 #include <unistd.h>
 
 #define WIN_SIZE 10
@@ -23,7 +23,7 @@
 
 #define SOCKTABLE_NAME "/ktp_socket_table"
 
-typedef enum { UNUSED, SOCK_REQ, BIND_REQ, READY } __k_sock_info;
+typedef enum { UNUSED, SOCK_REQ, BIND_REQ, CLOSE_REQ, READY } __k_sock_info;
 
 /** @brief simple circular buffer for sending and receiving buffers
  */
