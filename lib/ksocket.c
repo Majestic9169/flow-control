@@ -125,6 +125,9 @@ int k_socket(int domain, int type, int protocol) {
       t->sockets[i].parent_process = getpid();
       t->sockets[i].domain = domain;
       t->sockets[i].protocol = protocol;
+      t->sockets[i].next_seq = 1;
+      t->sockets[i].swnd.size = WIN_SIZE;
+      t->sockets[i].rwnd.size = WIN_SIZE;
       t->count++;
       break;
     }
@@ -296,3 +299,5 @@ int k_close(int fd) {
 
   return 0;
 }
+
+// TODO: dropMessage function to sim unreliable
