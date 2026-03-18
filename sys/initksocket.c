@@ -444,9 +444,9 @@ int main(void) {
        socktable->count);
 
   pthread_t R, S, G;
-  pthread_create(&R, NULL, recv_routine, NULL);
-  pthread_create(&S, NULL, send_routine, NULL);
-  pthread_create(&G, NULL, garbage_collector, NULL);
+  pthread_create(&R, NULL, recv_routine,      (void *)socktable);
+  pthread_create(&S, NULL, send_routine,      (void *)socktable);
+  pthread_create(&G, NULL, garbage_collector, (void *)socktable);
   /**
    * @}
    */
