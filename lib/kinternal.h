@@ -39,8 +39,10 @@ typedef struct {
  */
 typedef struct {
   size_t size;               ///< max unacked packets that can be sent
+  uint8_t unacked_count;                ///< number of currently unacked messages
   uint8_t unacked[WIN_SIZE]; ///< sequence numbers of all currently
                              ///< unacknowledged messages (circular buffer)
+  char unacked_data[WIN_SIZE][MSG_SIZE]; ///< payloads of unacked msgs for retransmissn
   struct timeval last_sent;  ///< time stamp of the oldest unacked message
 } __swnd_t;
 
@@ -49,8 +51,12 @@ typedef struct {
  */
 typedef struct {
   size_t size;                ///< max number of packets that can be received
-  uint8_t expected[WIN_SIZE]; ///< sequence number of all currently expected
-                              ///< packets
+  // (below attr not req since continuous and we already track last acked seq num)
+  // uint8_t expected[WIN_SIZE]; ///< sequence number of all currently expected
+  //                             ///< packets
+  uint8_t ooo_count;                  ///< number of buffered out-of-order messages
+  uint8_t ooo_seq[WIN_SIZE];          ///< seq numbers of out-of-order messages
+  char ooo_data[WIN_SIZE][MSG_SIZE];  ///< payloads of out-of-order messages
 } __rwnd_t;
 
 /**
@@ -58,7 +64,6 @@ typedef struct {
  * @details This structure tracks the state, buffers, and addressing for each
  * socket
  */
-// TODO: sequence and ack numbers?
 typedef struct {
   int is_free;          ///< availability flag
   int udp_sockfd;       ///< socket file descriptor of underlying udp socket
@@ -74,6 +79,9 @@ typedef struct {
   __buf_t recv_buf;            ///< internal reception buffer
   __swnd_t swnd;               ///< sending window
   __rwnd_t rwnd;               ///< receiving window
+
+  uint8_t next_seq;            ///< next sequence number to assign on send
+  uint8_t last_acked_seq;      ///< last in-order seq number delivered
 } __k_socket_t;
 
 /** @brief the global state table of KTP sockets

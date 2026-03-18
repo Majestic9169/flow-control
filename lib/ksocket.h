@@ -13,6 +13,7 @@
 
 #define SOCK_KTP 42
 #define MSG_SIZE 512
+#define T 5
 
 /**
  * @brief custom error codes
