@@ -425,6 +425,9 @@ int main(void) {
    */
   signal(SIGINT, sigint_handler);
 
+  /* cleanup any segment of sock table in shared mem from prev forcekill/crash */
+  shm_unlink(SOCKTABLE_NAME);
+
   int shmid;
 
   if ((shmid = create_socktable(SOCKTABLE_NAME, 0644)) == -1) {
