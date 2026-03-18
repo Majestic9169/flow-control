@@ -108,8 +108,16 @@ Public Attributes</h2></td></tr>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
 <tr class="memdesc:ab07e6138073f2d5e2496105e54c01529"><td class="mdescLeft">&#160;</td><td class="mdescRight">max unacked packets that can be sent <br /></td></tr>
 <tr class="separator:ab07e6138073f2d5e2496105e54c01529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0302e04d1474a288eece6e109ca85ec"><td class="memItemLeft" align="right" valign="top"><a id="af0302e04d1474a288eece6e109ca85ec" name="af0302e04d1474a288eece6e109ca85ec"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>unacked_count</b></td></tr>
+<tr class="memdesc:af0302e04d1474a288eece6e109ca85ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of currently unacked messages <br /></td></tr>
+<tr class="separator:af0302e04d1474a288eece6e109ca85ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b5c8d6529f2c4ed7cd307da5fc62078"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____swnd__t.html#a2b5c8d6529f2c4ed7cd307da5fc62078">unacked</a> [WIN_SIZE]</td></tr>
 <tr class="separator:a2b5c8d6529f2c4ed7cd307da5fc62078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae56070f36f95e84519e9cccab686367"><td class="memItemLeft" align="right" valign="top"><a id="aae56070f36f95e84519e9cccab686367" name="aae56070f36f95e84519e9cccab686367"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>unacked_data</b> [WIN_SIZE][MSG_SIZE]</td></tr>
+<tr class="memdesc:aae56070f36f95e84519e9cccab686367"><td class="mdescLeft">&#160;</td><td class="mdescRight">payloads of unacked msgs for retransmissn <br /></td></tr>
+<tr class="separator:aae56070f36f95e84519e9cccab686367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92a4ad7dcd99ff53d8106fac21bfbe40"><td class="memItemLeft" align="right" valign="top"><a id="a92a4ad7dcd99ff53d8106fac21bfbe40" name="a92a4ad7dcd99ff53d8106fac21bfbe40"></a>
 struct timeval&#160;</td><td class="memItemRight" valign="bottom"><b>last_sent</b></td></tr>
 <tr class="memdesc:a92a4ad7dcd99ff53d8106fac21bfbe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">time stamp of the oldest unacked message <br /></td></tr>

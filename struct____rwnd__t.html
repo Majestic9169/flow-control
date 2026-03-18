@@ -108,28 +108,22 @@ Public Attributes</h2></td></tr>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
 <tr class="memdesc:ac137a813ad49f35e9f8ca96f7032b3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">max number of packets that can be received <br /></td></tr>
 <tr class="separator:ac137a813ad49f35e9f8ca96f7032b3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39cb62ccd4c459c2b9ee77b3f757a68b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____rwnd__t.html#a39cb62ccd4c459c2b9ee77b3f757a68b">expected</a> [WIN_SIZE]</td></tr>
-<tr class="separator:a39cb62ccd4c459c2b9ee77b3f757a68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181cc7382b2d1115200931bfaa12e4ab"><td class="memItemLeft" align="right" valign="top"><a id="a181cc7382b2d1115200931bfaa12e4ab" name="a181cc7382b2d1115200931bfaa12e4ab"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ooo_count</b></td></tr>
+<tr class="memdesc:a181cc7382b2d1115200931bfaa12e4ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of buffered out-of-order messages <br /></td></tr>
+<tr class="separator:a181cc7382b2d1115200931bfaa12e4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5da37b9beff379aacecfec807735175"><td class="memItemLeft" align="right" valign="top"><a id="ad5da37b9beff379aacecfec807735175" name="ad5da37b9beff379aacecfec807735175"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ooo_seq</b> [WIN_SIZE]</td></tr>
+<tr class="memdesc:ad5da37b9beff379aacecfec807735175"><td class="mdescLeft">&#160;</td><td class="mdescRight">seq numbers of out-of-order messages <br /></td></tr>
+<tr class="separator:ad5da37b9beff379aacecfec807735175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0825bf586bccda80f6dcbb837741ae4f"><td class="memItemLeft" align="right" valign="top"><a id="a0825bf586bccda80f6dcbb837741ae4f" name="a0825bf586bccda80f6dcbb837741ae4f"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>ooo_data</b> [WIN_SIZE][MSG_SIZE]</td></tr>
+<tr class="memdesc:a0825bf586bccda80f6dcbb837741ae4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">payloads of out-of-order messages <br /></td></tr>
+<tr class="separator:a0825bf586bccda80f6dcbb837741ae4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal data structure for the receiver window. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a39cb62ccd4c459c2b9ee77b3f757a68b" name="a39cb62ccd4c459c2b9ee77b3f757a68b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39cb62ccd4c459c2b9ee77b3f757a68b">&#9670;&#160;</a></span>expected</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t __rwnd_t::expected[WIN_SIZE]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>sequence number of all currently expected packets </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>lib/<a class="el" href="kinternal_8h_source.html">kinternal.h</a></li>
 </ul>
 </div><!-- contents -->

@@ -114,6 +114,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ad4d025ecf1bdbf8b244ca688df8e478d"><td class="memItemLeft" align="right" valign="top"><a id="ad4d025ecf1bdbf8b244ca688df8e478d" name="ad4d025ecf1bdbf8b244ca688df8e478d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MSG_SIZE</b>&#160;&#160;&#160;512</td></tr>
 <tr class="separator:ad4d025ecf1bdbf8b244ca688df8e478d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0acb682b8260ab1c60b918599864e2e5"><td class="memItemLeft" align="right" valign="top"><a id="a0acb682b8260ab1c60b918599864e2e5" name="a0acb682b8260ab1c60b918599864e2e5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>T</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a0acb682b8260ab1c60b918599864e2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">custom KTP errors</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>custom error codes <a class="anchor" id="custom_err"></a> These start at 200 to avoid system error overlaps (those go upto ~133) </p>
 </div></td></tr>
@@ -234,10 +237,11 @@ Functions</h2></td></tr>
 <p>close KTP socket and clean up its system shared memory entry</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fd</td><td>file descriptor of KTP socket </td></tr>
+    <tr><td class="paramname">fd</td><td>file descriptor of KTP socket</td></tr>
   </table>
   </dd>
 </dl>
+<p>signals the daemon to close the underlying UDP socket and free the shared mem for the KTP socket. </p>
 
 </div>
 </div>
@@ -304,7 +308,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>-1 on error, due to no message in buffer is ENOMESSAGE </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on error, due to no message in buffer is ENOMESSAGE</dd></dl>
+<p>pops the oldest message from the recv buffer. Returns immediately n does not block if no msg available. </p>
 
 </div>
 </div>
@@ -371,7 +376,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>-1 on failure due to addr mismatch (ENOTBOUND) or insufficient space (ENOSPACE) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 on failure due to addr mismatch (ENOTBOUND) or insufficient space (ENOSPACE)</dd></dl>
+<p>writes message to the sender-side snd buffer.</p>
+<dl class="section note"><dt>Note</dt><dd>doesn't send over UDP directly. Thread S should read from send_buf, adds the KTP header, and call sendto() itself. </dd></dl>
 
 </div>
 </div>

@@ -154,6 +154,14 @@ struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><b>src_add
 <a class="el" href="struct____rwnd__t.html">__rwnd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rwnd</b></td></tr>
 <tr class="memdesc:a0766fd7419f0874c761c4f4940be7e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">receiving window <br /></td></tr>
 <tr class="separator:a0766fd7419f0874c761c4f4940be7e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a37452c1c84de28bea5a46b6530879"><td class="memItemLeft" align="right" valign="top"><a id="a93a37452c1c84de28bea5a46b6530879" name="a93a37452c1c84de28bea5a46b6530879"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>next_seq</b></td></tr>
+<tr class="memdesc:a93a37452c1c84de28bea5a46b6530879"><td class="mdescLeft">&#160;</td><td class="mdescRight">next sequence number to assign on send <br /></td></tr>
+<tr class="separator:a93a37452c1c84de28bea5a46b6530879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae842cd00e011138b4ed15cb1d9776ec7"><td class="memItemLeft" align="right" valign="top"><a id="ae842cd00e011138b4ed15cb1d9776ec7" name="ae842cd00e011138b4ed15cb1d9776ec7"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>last_acked_seq</b></td></tr>
+<tr class="memdesc:ae842cd00e011138b4ed15cb1d9776ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">last in-order seq number delivered <br /></td></tr>
+<tr class="separator:ae842cd00e011138b4ed15cb1d9776ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal data stored for each created socket. </p>

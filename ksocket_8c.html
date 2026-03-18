@@ -120,6 +120,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ac3fc6713af0ddafe05416f1008428f13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#ac3fc6713af0ddafe05416f1008428f13">k_bind</a> (int sockfd, const struct sockaddr *src_addr, const socklen_t src_addr_len, const struct sockaddr *dst_addr, const socklen_t dst_addr_len)</td></tr>
 <tr class="memdesc:ac3fc6713af0ddafe05416f1008428f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">bind the socket to a client and server address  <br /></td></tr>
 <tr class="separator:ac3fc6713af0ddafe05416f1008428f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517531ef1ba157d1a3ba061f774cddbb"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#a517531ef1ba157d1a3ba061f774cddbb">k_sendto</a> (int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len)</td></tr>
+<tr class="memdesc:a517531ef1ba157d1a3ba061f774cddbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">send msg to server buffer  <br /></td></tr>
+<tr class="separator:a517531ef1ba157d1a3ba061f774cddbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f32ef6031ca16aba6b8bb438cd0236"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#ab5f32ef6031ca16aba6b8bb438cd0236">k_recvfrom</a> (int socket, void *buffer, size_t length, int flags, const struct sockaddr *address, socklen_t address_len)</td></tr>
+<tr class="memdesc:ab5f32ef6031ca16aba6b8bb438cd0236"><td class="mdescLeft">&#160;</td><td class="mdescRight">read message from received messages  <br /></td></tr>
+<tr class="separator:ab5f32ef6031ca16aba6b8bb438cd0236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ecd38dc6f3a9721ab53ff9a815b5480"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#a9ecd38dc6f3a9721ab53ff9a815b5480">k_close</a> (int fd)</td></tr>
+<tr class="memdesc:a9ecd38dc6f3a9721ab53ff9a815b5480"><td class="mdescLeft">&#160;</td><td class="mdescRight">close KTP socket  <br /></td></tr>
+<tr class="separator:a9ecd38dc6f3a9721ab53ff9a815b5480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Internal Helpers</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Helpers for accessing table etc </p>
 </div></td></tr>
@@ -263,6 +272,138 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>-1 on error </dd></dl>
+
+</div>
+</div>
+<a id="a9ecd38dc6f3a9721ab53ff9a815b5480" name="a9ecd38dc6f3a9721ab53ff9a815b5480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ecd38dc6f3a9721ab53ff9a815b5480">&#9670;&#160;</a></span>k_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int k_close </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>close KTP socket </p>
+<p>signals the daemon to close the underlying UDP socket and free the shared mem for the KTP socket. </p>
+
+</div>
+</div>
+<a id="ab5f32ef6031ca16aba6b8bb438cd0236" name="ab5f32ef6031ca16aba6b8bb438cd0236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f32ef6031ca16aba6b8bb438cd0236">&#9670;&#160;</a></span>k_recvfrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t k_recvfrom </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>socket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct sockaddr *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">socklen_t&#160;</td>
+          <td class="paramname"><em>address_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read message from received messages </p>
+<p>pops the oldest message from the recv buffer. Returns immediately n does not block if no msg available. </p>
+
+</div>
+</div>
+<a id="a517531ef1ba157d1a3ba061f774cddbb" name="a517531ef1ba157d1a3ba061f774cddbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517531ef1ba157d1a3ba061f774cddbb">&#9670;&#160;</a></span>k_sendto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t k_sendto </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>socket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct sockaddr *&#160;</td>
+          <td class="paramname"><em>dest_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">socklen_t&#160;</td>
+          <td class="paramname"><em>dest_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>send msg to server buffer </p>
+<p>writes message to the sender-side snd buffer.</p>
+<dl class="section note"><dt>Note</dt><dd>doesn't send over UDP directly. Thread S should read from send_buf, adds the KTP header, and call sendto() itself. </dd></dl>
 
 </div>
 </div>

@@ -3,6 +3,8 @@ var struct____k__socket__t =
     [ "domain", "struct____k__socket__t.html#a0f388b4c4397d9cccade039f355aea82", null ],
     [ "dst_addr", "struct____k__socket__t.html#af5eda9c58704624c0e48e83800499a0c", null ],
     [ "is_free", "struct____k__socket__t.html#ad5c55e8391e2e4481ba2693da81f1105", null ],
+    [ "last_acked_seq", "struct____k__socket__t.html#ae842cd00e011138b4ed15cb1d9776ec7", null ],
+    [ "next_seq", "struct____k__socket__t.html#a93a37452c1c84de28bea5a46b6530879", null ],
     [ "nospace", "struct____k__socket__t.html#ad5015629622742261785356ea0ff0a54", null ],
     [ "parent_process", "struct____k__socket__t.html#ae719efc7517dd3417e0f8e027637b01b", null ],
     [ "protocol", "struct____k__socket__t.html#aec03ec76928ae064edf3702c23d5326b", null ],

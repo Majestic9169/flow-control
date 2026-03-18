@@ -354,7 +354,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>garbage collector routine </p>
-<p>empty up unterminated sockets once their parent processes are killed </p>
+<p>empty up unterminated sockets once their parent processes are killed</p>
+<p>empty up unterminated sockets once their parent processes are killed</p>
+<dl class="section note"><dt>Note</dt><dd>assignemnt didn't say anyth abt how often, so I just set freq as every T </dd></dl>
 
 </div>
 </div>
@@ -414,7 +416,9 @@ Functions</h2></td></tr>
 
 <p>the receiver thread routine </p>
 <p>waits for message to come in a recvfrom() call from <em>any</em> of the UDP sockets (using select()). When received, append the message to the receive buffer of the corresponding socket and sends the corresponding ACK</p>
-<p>updates windows </p>
+<p>updates windows</p>
+<p>the receiver thread routine</p>
+<p>waits for a message in a recvfrom() call from any of the UDP socks using select(). Data packets are written to recv_buf or held in rwnd.ooo (out-of-order, so no ACK). On select() timeout, sends dup ACK if nospace has since cleared. </p>
 
 </div>
 </div>
@@ -436,7 +440,9 @@ Functions</h2></td></tr>
 
 <p>the sender thread routine </p>
 <p>sleeps for time T/2 and wakes up periodically.</p>
-<p>if message timeout period is over, retransmits swnd of the socket </p>
+<p>if message timeout period is over, retransmits swnd of the socket</p>
+<p>the sender thread routine</p>
+<p>sleeps for time T/2 and wakes up periodically. Retransmits swnd if timeout T is exceeded. Sends any pending messages from send_buf that fit within the current swnd and remote rwnd. </p>
 
 </div>
 </div>
