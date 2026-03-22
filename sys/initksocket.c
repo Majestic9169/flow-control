@@ -193,6 +193,11 @@ void *recv_routine(void *args) {
                            (struct sockaddr *)&sender, &slen);
       if (n < (ssize_t)sizeof(__ktp_header)) continue;
 
+      if (dropMessage(DROP_PROBAB)) {
+        INFO("socket %d: packet dropped (simulated loss)", i);
+        continue;
+      }
+
       /* split packet, jus rip it up */
       __ktp_header *hdr = (__ktp_header *)packet;
       char *payload     = packet + sizeof(__ktp_header);

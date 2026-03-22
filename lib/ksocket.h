@@ -14,6 +14,7 @@
 #define SOCK_KTP 42
 #define MSG_SIZE 512
 #define T 5
+#define DROP_PROBAB 0.05f
 
 /**
  * @brief custom error codes
@@ -116,5 +117,17 @@ ssize_t k_recvfrom(int socket, void *buffer, size_t length, int flags,
  * @param fd file descriptor of KTP socket
  */
 int k_close(int fd);
+
+/** @brief drop a msg with a certain probab p
+ *
+ * @details To simulate unreliable link, this function generates 
+ * a random num between 0 and 1 and if that num is less than p, 
+ * then drop the msg.
+ *
+ * @param p probability of dropping (float)
+ * 
+ * @return 1 if the msg to be dropped, else 0
+ */
+int dropMessage(float p);
 
 #endif

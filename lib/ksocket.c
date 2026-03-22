@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <semaphore.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/mman.h>
 #include <sys/socket.h>
@@ -300,4 +301,9 @@ int k_close(int fd) {
   return 0;
 }
 
-// TODO: dropMessage function to sim unreliable
+/**
+ * @details drop message with a probab p to simulate unreliable link
+ */
+int dropMessage(float p) {
+  return ((float)rand() / RAND_MAX) < p ? 1 : 0;
+}
