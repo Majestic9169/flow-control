@@ -117,6 +117,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a0acb682b8260ab1c60b918599864e2e5"><td class="memItemLeft" align="right" valign="top"><a id="a0acb682b8260ab1c60b918599864e2e5" name="a0acb682b8260ab1c60b918599864e2e5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>T</b>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:a0acb682b8260ab1c60b918599864e2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a516ddd3ab90372e8d67c25228931ac08"><td class="memItemLeft" align="right" valign="top"><a id="a516ddd3ab90372e8d67c25228931ac08" name="a516ddd3ab90372e8d67c25228931ac08"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DROP_PROBAB</b>&#160;&#160;&#160;0.05f</td></tr>
+<tr class="separator:a516ddd3ab90372e8d67c25228931ac08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">custom KTP errors</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>custom error codes <a class="anchor" id="custom_err"></a> These start at 200 to avoid system error overlaps (those go upto ~133) </p>
 </div></td></tr>
@@ -153,10 +156,42 @@ Functions</h2></td></tr>
 <tr class="memitem:a9ecd38dc6f3a9721ab53ff9a815b5480"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8h.html#a9ecd38dc6f3a9721ab53ff9a815b5480">k_close</a> (int fd)</td></tr>
 <tr class="memdesc:a9ecd38dc6f3a9721ab53ff9a815b5480"><td class="mdescLeft">&#160;</td><td class="mdescRight">close KTP socket  <br /></td></tr>
 <tr class="separator:a9ecd38dc6f3a9721ab53ff9a815b5480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af57ecafe364f98c23fe1c32bc636fde3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8h.html#af57ecafe364f98c23fe1c32bc636fde3">dropMessage</a> (float p)</td></tr>
+<tr class="memdesc:af57ecafe364f98c23fe1c32bc636fde3"><td class="mdescLeft">&#160;</td><td class="mdescRight">drop a msg with a certain probab p  <br /></td></tr>
+<tr class="separator:af57ecafe364f98c23fe1c32bc636fde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The interface for the libksocket.a library. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="af57ecafe364f98c23fe1c32bc636fde3" name="af57ecafe364f98c23fe1c32bc636fde3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af57ecafe364f98c23fe1c32bc636fde3">&#9670;&#160;</a></span>dropMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dropMessage </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>drop a msg with a certain probab p </p>
+<p>To simulate unreliable link, this function generates a random num between 0 and 1 and if that num is less than p, then drop the msg.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>probability of dropping (float)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if the msg to be dropped, else 0</dd></dl>
+<p>drop message with a probab p to simulate unreliable link </p>
+
+</div>
+</div>
 <a id="ac3fc6713af0ddafe05416f1008428f13" name="ac3fc6713af0ddafe05416f1008428f13"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac3fc6713af0ddafe05416f1008428f13">&#9670;&#160;</a></span>k_bind()</h2>
 

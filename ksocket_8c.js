@@ -1,6 +1,7 @@
 var ksocket_8c =
 [
     [ "attach_table", "ksocket_8c.html#a9f23d7f40c70150a30f5ca9006dd6fba", null ],
+    [ "dropMessage", "ksocket_8c.html#af57ecafe364f98c23fe1c32bc636fde3", null ],
     [ "init_buf", "ksocket_8c.html#a64c4c6c846e9c7c2845d83492e26814b", null ],
     [ "k_bind", "ksocket_8c.html#ac3fc6713af0ddafe05416f1008428f13", null ],
     [ "k_close", "ksocket_8c.html#a9ecd38dc6f3a9721ab53ff9a815b5480", null ],
