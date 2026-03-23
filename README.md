@@ -9,7 +9,49 @@ Documentation page (with list and description of functions and structures): [Doc
 
 Attached is also the tarball containing the current version of the project (as directed in the assignment).
 
-To run the project:
+## Directory structure
+
+```bash
+.
+├── app/
+│   ├── Makefile
+│   ├── user1.c
+│   └── user2.c
+├── compile_flags.txt        # helper file for clang language server
+├── Doxyfile                 # this is the configuration file for the program that generates documentation from code comments
+├── lib/
+│   ├── kinternal.h
+│   ├── ksocket.c
+│   ├── ksocket.h
+│   └── Makefile
+├── logs/
+├── payload.png              # our sample file of > 100KB that we are sending and receiving
+├── performance_report.py    # python script to generate performance report from daemon logs
+├── README.md                # this looks nicer than documentation.txt i think
+├── sys/
+│   ├── initksocket.c
+│   ├── initksocket.h
+│   └── Makefile
+├── testfile_small.txt       # some alternate test files to transfer
+└── testfile.txt             # a larger one > 100KB
+```
+
+## Performance Table
+
+A script [performance_report.py](./performance_report.py) is provided and our logs for the run with various probabilities are given in [./logs](./logs/). Run the script from this directory to get the P table for the various logs
+
+```bash
+❯ python performance_report.py
+Prob       | Sent   | Retrans  | Drops  | Avg Sends/Chunk
+---------------------------------------------------------
+0.05       | 256    | 82       | 35     | 1.32
+0.05       | 8      | 5        | 2      | 1.62
+0.10       | 256    | 154      | 76     | 1.60
+0.45       | 254    | 473      | 432    | 2.86
+0.50       | 256    | 920      | 762    | 4.59
+```
+
+## To run the project:
 
 1. Recommended: 
 	  - Clone the github repo by: 
@@ -53,3 +95,50 @@ To run the project:
     ❯ ./sender
     usage: ./sender <src_port> <dst_ip> <dst_port> <file>
     ```
+
+### Single Socket Pair
+
+```bash
+cd app/
+make
+./receiver 9090 127.0.0.1 8080 received.bin
+```
+
+```bash
+./sender 8080 127.0.0.1 9090 ../payload.png
+```
+
+Run in different terminals for clearer logs. If you want to run in the same consider 
+
+```bash
+cd app/
+make run
+```
+
+### Multiple Socket Pairs
+
+Similar to above
+
+```bash
+cd app/
+make
+# pair 1
+./receiver 8080 127.0.0.1 8081 received_1.bin
+./sender 8081 127.0.0.1 8080 ../payload.png
+# pair 2
+./receiver 9090 127.0.0.1 9091 received_2.bin
+./sender 9091 127.0.0.1 9090 ../payload.png
+```
+
+> [!CAUTION] 
+> make sure their receiving files are not the same otherwise you will lose data
+
+If you want to run them in the same terminal (chaotic)
+
+```bash
+cd app/
+make manyrun
+```
+
+> [!NOTE] 
+> Listeners will wait for some data for 100 * TIMEOUTVALUE seconds before auto quitting. You can also prematurely CTRL+C to stop the listeners
