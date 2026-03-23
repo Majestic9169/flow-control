@@ -52,14 +52,22 @@ A script [performance_report.py](./performance_report.py) is provided and our lo
 
 ```bash
 ❯ python performance_report.py
-Prob       | Sent   | Retrans  | Drops  | Avg Sends/Chunk
----------------------------------------------------------
-0.05       | 256    | 82       | 35     | 1.32
-0.05       | 8      | 5        | 2      | 1.62
-0.10       | 256    | 154      | 76     | 1.60
-0.45       | 254    | 473      | 432    | 2.86
-0.50       | 256    | 920      | 762    | 4.59
+Prob     | Unique Sent  | Retrans  | Drops    | Avg Sends/Chunk
+---------------------------------------------------------------
+0.05     | 350          | 82       | 35       | 1.23
+0.10     | 347          | 154      | 76       | 1.44
+0.15     | 347          | 235      | 139      | 1.68
+0.20     | 350          | 299      | 195      | 1.85
+0.25     | 350          | 323      | 249      | 1.92
+0.30     | 350          | 436      | 344      | 2.25
+0.35     | 350          | 608      | 455      | 2.74
+0.40     | 350          | 685      | 518      | 2.96
+0.45     | 350          | 740      | 662      | 3.11
+0.50     | 350          | 920      | 762      | 3.63
 ```
+
+- (347 segments for `./testfile.txt`)
+- (350 segments for `./payload.png`)
 
 ## To run the project:
 
