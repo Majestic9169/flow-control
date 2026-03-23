@@ -18,6 +18,7 @@
 #define LOG(...) (printf("[INFO]: "), printf(__VA_ARGS__))
 #define RECV_LOG(...) (printf("[RECV]: "), printf(__VA_ARGS__))
 #define SLEEP_TIME 1000
+#define MAX_WAIT 10
 
 volatile sig_atomic_t is_exit = 0;
 
@@ -113,11 +114,16 @@ int main(int argc, char *argv[]) {
 
   char buf[MSG_SIZE];
   int msgs = 0;
+  int wait_time = 0;
   while (!is_exit) {
     if (k_recvfrom(s, buf, MSG_SIZE, 0, NULL, 0) == -1) {
       if (errno == ENOMESSAGE) {
+        if (wait_time > MAX_WAIT) {
+          break;
+        }
         RECV_LOG("[ENOMESSAGE]: sleeping for %d ms\n", SLEEP_TIME);
         usleep(SLEEP_TIME * 1000);
+        wait_time++;
         continue;
       }
       RECV_LOG("[ERROR] k_recvfrom: %s\n", k_strerr(errno));
@@ -127,6 +133,7 @@ int main(int argc, char *argv[]) {
     fflush(f);
     msgs++;
     RECV_LOG("Received segment id %d\n", msgs);
+    wait_time = 0;
   }
 
   LOG("Transmission ended | received %d segments | %d bytes\n", msgs,
