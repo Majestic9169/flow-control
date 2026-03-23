@@ -354,10 +354,10 @@ void *send_routine(void *args) {
         }
       }
 
-      /* send new messages within swnd limit and while receiver has space */
+      /* send new messages within swnd limit */
       while (sock->send_buf.count > 0 &&
              sock->swnd.unacked_count < (int)sock->swnd.size &&
-             sock->swnd.size > 0 && !sock->nospace) {
+             sock->swnd.size > 0) {
 
         char payload[MSG_SIZE];
         pop_buf(&sock->send_buf, payload);

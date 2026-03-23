@@ -254,6 +254,7 @@ ssize_t k_recvfrom(int socket, void *buffer, size_t length, int flags,
   (void)flags;
   (void)address;
   (void)address_len;
+  (void)length;
 
   /* grab table */
   socket_table_t *t = attach_table(SOCKTABLE_NAME, 0644);
@@ -298,16 +299,32 @@ int k_close(int fd) {
     return -1;
   }
 
+  /*
+   * Drain phase: to not close sock till S has sent everything and has received
+   * ACKs for all messages in transit
+   */
+  while (1) {
+    sem_wait(&t->mtx);
+    int send_empty    = (t->sockets[fd].send_buf.count == 0);
+    int unacked_empty = (t->sockets[fd].swnd.unacked_count == 0);
+    sem_post(&t->mtx);
+ 
+    if (send_empty && unacked_empty) break;
+ 
+    /* check every T/4 secs (T/4 should be fine ig, lesser would waste time as blocks mtx) */
+    usleep((T * 1000000) / 4);
+  }
+
   /* grab mutex */
   sem_wait(&t->mtx);
 
   /* to signal daemon to close the UDP fd and free the slot */
   t->info[fd] = CLOSE_REQ;
+  sem_post(&t->mtx);
 
   sem_post(&t->sys_sem);
   sem_wait(&t->lib_sem);
 
-  sem_post(&t->mtx);
   munmap(t, sizeof(socket_table_t));
 
   return 0;
