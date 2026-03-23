@@ -1,0 +1,1583 @@
+./ksocketd
+[[1;34m23:15:38[0m] [139911053571904] shm: created shm segment /ktp_socket_table
+[[1;34m23:15:38[0m] [139911053571904] shm: resized shm segment
+[[1;34m23:15:38[0m] [139911053571904] shm: attached to shm segment
+[[1;34m23:15:38[0m] [139911053571904] shm: initialised table mutex
+[[1;34m23:15:38[0m] [139911053571904] shm: initialised library semaphore
+[[1;34m23:15:38[0m] [139911053571904] shm: initialised daemon semaphore
+[[1;34m23:15:38[0m] [139911053571904] shm: initialised socket table with 0 sockets currently active
+[[1;34m23:15:38[0m] [139911050921664] thread: starting Receiver routine
+[[1;34m23:15:38[0m] [139911034136256] thread: starting Garbage Collector routine
+[[1;34m23:15:38[0m] [139911042528960] thread: starting Sender routine
+[[1;34m23:15:40[0m] [139911053571904] socket: request for new socket 0 by pid 13277
+[[1;34m23:15:40[0m] [139911053571904] socket: created new socket 0 (udp_sock = 10)
+[[1;34m23:15:41[0m] [139911053571904] socket: request to bind socket 0 to 0.0.0.0:9001
+[[1;34m23:15:41[0m] [139911053571904] socket: bound socket 0
+[[1;34m23:15:42[0m] [139911053571904] socket: request for new socket 1 by pid 13303
+[[1;34m23:15:42[0m] [139911053571904] socket: created new socket 1 (udp_sock = 11)
+[[1;34m23:15:43[0m] [139911053571904] socket: request to bind socket 1 to 0.0.0.0:9000
+[[1;34m23:15:43[0m] [139911053571904] socket: bound socket 1
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=1 unacked=1
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=2 unacked=2
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=3 unacked=3
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=4 unacked=4
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=5 unacked=5
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=6 unacked=6
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=7 unacked=7
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=8 unacked=8
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=9 unacked=9
+[[1;34m23:15:44[0m] [139911042528960] socket 1: SENT_SEGMENT=10 unacked=10
+[[1;34m23:15:44[0m] [139911050921664] socket 0: DATA seq=1 ACK=1 win=9
+[[1;34m23:15:44[0m] [139911050921664] socket 0: DATA seq=2 ACK=2 win=8
+[[1;34m23:15:44[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:44[0m] [139911050921664] socket 0: DATA seq=3 ACK=3 win=7
+[[1;34m23:15:44[0m] [139911050921664] socket 1: ACK ack=2 new_win=8
+[[1;34m23:15:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:44[0m] [139911050921664] socket 1: ACK ack=3 new_win=7
+[[1;34m23:15:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:44[0m] [139911050921664] socket 0: OOO seq=8 buffered
+[[1;34m23:15:44[0m] [139911050921664] socket 0: OOO seq=9 buffered
+[[1;34m23:15:44[0m] [139911050921664] socket 0: OOO seq=10 buffered
+[[1;34m23:15:50[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:15:50[0m] [139911050921664] socket 0: DATA seq=4 ACK=4 win=9
+[[1;34m23:15:50[0m] [139911050921664] socket 0: DATA seq=5 ACK=5 win=8
+[[1;34m23:15:50[0m] [139911050921664] socket 1: ACK ack=4 new_win=9
+[[1;34m23:15:50[0m] [139911050921664] socket 0: DATA seq=6 ACK=6 win=7
+[[1;34m23:15:50[0m] [139911050921664] socket 1: ACK ack=5 new_win=8
+[[1;34m23:15:50[0m] [139911050921664] socket 0: DATA seq=7 ACK=10 win=3
+[[1;34m23:15:50[0m] [139911050921664] socket 1: ACK ack=6 new_win=7
+[[1;34m23:15:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:50[0m] [139911050921664] socket 1: ACK ack=10 new_win=3
+[[1;34m23:15:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:52[0m] [139911042528960] socket 1: SENT_SEGMENT=11 unacked=1
+[[1;34m23:15:52[0m] [139911042528960] socket 1: SENT_SEGMENT=12 unacked=2
+[[1;34m23:15:52[0m] [139911042528960] socket 1: SENT_SEGMENT=13 unacked=3
+[[1;34m23:15:52[0m] [139911050921664] socket 0: DATA seq=11 ACK=11 win=9
+[[1;34m23:15:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:52[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:15:58[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=3 messages
+[[1;34m23:15:58[0m] [139911050921664] socket 0: DATA seq=12 ACK=12 win=9
+[[1;34m23:15:58[0m] [139911050921664] socket 1: ACK ack=11 new_win=10
+[[1;34m23:15:58[0m] [139911050921664] socket 0: DATA seq=13 ACK=13 win=8
+[[1;34m23:15:58[0m] [139911050921664] socket 1: ACK ack=12 new_win=9
+[[1;34m23:15:58[0m] [139911050921664] socket 1: ACK ack=13 new_win=8
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=14 unacked=1
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=15 unacked=2
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=16 unacked=3
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=17 unacked=4
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=18 unacked=5
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=19 unacked=6
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=20 unacked=7
+[[1;34m23:16:00[0m] [139911042528960] socket 1: SENT_SEGMENT=21 unacked=8
+[[1;34m23:16:00[0m] [139911050921664] socket 0: DATA seq=14 ACK=14 win=9
+[[1;34m23:16:00[0m] [139911050921664] socket 0: DATA seq=15 ACK=15 win=8
+[[1;34m23:16:00[0m] [139911050921664] socket 1: ACK ack=14 new_win=9
+[[1;34m23:16:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:00[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:00[0m] [139911050921664] socket 0: OOO seq=17 buffered
+[[1;34m23:16:00[0m] [139911050921664] socket 0: OOO seq=18 buffered
+[[1;34m23:16:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:02[0m] [139911042528960] socket 1: SENT_SEGMENT=22 unacked=8
+[[1;34m23:16:02[0m] [139911042528960] socket 1: SENT_SEGMENT=23 unacked=9
+[[1;34m23:16:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:02[0m] [139911050921664] socket 0: OOO seq=23 buffered
+[[1;34m23:16:06[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:16:06[0m] [139911050921664] socket 0: DATA seq=16 ACK=18 win=7
+[[1;34m23:16:06[0m] [139911050921664] socket 1: ACK ack=15 new_win=10
+[[1;34m23:16:06[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:06[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:06[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:06[0m] [139911050921664] socket 0: OOO seq=21 buffered
+[[1;34m23:16:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:08[0m] [139911042528960] socket 1: SENT_SEGMENT=24 unacked=9
+[[1;34m23:16:08[0m] [139911042528960] socket 1: SENT_SEGMENT=25 unacked=10
+[[1;34m23:16:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:08[0m] [139911050921664] socket 0: OOO seq=25 buffered
+[[1;34m23:16:12[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:16:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:12[0m] [139911050921664] socket 1: ACK ack=18 new_win=10
+[[1;34m23:16:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:12[0m] [139911050921664] socket 0: DATA seq=19 ACK=19 win=9
+[[1;34m23:16:12[0m] [139911050921664] socket 0: DATA seq=20 ACK=21 win=7
+[[1;34m23:16:12[0m] [139911050921664] socket 1: ACK ack=19 new_win=9
+[[1;34m23:16:12[0m] [139911050921664] socket 1: ACK ack=21 new_win=7
+[[1;34m23:16:12[0m] [139911050921664] socket 0: DATA seq=22 ACK=23 win=5
+[[1;34m23:16:12[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:12[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:12[0m] [139911050921664] socket 1: ACK ack=23 new_win=5
+[[1;34m23:16:14[0m] [139911042528960] socket 1: SENT_SEGMENT=26 unacked=3
+[[1;34m23:16:14[0m] [139911042528960] socket 1: SENT_SEGMENT=27 unacked=4
+[[1;34m23:16:14[0m] [139911042528960] socket 1: SENT_SEGMENT=28 unacked=5
+[[1;34m23:16:14[0m] [139911050921664] socket 0: OOO seq=26 buffered
+[[1;34m23:16:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:14[0m] [139911050921664] socket 0: OOO seq=28 buffered
+[[1;34m23:16:18[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:16:18[0m] [139911050921664] socket 0: DATA seq=24 ACK=26 win=7
+[[1;34m23:16:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:18[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:18[0m] [139911050921664] socket 0: DATA seq=27 ACK=28 win=5
+[[1;34m23:16:18[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:18[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:18[0m] [139911050921664] socket 1: ACK ack=28 new_win=5
+[[1;34m23:16:20[0m] [139911042528960] socket 1: SENT_SEGMENT=29 unacked=1
+[[1;34m23:16:20[0m] [139911042528960] socket 1: SENT_SEGMENT=30 unacked=2
+[[1;34m23:16:20[0m] [139911042528960] socket 1: SENT_SEGMENT=31 unacked=3
+[[1;34m23:16:20[0m] [139911042528960] socket 1: SENT_SEGMENT=32 unacked=4
+[[1;34m23:16:20[0m] [139911042528960] socket 1: SENT_SEGMENT=33 unacked=5
+[[1;34m23:16:20[0m] [139911050921664] socket 0: DATA seq=29 ACK=29 win=9
+[[1;34m23:16:20[0m] [139911050921664] socket 0: DATA seq=30 ACK=30 win=8
+[[1;34m23:16:20[0m] [139911050921664] socket 1: ACK ack=29 new_win=9
+[[1;34m23:16:20[0m] [139911050921664] socket 0: DATA seq=31 ACK=31 win=7
+[[1;34m23:16:20[0m] [139911050921664] socket 1: ACK ack=30 new_win=8
+[[1;34m23:16:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:20[0m] [139911050921664] socket 1: ACK ack=31 new_win=7
+[[1;34m23:16:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:22[0m] [139911042528960] socket 1: SENT_SEGMENT=34 unacked=3
+[[1;34m23:16:22[0m] [139911042528960] socket 1: SENT_SEGMENT=35 unacked=4
+[[1;34m23:16:22[0m] [139911042528960] socket 1: SENT_SEGMENT=36 unacked=5
+[[1;34m23:16:22[0m] [139911042528960] socket 1: SENT_SEGMENT=37 unacked=6
+[[1;34m23:16:22[0m] [139911042528960] socket 1: SENT_SEGMENT=38 unacked=7
+[[1;34m23:16:22[0m] [139911050921664] socket 0: OOO seq=34 buffered
+[[1;34m23:16:22[0m] [139911050921664] socket 0: OOO seq=35 buffered
+[[1;34m23:16:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:22[0m] [139911050921664] socket 0: OOO seq=38 buffered
+[[1;34m23:16:26[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:16:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:26[0m] [139911050921664] socket 0: OOO seq=33 buffered
+[[1;34m23:16:26[0m] [139911050921664] socket 0: OOO seq=36 buffered
+[[1;34m23:16:26[0m] [139911050921664] socket 0: OOO seq=37 buffered
+[[1;34m23:16:32[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:16:32[0m] [139911050921664] socket 0: DATA seq=32 ACK=38 win=3
+[[1;34m23:16:32[0m] [139911050921664] socket 1: ACK ack=38 new_win=3
+[[1;34m23:16:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:32[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:32[0m] [139911050921664] socket 1: ACK ack=38 new_win=3
+[[1;34m23:16:32[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:34[0m] [139911042528960] socket 1: SENT_SEGMENT=39 unacked=1
+[[1;34m23:16:34[0m] [139911042528960] socket 1: SENT_SEGMENT=40 unacked=2
+[[1;34m23:16:34[0m] [139911042528960] socket 1: SENT_SEGMENT=41 unacked=3
+[[1;34m23:16:34[0m] [139911050921664] socket 0: DATA seq=39 ACK=39 win=9
+[[1;34m23:16:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:34[0m] [139911050921664] socket 1: ACK ack=39 new_win=9
+[[1;34m23:16:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:36[0m] [139911042528960] socket 1: SENT_SEGMENT=42 unacked=3
+[[1;34m23:16:36[0m] [139911042528960] socket 1: SENT_SEGMENT=43 unacked=4
+[[1;34m23:16:36[0m] [139911042528960] socket 1: SENT_SEGMENT=44 unacked=5
+[[1;34m23:16:36[0m] [139911042528960] socket 1: SENT_SEGMENT=45 unacked=6
+[[1;34m23:16:36[0m] [139911042528960] socket 1: SENT_SEGMENT=46 unacked=7
+[[1;34m23:16:36[0m] [139911042528960] socket 1: SENT_SEGMENT=47 unacked=8
+[[1;34m23:16:36[0m] [139911042528960] socket 1: SENT_SEGMENT=48 unacked=9
+[[1;34m23:16:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:36[0m] [139911050921664] socket 0: OOO seq=46 buffered
+[[1;34m23:16:36[0m] [139911050921664] socket 0: OOO seq=47 buffered
+[[1;34m23:16:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:40[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:16:40[0m] [139911050921664] socket 0: DATA seq=40 ACK=40 win=9
+[[1;34m23:16:40[0m] [139911050921664] socket 0: DATA seq=41 ACK=41 win=8
+[[1;34m23:16:40[0m] [139911050921664] socket 1: ACK ack=40 new_win=9
+[[1;34m23:16:40[0m] [139911050921664] socket 0: DATA seq=42 ACK=42 win=7
+[[1;34m23:16:40[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:40[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:40[0m] [139911050921664] socket 0: OOO seq=44 buffered
+[[1;34m23:16:40[0m] [139911050921664] socket 0: OOO seq=45 buffered
+[[1;34m23:16:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:40[0m] [139911050921664] socket 0: OOO seq=48 buffered
+[[1;34m23:16:42[0m] [139911042528960] socket 1: SENT_SEGMENT=49 unacked=9
+[[1;34m23:16:42[0m] [139911050921664] socket 0: OOO seq=49 buffered
+[[1;34m23:16:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:16:46[0m] [139911050921664] socket 1: ACK ack=42 new_win=10
+[[1;34m23:16:46[0m] [139911050921664] socket 0: DATA seq=43 ACK=49 win=3
+[[1;34m23:16:46[0m] [139911050921664] socket 1: ACK ack=42 new_win=10
+[[1;34m23:16:46[0m] [139911050921664] socket 1: ACK ack=49 new_win=3
+[[1;34m23:16:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:46[0m] [139911050921664] socket 1: ACK ack=49 new_win=3
+[[1;34m23:16:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:46[0m] [139911050921664] socket 1: ACK ack=49 new_win=3
+[[1;34m23:16:46[0m] [139911050921664] socket 1: ACK ack=49 new_win=3
+[[1;34m23:16:46[0m] [139911050921664] socket 1: ACK ack=49 new_win=3
+[[1;34m23:16:48[0m] [139911042528960] socket 1: SENT_SEGMENT=50 unacked=1
+[[1;34m23:16:48[0m] [139911042528960] socket 1: SENT_SEGMENT=51 unacked=2
+[[1;34m23:16:48[0m] [139911042528960] socket 1: SENT_SEGMENT=52 unacked=3
+[[1;34m23:16:48[0m] [139911050921664] socket 0: DATA seq=50 ACK=50 win=9
+[[1;34m23:16:48[0m] [139911050921664] socket 0: DATA seq=51 ACK=51 win=8
+[[1;34m23:16:48[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:48[0m] [139911050921664] socket 0: DATA seq=52 ACK=52 win=7
+[[1;34m23:16:48[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:48[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:54[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=3 messages
+[[1;34m23:16:54[0m] [139911050921664] socket 1: ACK ack=52 new_win=10
+[[1;34m23:16:54[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:54[0m] [139911050921664] socket 1: ACK ack=52 new_win=10
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=53 unacked=1
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=54 unacked=2
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=55 unacked=3
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=56 unacked=4
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=57 unacked=5
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=58 unacked=6
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=59 unacked=7
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=60 unacked=8
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=61 unacked=9
+[[1;34m23:16:56[0m] [139911042528960] socket 1: SENT_SEGMENT=62 unacked=10
+[[1;34m23:16:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:56[0m] [139911050921664] socket 0: OOO seq=54 buffered
+[[1;34m23:16:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:16:56[0m] [139911050921664] socket 0: OOO seq=57 buffered
+[[1;34m23:16:56[0m] [139911050921664] socket 0: OOO seq=58 buffered
+[[1;34m23:16:56[0m] [139911050921664] socket 0: OOO seq=59 buffered
+[[1;34m23:16:56[0m] [139911050921664] socket 0: OOO seq=60 buffered
+[[1;34m23:16:56[0m] [139911050921664] socket 0: OOO seq=61 buffered
+[[1;34m23:16:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:02[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:17:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:02[0m] [139911050921664] socket 0: OOO seq=56 buffered
+[[1;34m23:17:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:02[0m] [139911050921664] socket 0: OOO seq=62 buffered
+[[1;34m23:17:08[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:17:08[0m] [139911050921664] socket 0: DATA seq=53 ACK=54 win=8
+[[1;34m23:17:08[0m] [139911050921664] socket 1: ACK ack=54 new_win=8
+[[1;34m23:17:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:08[0m] [139911050921664] socket 1: ACK ack=54 new_win=8
+[[1;34m23:17:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:14[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:17:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:20[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:17:20[0m] [139911050921664] socket 0: DATA seq=55 ACK=62 win=2
+[[1;34m23:17:20[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:20[0m] [139911050921664] socket 1: ACK ack=62 new_win=2
+[[1;34m23:17:20[0m] [139911050921664] socket 1: ACK ack=62 new_win=2
+[[1;34m23:17:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:20[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:20[0m] [139911050921664] socket 1: ACK ack=62 new_win=2
+[[1;34m23:17:20[0m] [139911050921664] socket 1: ACK ack=62 new_win=2
+[[1;34m23:17:20[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:22[0m] [139911042528960] socket 1: SENT_SEGMENT=63 unacked=1
+[[1;34m23:17:22[0m] [139911042528960] socket 1: SENT_SEGMENT=64 unacked=2
+[[1;34m23:17:22[0m] [139911050921664] socket 0: DATA seq=63 ACK=63 win=9
+[[1;34m23:17:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:22[0m] [139911050921664] socket 1: ACK ack=63 new_win=9
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=65 unacked=2
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=66 unacked=3
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=67 unacked=4
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=68 unacked=5
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=69 unacked=6
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=70 unacked=7
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=71 unacked=8
+[[1;34m23:17:24[0m] [139911042528960] socket 1: SENT_SEGMENT=72 unacked=9
+[[1;34m23:17:24[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:24[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:24[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:24[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:24[0m] [139911050921664] socket 0: OOO seq=69 buffered
+[[1;34m23:17:24[0m] [139911050921664] socket 0: OOO seq=70 buffered
+[[1;34m23:17:24[0m] [139911050921664] socket 0: OOO seq=71 buffered
+[[1;34m23:17:24[0m] [139911050921664] socket 0: OOO seq=72 buffered
+[[1;34m23:17:28[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:17:28[0m] [139911050921664] socket 0: DATA seq=64 ACK=64 win=9
+[[1;34m23:17:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:28[0m] [139911050921664] socket 1: ACK ack=64 new_win=9
+[[1;34m23:17:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:28[0m] [139911050921664] socket 0: OOO seq=67 buffered
+[[1;34m23:17:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:30[0m] [139911042528960] socket 1: SENT_SEGMENT=73 unacked=9
+[[1;34m23:17:30[0m] [139911050921664] socket 0: OOO seq=73 buffered
+[[1;34m23:17:34[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:17:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:40[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:17:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:40[0m] [139911050921664] socket 0: OOO seq=66 buffered
+[[1;34m23:17:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:17:46[0m] [139911050921664] socket 0: DATA seq=65 ACK=67 win=7
+[[1;34m23:17:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:46[0m] [139911050921664] socket 1: ACK ack=67 new_win=7
+[[1;34m23:17:46[0m] [139911050921664] socket 0: DATA seq=68 ACK=73 win=1
+[[1;34m23:17:46[0m] [139911050921664] socket 1: ACK ack=67 new_win=7
+[[1;34m23:17:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:46[0m] [139911050921664] socket 1: ACK ack=73 new_win=1
+[[1;34m23:17:46[0m] [139911050921664] socket 1: ACK ack=73 new_win=1
+[[1;34m23:17:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:46[0m] [139911050921664] socket 1: ACK ack=73 new_win=1
+[[1;34m23:17:48[0m] [139911042528960] socket 1: SENT_SEGMENT=74 unacked=1
+[[1;34m23:17:48[0m] [139911050921664] socket 0: DATA seq=74 ACK=74 win=9
+[[1;34m23:17:48[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:17:54[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=1 messages
+[[1;34m23:17:54[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:00[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=1 messages
+[[1;34m23:18:00[0m] [139911050921664] socket 1: ACK ack=74 new_win=10
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=75 unacked=1
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=76 unacked=2
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=77 unacked=3
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=78 unacked=4
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=79 unacked=5
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=80 unacked=6
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=81 unacked=7
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=82 unacked=8
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=83 unacked=9
+[[1;34m23:18:02[0m] [139911042528960] socket 1: SENT_SEGMENT=84 unacked=10
+[[1;34m23:18:02[0m] [139911050921664] socket 0: DATA seq=75 ACK=75 win=9
+[[1;34m23:18:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:02[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:02[0m] [139911050921664] socket 0: OOO seq=80 buffered
+[[1;34m23:18:02[0m] [139911050921664] socket 0: OOO seq=81 buffered
+[[1;34m23:18:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:02[0m] [139911050921664] socket 0: OOO seq=83 buffered
+[[1;34m23:18:02[0m] [139911050921664] socket 0: OOO seq=84 buffered
+[[1;34m23:18:08[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:18:08[0m] [139911050921664] socket 0: DATA seq=76 ACK=76 win=9
+[[1;34m23:18:08[0m] [139911050921664] socket 1: ACK ack=75 new_win=10
+[[1;34m23:18:08[0m] [139911050921664] socket 0: DATA seq=77 ACK=77 win=8
+[[1;34m23:18:08[0m] [139911050921664] socket 1: ACK ack=76 new_win=9
+[[1;34m23:18:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:08[0m] [139911050921664] socket 1: ACK ack=77 new_win=8
+[[1;34m23:18:08[0m] [139911050921664] socket 0: OOO seq=79 buffered
+[[1;34m23:18:08[0m] [139911050921664] socket 0: OOO seq=82 buffered
+[[1;34m23:18:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:10[0m] [139911042528960] socket 1: SENT_SEGMENT=85 unacked=8
+[[1;34m23:18:10[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:14[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:18:14[0m] [139911050921664] socket 0: DATA seq=78 ACK=84 win=3
+[[1;34m23:18:14[0m] [139911050921664] socket 1: ACK ack=84 new_win=3
+[[1;34m23:18:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:14[0m] [139911050921664] socket 1: ACK ack=84 new_win=3
+[[1;34m23:18:14[0m] [139911050921664] socket 1: ACK ack=84 new_win=3
+[[1;34m23:18:14[0m] [139911050921664] socket 1: ACK ack=84 new_win=3
+[[1;34m23:18:14[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:14[0m] [139911050921664] socket 0: DATA seq=85 ACK=85 win=2
+[[1;34m23:18:14[0m] [139911050921664] socket 1: ACK ack=84 new_win=3
+[[1;34m23:18:14[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:16[0m] [139911042528960] socket 1: SENT_SEGMENT=86 unacked=2
+[[1;34m23:18:16[0m] [139911042528960] socket 1: SENT_SEGMENT=87 unacked=3
+[[1;34m23:18:16[0m] [139911050921664] socket 0: DATA seq=86 ACK=86 win=9
+[[1;34m23:18:16[0m] [139911050921664] socket 0: DATA seq=87 ACK=87 win=8
+[[1;34m23:18:16[0m] [139911050921664] socket 1: ACK ack=86 new_win=9
+[[1;34m23:18:16[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=88 unacked=2
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=89 unacked=3
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=90 unacked=4
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=91 unacked=5
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=92 unacked=6
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=93 unacked=7
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=94 unacked=8
+[[1;34m23:18:18[0m] [139911042528960] socket 1: SENT_SEGMENT=95 unacked=9
+[[1;34m23:18:18[0m] [139911050921664] socket 0: DATA seq=88 ACK=88 win=9
+[[1;34m23:18:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:18[0m] [139911050921664] socket 1: ACK ack=88 new_win=9
+[[1;34m23:18:18[0m] [139911050921664] socket 0: OOO seq=90 buffered
+[[1;34m23:18:18[0m] [139911050921664] socket 0: OOO seq=91 buffered
+[[1;34m23:18:18[0m] [139911050921664] socket 0: OOO seq=92 buffered
+[[1;34m23:18:18[0m] [139911050921664] socket 0: OOO seq=93 buffered
+[[1;34m23:18:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:20[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:18:20[0m] [139911042528960] socket 1: SENT_SEGMENT=96 unacked=8
+[[1;34m23:18:20[0m] [139911042528960] socket 1: SENT_SEGMENT=97 unacked=9
+[[1;34m23:18:20[0m] [139911050921664] socket 0: DATA seq=89 ACK=93 win=5
+[[1;34m23:18:20[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:20[0m] [139911050921664] socket 1: ACK ack=93 new_win=5
+[[1;34m23:18:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:20[0m] [139911050921664] socket 1: ACK ack=93 new_win=5
+[[1;34m23:18:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:20[0m] [139911050921664] socket 0: DATA seq=94 ACK=94 win=4
+[[1;34m23:18:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:20[0m] [139911050921664] socket 1: ACK ack=94 new_win=4
+[[1;34m23:18:20[0m] [139911050921664] socket 0: OOO seq=96 buffered
+[[1;34m23:18:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:22[0m] [139911042528960] socket 1: SENT_SEGMENT=98 unacked=4
+[[1;34m23:18:22[0m] [139911050921664] socket 0: OOO seq=98 buffered
+[[1;34m23:18:26[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=4 messages
+[[1;34m23:18:26[0m] [139911050921664] socket 0: DATA seq=95 ACK=96 win=8
+[[1;34m23:18:26[0m] [139911050921664] socket 1: ACK ack=96 new_win=8
+[[1;34m23:18:26[0m] [139911050921664] socket 0: DATA seq=97 ACK=98 win=6
+[[1;34m23:18:26[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:26[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:26[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:28[0m] [139911042528960] socket 1: SENT_SEGMENT=99 unacked=3
+[[1;34m23:18:28[0m] [139911042528960] socket 1: SENT_SEGMENT=100 unacked=4
+[[1;34m23:18:28[0m] [139911042528960] socket 1: SENT_SEGMENT=101 unacked=5
+[[1;34m23:18:28[0m] [139911042528960] socket 1: SENT_SEGMENT=102 unacked=6
+[[1;34m23:18:28[0m] [139911042528960] socket 1: SENT_SEGMENT=103 unacked=7
+[[1;34m23:18:28[0m] [139911042528960] socket 1: SENT_SEGMENT=104 unacked=8
+[[1;34m23:18:28[0m] [139911050921664] socket 0: DATA seq=99 ACK=99 win=9
+[[1;34m23:18:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:28[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:28[0m] [139911050921664] socket 0: OOO seq=101 buffered
+[[1;34m23:18:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:28[0m] [139911050921664] socket 0: OOO seq=103 buffered
+[[1;34m23:18:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:32[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:18:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:32[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:32[0m] [139911050921664] socket 1: ACK ack=99 new_win=10
+[[1;34m23:18:32[0m] [139911050921664] socket 0: OOO seq=102 buffered
+[[1;34m23:18:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:32[0m] [139911050921664] socket 0: OOO seq=104 buffered
+[[1;34m23:18:34[0m] [139911042528960] socket 1: SENT_SEGMENT=105 unacked=6
+[[1;34m23:18:34[0m] [139911042528960] socket 1: SENT_SEGMENT=106 unacked=7
+[[1;34m23:18:34[0m] [139911042528960] socket 1: SENT_SEGMENT=107 unacked=8
+[[1;34m23:18:34[0m] [139911042528960] socket 1: SENT_SEGMENT=108 unacked=9
+[[1;34m23:18:34[0m] [139911042528960] socket 1: SENT_SEGMENT=109 unacked=10
+[[1;34m23:18:34[0m] [139911050921664] socket 0: OOO seq=105 buffered
+[[1;34m23:18:34[0m] [139911050921664] socket 0: OOO seq=106 buffered
+[[1;34m23:18:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:34[0m] [139911050921664] socket 0: OOO seq=108 buffered
+[[1;34m23:18:34[0m] [139911050921664] socket 0: OOO seq=109 buffered
+[[1;34m23:18:38[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:18:38[0m] [139911050921664] socket 0: DATA seq=100 ACK=106 win=3
+[[1;34m23:18:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:38[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:38[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:38[0m] [139911050921664] socket 1: ACK ack=106 new_win=3
+[[1;34m23:18:38[0m] [139911050921664] socket 0: DATA seq=107 ACK=109 win=0
+[[1;34m23:18:38[0m] [139911050921664] socket 1: ACK ack=106 new_win=3
+[[1;34m23:18:38[0m] [139911050921664] socket 1: ACK ack=109 new_win=0
+[[1;34m23:18:38[0m] [139911050921664] socket 1: ACK ack=109 new_win=0
+[[1;34m23:18:38[0m] [139911050921664] socket 1: ACK ack=109 new_win=0
+[[1;34m23:18:39[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=109
+[[1;34m23:18:39[0m] [139911050921664] socket 1: ACK ack=109 new_win=10
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=110 unacked=1
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=111 unacked=2
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=112 unacked=3
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=113 unacked=4
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=114 unacked=5
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=115 unacked=6
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=116 unacked=7
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=117 unacked=8
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=118 unacked=9
+[[1;34m23:18:40[0m] [139911042528960] socket 1: SENT_SEGMENT=119 unacked=10
+[[1;34m23:18:40[0m] [139911050921664] socket 0: DATA seq=110 ACK=110 win=9
+[[1;34m23:18:40[0m] [139911050921664] socket 0: DATA seq=111 ACK=111 win=8
+[[1;34m23:18:40[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:40[0m] [139911050921664] socket 1: ACK ack=111 new_win=8
+[[1;34m23:18:40[0m] [139911050921664] socket 0: OOO seq=113 buffered
+[[1;34m23:18:40[0m] [139911050921664] socket 0: OOO seq=114 buffered
+[[1;34m23:18:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:40[0m] [139911050921664] socket 0: OOO seq=118 buffered
+[[1;34m23:18:40[0m] [139911050921664] socket 0: OOO seq=119 buffered
+[[1;34m23:18:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:18:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:46[0m] [139911050921664] socket 0: OOO seq=116 buffered
+[[1;34m23:18:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:52[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:18:52[0m] [139911050921664] socket 0: DATA seq=112 ACK=114 win=7
+[[1;34m23:18:52[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:52[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:52[0m] [139911050921664] socket 0: DATA seq=115 ACK=116 win=5
+[[1;34m23:18:52[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:52[0m] [139911050921664] socket 1: ACK ack=116 new_win=5
+[[1;34m23:18:54[0m] [139911042528960] socket 1: SENT_SEGMENT=120 unacked=4
+[[1;34m23:18:54[0m] [139911042528960] socket 1: SENT_SEGMENT=121 unacked=5
+[[1;34m23:18:54[0m] [139911050921664] socket 0: OOO seq=120 buffered
+[[1;34m23:18:54[0m] [139911050921664] socket 0: OOO seq=121 buffered
+[[1;34m23:18:58[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:18:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:18:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:04[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:19:04[0m] [139911050921664] socket 0: DATA seq=117 ACK=121 win=5
+[[1;34m23:19:04[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:04[0m] [139911050921664] socket 1: ACK ack=121 new_win=5
+[[1;34m23:19:04[0m] [139911050921664] socket 1: ACK ack=121 new_win=5
+[[1;34m23:19:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:04[0m] [139911050921664] socket 1: ACK ack=121 new_win=5
+[[1;34m23:19:06[0m] [139911042528960] socket 1: SENT_SEGMENT=122 unacked=1
+[[1;34m23:19:06[0m] [139911042528960] socket 1: SENT_SEGMENT=123 unacked=2
+[[1;34m23:19:06[0m] [139911042528960] socket 1: SENT_SEGMENT=124 unacked=3
+[[1;34m23:19:06[0m] [139911042528960] socket 1: SENT_SEGMENT=125 unacked=4
+[[1;34m23:19:06[0m] [139911042528960] socket 1: SENT_SEGMENT=126 unacked=5
+[[1;34m23:19:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:06[0m] [139911050921664] socket 0: OOO seq=123 buffered
+[[1;34m23:19:06[0m] [139911050921664] socket 0: OOO seq=124 buffered
+[[1;34m23:19:06[0m] [139911050921664] socket 0: OOO seq=125 buffered
+[[1;34m23:19:06[0m] [139911050921664] socket 0: OOO seq=126 buffered
+[[1;34m23:19:12[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:19:12[0m] [139911050921664] socket 0: DATA seq=122 ACK=126 win=5
+[[1;34m23:19:12[0m] [139911050921664] socket 1: ACK ack=126 new_win=5
+[[1;34m23:19:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:12[0m] [139911050921664] socket 1: ACK ack=126 new_win=5
+[[1;34m23:19:12[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:12[0m] [139911050921664] socket 1: ACK ack=126 new_win=5
+[[1;34m23:19:14[0m] [139911042528960] socket 1: SENT_SEGMENT=127 unacked=1
+[[1;34m23:19:14[0m] [139911042528960] socket 1: SENT_SEGMENT=128 unacked=2
+[[1;34m23:19:14[0m] [139911042528960] socket 1: SENT_SEGMENT=129 unacked=3
+[[1;34m23:19:14[0m] [139911042528960] socket 1: SENT_SEGMENT=130 unacked=4
+[[1;34m23:19:14[0m] [139911042528960] socket 1: SENT_SEGMENT=131 unacked=5
+[[1;34m23:19:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:14[0m] [139911050921664] socket 0: OOO seq=129 buffered
+[[1;34m23:19:14[0m] [139911050921664] socket 0: OOO seq=130 buffered
+[[1;34m23:19:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:20[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:19:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:20[0m] [139911050921664] socket 0: OOO seq=131 buffered
+[[1;34m23:19:26[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:19:26[0m] [139911050921664] socket 0: DATA seq=127 ACK=127 win=9
+[[1;34m23:19:26[0m] [139911050921664] socket 0: DATA seq=128 ACK=131 win=5
+[[1;34m23:19:26[0m] [139911050921664] socket 1: ACK ack=127 new_win=9
+[[1;34m23:19:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:26[0m] [139911050921664] socket 1: ACK ack=131 new_win=5
+[[1;34m23:19:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:26[0m] [139911050921664] socket 1: ACK ack=131 new_win=5
+[[1;34m23:19:28[0m] [139911042528960] socket 1: SENT_SEGMENT=132 unacked=1
+[[1;34m23:19:28[0m] [139911042528960] socket 1: SENT_SEGMENT=133 unacked=2
+[[1;34m23:19:28[0m] [139911042528960] socket 1: SENT_SEGMENT=134 unacked=3
+[[1;34m23:19:28[0m] [139911042528960] socket 1: SENT_SEGMENT=135 unacked=4
+[[1;34m23:19:28[0m] [139911042528960] socket 1: SENT_SEGMENT=136 unacked=5
+[[1;34m23:19:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:28[0m] [139911050921664] socket 0: OOO seq=135 buffered
+[[1;34m23:19:28[0m] [139911050921664] socket 0: OOO seq=136 buffered
+[[1;34m23:19:34[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:19:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:40[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:19:40[0m] [139911050921664] socket 0: DATA seq=132 ACK=132 win=9
+[[1;34m23:19:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:40[0m] [139911050921664] socket 1: ACK ack=132 new_win=9
+[[1;34m23:19:40[0m] [139911050921664] socket 0: OOO seq=134 buffered
+[[1;34m23:19:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:42[0m] [139911042528960] socket 1: SENT_SEGMENT=137 unacked=5
+[[1;34m23:19:42[0m] [139911042528960] socket 1: SENT_SEGMENT=138 unacked=6
+[[1;34m23:19:42[0m] [139911042528960] socket 1: SENT_SEGMENT=139 unacked=7
+[[1;34m23:19:42[0m] [139911042528960] socket 1: SENT_SEGMENT=140 unacked=8
+[[1;34m23:19:42[0m] [139911042528960] socket 1: SENT_SEGMENT=141 unacked=9
+[[1;34m23:19:42[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:42[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:42[0m] [139911050921664] socket 0: OOO seq=139 buffered
+[[1;34m23:19:42[0m] [139911050921664] socket 0: OOO seq=140 buffered
+[[1;34m23:19:42[0m] [139911050921664] socket 0: OOO seq=141 buffered
+[[1;34m23:19:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:19:46[0m] [139911050921664] socket 0: DATA seq=133 ACK=136 win=6
+[[1;34m23:19:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:46[0m] [139911050921664] socket 1: ACK ack=136 new_win=6
+[[1;34m23:19:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:46[0m] [139911050921664] socket 0: DATA seq=137 ACK=137 win=5
+[[1;34m23:19:46[0m] [139911050921664] socket 0: DATA seq=138 ACK=141 win=1
+[[1;34m23:19:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:46[0m] [139911050921664] socket 1: ACK ack=141 new_win=1
+[[1;34m23:19:48[0m] [139911042528960] socket 1: SENT_SEGMENT=142 unacked=1
+[[1;34m23:19:48[0m] [139911050921664] socket 0: DATA seq=142 ACK=142 win=9
+[[1;34m23:19:48[0m] [139911050921664] socket 1: ACK ack=142 new_win=9
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=143 unacked=1
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=144 unacked=2
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=145 unacked=3
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=146 unacked=4
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=147 unacked=5
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=148 unacked=6
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=149 unacked=7
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=150 unacked=8
+[[1;34m23:19:50[0m] [139911042528960] socket 1: SENT_SEGMENT=151 unacked=9
+[[1;34m23:19:50[0m] [139911050921664] socket 0: DATA seq=143 ACK=143 win=9
+[[1;34m23:19:50[0m] [139911050921664] socket 0: DATA seq=144 ACK=144 win=8
+[[1;34m23:19:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:50[0m] [139911050921664] socket 1: ACK ack=144 new_win=8
+[[1;34m23:19:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:50[0m] [139911050921664] socket 0: OOO seq=147 buffered
+[[1;34m23:19:50[0m] [139911050921664] socket 0: OOO seq=148 buffered
+[[1;34m23:19:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:50[0m] [139911050921664] socket 0: OOO seq=150 buffered
+[[1;34m23:19:50[0m] [139911050921664] socket 0: OOO seq=151 buffered
+[[1;34m23:19:52[0m] [139911042528960] socket 1: SENT_SEGMENT=152 unacked=8
+[[1;34m23:19:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:56[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:19:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:56[0m] [139911050921664] socket 0: OOO seq=149 buffered
+[[1;34m23:19:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:19:56[0m] [139911050921664] socket 0: OOO seq=152 buffered
+[[1;34m23:20:02[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:20:02[0m] [139911050921664] socket 0: DATA seq=145 ACK=145 win=9
+[[1;34m23:20:02[0m] [139911050921664] socket 0: DATA seq=146 ACK=152 win=2
+[[1;34m23:20:02[0m] [139911050921664] socket 1: ACK ack=145 new_win=9
+[[1;34m23:20:02[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:02[0m] [139911050921664] socket 1: ACK ack=152 new_win=2
+[[1;34m23:20:02[0m] [139911050921664] socket 1: ACK ack=152 new_win=2
+[[1;34m23:20:02[0m] [139911050921664] socket 1: ACK ack=152 new_win=2
+[[1;34m23:20:02[0m] [139911050921664] socket 1: ACK ack=152 new_win=2
+[[1;34m23:20:02[0m] [139911050921664] socket 1: ACK ack=152 new_win=2
+[[1;34m23:20:04[0m] [139911042528960] socket 1: SENT_SEGMENT=153 unacked=1
+[[1;34m23:20:04[0m] [139911042528960] socket 1: SENT_SEGMENT=154 unacked=2
+[[1;34m23:20:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:10[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=2 messages
+[[1;34m23:20:10[0m] [139911050921664] socket 0: DATA seq=153 ACK=153 win=9
+[[1;34m23:20:10[0m] [139911050921664] socket 0: DATA seq=154 ACK=154 win=8
+[[1;34m23:20:10[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:10[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:16[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=2 messages
+[[1;34m23:20:16[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:16[0m] [139911050921664] socket 1: ACK ack=154 new_win=10
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=155 unacked=1
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=156 unacked=2
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=157 unacked=3
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=158 unacked=4
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=159 unacked=5
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=160 unacked=6
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=161 unacked=7
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=162 unacked=8
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=163 unacked=9
+[[1;34m23:20:18[0m] [139911042528960] socket 1: SENT_SEGMENT=164 unacked=10
+[[1;34m23:20:18[0m] [139911050921664] socket 0: DATA seq=155 ACK=155 win=9
+[[1;34m23:20:18[0m] [139911050921664] socket 0: DATA seq=156 ACK=156 win=8
+[[1;34m23:20:18[0m] [139911050921664] socket 1: ACK ack=155 new_win=9
+[[1;34m23:20:18[0m] [139911050921664] socket 0: DATA seq=157 ACK=157 win=7
+[[1;34m23:20:18[0m] [139911050921664] socket 1: ACK ack=156 new_win=8
+[[1;34m23:20:18[0m] [139911050921664] socket 0: DATA seq=158 ACK=158 win=6
+[[1;34m23:20:18[0m] [139911050921664] socket 1: ACK ack=157 new_win=7
+[[1;34m23:20:18[0m] [139911050921664] socket 0: DATA seq=159 ACK=159 win=5
+[[1;34m23:20:18[0m] [139911050921664] socket 1: ACK ack=158 new_win=6
+[[1;34m23:20:18[0m] [139911050921664] socket 0: DATA seq=160 ACK=160 win=4
+[[1;34m23:20:18[0m] [139911050921664] socket 1: ACK ack=159 new_win=5
+[[1;34m23:20:18[0m] [139911050921664] socket 0: DATA seq=161 ACK=161 win=3
+[[1;34m23:20:18[0m] [139911050921664] socket 1: ACK ack=160 new_win=4
+[[1;34m23:20:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:18[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:18[0m] [139911050921664] socket 0: OOO seq=163 buffered
+[[1;34m23:20:18[0m] [139911050921664] socket 0: OOO seq=164 buffered
+[[1;34m23:20:24[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=4 messages
+[[1;34m23:20:24[0m] [139911050921664] socket 0: DATA seq=162 ACK=164 win=7
+[[1;34m23:20:24[0m] [139911050921664] socket 1: ACK ack=161 new_win=10
+[[1;34m23:20:24[0m] [139911050921664] socket 1: ACK ack=164 new_win=7
+[[1;34m23:20:24[0m] [139911050921664] socket 1: ACK ack=164 new_win=7
+[[1;34m23:20:24[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:26[0m] [139911042528960] socket 1: SENT_SEGMENT=165 unacked=1
+[[1;34m23:20:26[0m] [139911042528960] socket 1: SENT_SEGMENT=166 unacked=2
+[[1;34m23:20:26[0m] [139911042528960] socket 1: SENT_SEGMENT=167 unacked=3
+[[1;34m23:20:26[0m] [139911042528960] socket 1: SENT_SEGMENT=168 unacked=4
+[[1;34m23:20:26[0m] [139911042528960] socket 1: SENT_SEGMENT=169 unacked=5
+[[1;34m23:20:26[0m] [139911042528960] socket 1: SENT_SEGMENT=170 unacked=6
+[[1;34m23:20:26[0m] [139911042528960] socket 1: SENT_SEGMENT=171 unacked=7
+[[1;34m23:20:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:26[0m] [139911050921664] socket 0: OOO seq=167 buffered
+[[1;34m23:20:26[0m] [139911050921664] socket 0: OOO seq=168 buffered
+[[1;34m23:20:26[0m] [139911050921664] socket 0: OOO seq=169 buffered
+[[1;34m23:20:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:26[0m] [139911050921664] socket 0: OOO seq=171 buffered
+[[1;34m23:20:32[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:20:32[0m] [139911050921664] socket 0: DATA seq=165 ACK=165 win=9
+[[1;34m23:20:32[0m] [139911050921664] socket 0: DATA seq=166 ACK=169 win=5
+[[1;34m23:20:32[0m] [139911050921664] socket 1: ACK ack=165 new_win=9
+[[1;34m23:20:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:32[0m] [139911050921664] socket 1: ACK ack=169 new_win=5
+[[1;34m23:20:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:32[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:34[0m] [139911042528960] socket 1: SENT_SEGMENT=172 unacked=3
+[[1;34m23:20:34[0m] [139911042528960] socket 1: SENT_SEGMENT=173 unacked=4
+[[1;34m23:20:34[0m] [139911042528960] socket 1: SENT_SEGMENT=174 unacked=5
+[[1;34m23:20:34[0m] [139911050921664] socket 0: OOO seq=172 buffered
+[[1;34m23:20:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:34[0m] [139911050921664] socket 0: OOO seq=174 buffered
+[[1;34m23:20:38[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:20:38[0m] [139911050921664] socket 0: DATA seq=170 ACK=172 win=7
+[[1;34m23:20:38[0m] [139911050921664] socket 1: ACK ack=172 new_win=7
+[[1;34m23:20:38[0m] [139911050921664] socket 1: ACK ack=172 new_win=7
+[[1;34m23:20:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:38[0m] [139911050921664] socket 1: ACK ack=172 new_win=7
+[[1;34m23:20:40[0m] [139911042528960] socket 1: SENT_SEGMENT=175 unacked=3
+[[1;34m23:20:40[0m] [139911042528960] socket 1: SENT_SEGMENT=176 unacked=4
+[[1;34m23:20:40[0m] [139911042528960] socket 1: SENT_SEGMENT=177 unacked=5
+[[1;34m23:20:40[0m] [139911042528960] socket 1: SENT_SEGMENT=178 unacked=6
+[[1;34m23:20:40[0m] [139911042528960] socket 1: SENT_SEGMENT=179 unacked=7
+[[1;34m23:20:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:44[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:20:44[0m] [139911050921664] socket 0: DATA seq=173 ACK=174 win=8
+[[1;34m23:20:44[0m] [139911050921664] socket 1: ACK ack=174 new_win=8
+[[1;34m23:20:44[0m] [139911050921664] socket 0: DATA seq=175 ACK=175 win=7
+[[1;34m23:20:44[0m] [139911050921664] socket 1: ACK ack=174 new_win=8
+[[1;34m23:20:44[0m] [139911050921664] socket 0: DATA seq=176 ACK=176 win=6
+[[1;34m23:20:44[0m] [139911050921664] socket 1: ACK ack=175 new_win=7
+[[1;34m23:20:44[0m] [139911050921664] socket 0: DATA seq=177 ACK=177 win=5
+[[1;34m23:20:44[0m] [139911050921664] socket 1: ACK ack=176 new_win=6
+[[1;34m23:20:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:44[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:44[0m] [139911050921664] socket 0: OOO seq=179 buffered
+[[1;34m23:20:46[0m] [139911042528960] socket 1: SENT_SEGMENT=180 unacked=4
+[[1;34m23:20:46[0m] [139911042528960] socket 1: SENT_SEGMENT=181 unacked=5
+[[1;34m23:20:46[0m] [139911042528960] socket 1: SENT_SEGMENT=182 unacked=6
+[[1;34m23:20:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:46[0m] [139911050921664] socket 0: OOO seq=182 buffered
+[[1;34m23:20:50[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=6 messages
+[[1;34m23:20:50[0m] [139911050921664] socket 0: DATA seq=178 ACK=179 win=8
+[[1;34m23:20:50[0m] [139911050921664] socket 1: ACK ack=177 new_win=10
+[[1;34m23:20:50[0m] [139911050921664] socket 1: ACK ack=179 new_win=8
+[[1;34m23:20:50[0m] [139911050921664] socket 0: DATA seq=180 ACK=180 win=7
+[[1;34m23:20:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:50[0m] [139911050921664] socket 1: ACK ack=180 new_win=7
+[[1;34m23:20:52[0m] [139911042528960] socket 1: SENT_SEGMENT=183 unacked=3
+[[1;34m23:20:52[0m] [139911042528960] socket 1: SENT_SEGMENT=184 unacked=4
+[[1;34m23:20:52[0m] [139911042528960] socket 1: SENT_SEGMENT=185 unacked=5
+[[1;34m23:20:52[0m] [139911042528960] socket 1: SENT_SEGMENT=186 unacked=6
+[[1;34m23:20:52[0m] [139911042528960] socket 1: SENT_SEGMENT=187 unacked=7
+[[1;34m23:20:52[0m] [139911050921664] socket 0: OOO seq=183 buffered
+[[1;34m23:20:52[0m] [139911050921664] socket 0: OOO seq=184 buffered
+[[1;34m23:20:52[0m] [139911050921664] socket 0: OOO seq=185 buffered
+[[1;34m23:20:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:52[0m] [139911050921664] socket 0: OOO seq=187 buffered
+[[1;34m23:20:56[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:20:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:20:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:02[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:21:02[0m] [139911050921664] socket 0: DATA seq=181 ACK=185 win=5
+[[1;34m23:21:02[0m] [139911050921664] socket 1: ACK ack=185 new_win=5
+[[1;34m23:21:02[0m] [139911050921664] socket 1: ACK ack=185 new_win=5
+[[1;34m23:21:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:02[0m] [139911050921664] socket 1: ACK ack=185 new_win=5
+[[1;34m23:21:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:04[0m] [139911042528960] socket 1: SENT_SEGMENT=188 unacked=3
+[[1;34m23:21:04[0m] [139911042528960] socket 1: SENT_SEGMENT=189 unacked=4
+[[1;34m23:21:04[0m] [139911042528960] socket 1: SENT_SEGMENT=190 unacked=5
+[[1;34m23:21:04[0m] [139911050921664] socket 0: OOO seq=188 buffered
+[[1;34m23:21:04[0m] [139911050921664] socket 0: OOO seq=189 buffered
+[[1;34m23:21:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:08[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:08[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:08[0m] [139911050921664] socket 0: OOO seq=190 buffered
+[[1;34m23:21:14[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:14[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:20[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:20[0m] [139911050921664] socket 0: DATA seq=186 ACK=190 win=5
+[[1;34m23:21:20[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:20[0m] [139911050921664] socket 1: ACK ack=190 new_win=5
+[[1;34m23:21:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:20[0m] [139911050921664] socket 1: ACK ack=190 new_win=5
+[[1;34m23:21:22[0m] [139911042528960] socket 1: SENT_SEGMENT=191 unacked=1
+[[1;34m23:21:22[0m] [139911042528960] socket 1: SENT_SEGMENT=192 unacked=2
+[[1;34m23:21:22[0m] [139911042528960] socket 1: SENT_SEGMENT=193 unacked=3
+[[1;34m23:21:22[0m] [139911042528960] socket 1: SENT_SEGMENT=194 unacked=4
+[[1;34m23:21:22[0m] [139911042528960] socket 1: SENT_SEGMENT=195 unacked=5
+[[1;34m23:21:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:22[0m] [139911050921664] socket 0: OOO seq=192 buffered
+[[1;34m23:21:22[0m] [139911050921664] socket 0: OOO seq=193 buffered
+[[1;34m23:21:22[0m] [139911050921664] socket 0: OOO seq=194 buffered
+[[1;34m23:21:22[0m] [139911050921664] socket 0: OOO seq=195 buffered
+[[1;34m23:21:28[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:34[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:40[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:52[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:58[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:21:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:21:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:04[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:22:04[0m] [139911050921664] socket 0: DATA seq=191 ACK=195 win=5
+[[1;34m23:22:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:04[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:04[0m] [139911050921664] socket 1: ACK ack=195 new_win=5
+[[1;34m23:22:04[0m] [139911050921664] socket 1: ACK ack=195 new_win=5
+[[1;34m23:22:04[0m] [139911050921664] socket 1: ACK ack=195 new_win=5
+[[1;34m23:22:06[0m] [139911042528960] socket 1: SENT_SEGMENT=196 unacked=1
+[[1;34m23:22:06[0m] [139911042528960] socket 1: SENT_SEGMENT=197 unacked=2
+[[1;34m23:22:06[0m] [139911042528960] socket 1: SENT_SEGMENT=198 unacked=3
+[[1;34m23:22:06[0m] [139911042528960] socket 1: SENT_SEGMENT=199 unacked=4
+[[1;34m23:22:06[0m] [139911042528960] socket 1: SENT_SEGMENT=200 unacked=5
+[[1;34m23:22:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:06[0m] [139911050921664] socket 0: OOO seq=197 buffered
+[[1;34m23:22:06[0m] [139911050921664] socket 0: OOO seq=198 buffered
+[[1;34m23:22:06[0m] [139911050921664] socket 0: OOO seq=199 buffered
+[[1;34m23:22:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:12[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:22:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:12[0m] [139911050921664] socket 0: OOO seq=200 buffered
+[[1;34m23:22:18[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:22:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:24[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:22:24[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:24[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:24[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:30[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:22:30[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:30[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:36[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:22:36[0m] [139911050921664] socket 0: DATA seq=196 ACK=200 win=5
+[[1;34m23:22:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:36[0m] [139911050921664] socket 1: ACK ack=200 new_win=5
+[[1;34m23:22:36[0m] [139911050921664] socket 1: ACK ack=200 new_win=5
+[[1;34m23:22:36[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:36[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:38[0m] [139911042528960] socket 1: SENT_SEGMENT=201 unacked=1
+[[1;34m23:22:38[0m] [139911042528960] socket 1: SENT_SEGMENT=202 unacked=2
+[[1;34m23:22:38[0m] [139911042528960] socket 1: SENT_SEGMENT=203 unacked=3
+[[1;34m23:22:38[0m] [139911042528960] socket 1: SENT_SEGMENT=204 unacked=4
+[[1;34m23:22:38[0m] [139911042528960] socket 1: SENT_SEGMENT=205 unacked=5
+[[1;34m23:22:38[0m] [139911050921664] socket 0: DATA seq=201 ACK=201 win=9
+[[1;34m23:22:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:38[0m] [139911050921664] socket 1: ACK ack=201 new_win=9
+[[1;34m23:22:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:38[0m] [139911050921664] socket 0: OOO seq=204 buffered
+[[1;34m23:22:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:40[0m] [139911042528960] socket 1: SENT_SEGMENT=206 unacked=5
+[[1;34m23:22:40[0m] [139911042528960] socket 1: SENT_SEGMENT=207 unacked=6
+[[1;34m23:22:40[0m] [139911042528960] socket 1: SENT_SEGMENT=208 unacked=7
+[[1;34m23:22:40[0m] [139911042528960] socket 1: SENT_SEGMENT=209 unacked=8
+[[1;34m23:22:40[0m] [139911042528960] socket 1: SENT_SEGMENT=210 unacked=9
+[[1;34m23:22:40[0m] [139911050921664] socket 0: OOO seq=206 buffered
+[[1;34m23:22:40[0m] [139911050921664] socket 0: OOO seq=207 buffered
+[[1;34m23:22:40[0m] [139911050921664] socket 0: OOO seq=208 buffered
+[[1;34m23:22:40[0m] [139911050921664] socket 0: OOO seq=209 buffered
+[[1;34m23:22:40[0m] [139911050921664] socket 0: OOO seq=210 buffered
+[[1;34m23:22:44[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:22:44[0m] [139911050921664] socket 0: DATA seq=202 ACK=202 win=9
+[[1;34m23:22:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:44[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:44[0m] [139911050921664] socket 0: OOO seq=205 buffered
+[[1;34m23:22:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:22:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911050921664] socket 0: DATA seq=203 ACK=210 win=2
+[[1;34m23:22:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:50[0m] [139911050921664] socket 1: ACK ack=210 new_win=2
+[[1;34m23:22:50[0m] [139911050921664] socket 1: ACK ack=210 new_win=2
+[[1;34m23:22:52[0m] [139911042528960] socket 1: SENT_SEGMENT=211 unacked=1
+[[1;34m23:22:52[0m] [139911042528960] socket 1: SENT_SEGMENT=212 unacked=2
+[[1;34m23:22:52[0m] [139911050921664] socket 0: DATA seq=211 ACK=211 win=9
+[[1;34m23:22:52[0m] [139911050921664] socket 0: DATA seq=212 ACK=212 win=8
+[[1;34m23:22:52[0m] [139911050921664] socket 1: ACK ack=211 new_win=9
+[[1;34m23:22:52[0m] [139911050921664] socket 1: ACK ack=212 new_win=8
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=213 unacked=1
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=214 unacked=2
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=215 unacked=3
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=216 unacked=4
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=217 unacked=5
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=218 unacked=6
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=219 unacked=7
+[[1;34m23:22:54[0m] [139911042528960] socket 1: SENT_SEGMENT=220 unacked=8
+[[1;34m23:22:54[0m] [139911050921664] socket 0: DATA seq=213 ACK=213 win=9
+[[1;34m23:22:54[0m] [139911050921664] socket 0: DATA seq=214 ACK=214 win=8
+[[1;34m23:22:54[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:54[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:54[0m] [139911050921664] socket 1: ACK ack=214 new_win=8
+[[1;34m23:22:54[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:54[0m] [139911050921664] socket 0: OOO seq=217 buffered
+[[1;34m23:22:54[0m] [139911050921664] socket 0: OOO seq=218 buffered
+[[1;34m23:22:54[0m] [139911050921664] socket 0: OOO seq=219 buffered
+[[1;34m23:22:54[0m] [139911050921664] socket 0: OOO seq=220 buffered
+[[1;34m23:22:56[0m] [139911042528960] socket 1: SENT_SEGMENT=221 unacked=7
+[[1;34m23:22:56[0m] [139911042528960] socket 1: SENT_SEGMENT=222 unacked=8
+[[1;34m23:22:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:22:56[0m] [139911050921664] socket 0: OOO seq=222 buffered
+[[1;34m23:23:00[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:23:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:00[0m] [139911050921664] socket 0: OOO seq=216 buffered
+[[1;34m23:23:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:06[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:23:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:06[0m] [139911050921664] socket 0: OOO seq=221 buffered
+[[1;34m23:23:12[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:23:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:18[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:23:18[0m] [139911050921664] socket 0: DATA seq=215 ACK=222 win=2
+[[1;34m23:23:18[0m] [139911050921664] socket 1: ACK ack=222 new_win=2
+[[1;34m23:23:18[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:18[0m] [139911050921664] socket 1: ACK ack=222 new_win=2
+[[1;34m23:23:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:18[0m] [139911050921664] socket 1: ACK ack=222 new_win=2
+[[1;34m23:23:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:18[0m] [139911050921664] socket 1: ACK ack=222 new_win=2
+[[1;34m23:23:18[0m] [139911050921664] socket 1: ACK ack=222 new_win=2
+[[1;34m23:23:20[0m] [139911042528960] socket 1: SENT_SEGMENT=223 unacked=1
+[[1;34m23:23:20[0m] [139911042528960] socket 1: SENT_SEGMENT=224 unacked=2
+[[1;34m23:23:20[0m] [139911050921664] socket 0: DATA seq=223 ACK=223 win=9
+[[1;34m23:23:20[0m] [139911050921664] socket 0: DATA seq=224 ACK=224 win=8
+[[1;34m23:23:20[0m] [139911050921664] socket 1: ACK ack=223 new_win=9
+[[1;34m23:23:20[0m] [139911050921664] socket 1: ACK ack=224 new_win=8
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=225 unacked=1
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=226 unacked=2
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=227 unacked=3
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=228 unacked=4
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=229 unacked=5
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=230 unacked=6
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=231 unacked=7
+[[1;34m23:23:22[0m] [139911042528960] socket 1: SENT_SEGMENT=232 unacked=8
+[[1;34m23:23:22[0m] [139911050921664] socket 0: DATA seq=225 ACK=225 win=9
+[[1;34m23:23:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:22[0m] [139911050921664] socket 1: ACK ack=225 new_win=9
+[[1;34m23:23:22[0m] [139911050921664] socket 0: OOO seq=227 buffered
+[[1;34m23:23:22[0m] [139911050921664] socket 0: OOO seq=228 buffered
+[[1;34m23:23:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:24[0m] [139911042528960] socket 1: SENT_SEGMENT=233 unacked=8
+[[1;34m23:23:24[0m] [139911042528960] socket 1: SENT_SEGMENT=234 unacked=9
+[[1;34m23:23:24[0m] [139911050921664] socket 0: OOO seq=233 buffered
+[[1;34m23:23:24[0m] [139911050921664] socket 0: OOO seq=234 buffered
+[[1;34m23:23:28[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:23:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:28[0m] [139911050921664] socket 0: OOO seq=229 buffered
+[[1;34m23:23:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:28[0m] [139911050921664] socket 0: OOO seq=232 buffered
+[[1;34m23:23:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:34[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:23:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:40[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:23:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:23:46[0m] [139911050921664] socket 0: DATA seq=226 ACK=229 win=6
+[[1;34m23:23:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:46[0m] [139911050921664] socket 0: DATA seq=230 ACK=230 win=5
+[[1;34m23:23:46[0m] [139911050921664] socket 1: ACK ack=229 new_win=6
+[[1;34m23:23:46[0m] [139911050921664] socket 0: DATA seq=231 ACK=234 win=1
+[[1;34m23:23:46[0m] [139911050921664] socket 1: ACK ack=230 new_win=5
+[[1;34m23:23:46[0m] [139911050921664] socket 1: ACK ack=234 new_win=1
+[[1;34m23:23:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:46[0m] [139911050921664] socket 1: ACK ack=234 new_win=1
+[[1;34m23:23:48[0m] [139911042528960] socket 1: SENT_SEGMENT=235 unacked=1
+[[1;34m23:23:48[0m] [139911050921664] socket 0: DATA seq=235 ACK=235 win=9
+[[1;34m23:23:48[0m] [139911050921664] socket 1: ACK ack=235 new_win=9
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=236 unacked=1
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=237 unacked=2
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=238 unacked=3
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=239 unacked=4
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=240 unacked=5
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=241 unacked=6
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=242 unacked=7
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=243 unacked=8
+[[1;34m23:23:50[0m] [139911042528960] socket 1: SENT_SEGMENT=244 unacked=9
+[[1;34m23:23:50[0m] [139911050921664] socket 0: DATA seq=236 ACK=236 win=9
+[[1;34m23:23:50[0m] [139911050921664] socket 0: DATA seq=237 ACK=237 win=8
+[[1;34m23:23:50[0m] [139911050921664] socket 1: ACK ack=236 new_win=9
+[[1;34m23:23:50[0m] [139911050921664] socket 0: DATA seq=238 ACK=238 win=7
+[[1;34m23:23:50[0m] [139911050921664] socket 1: ACK ack=237 new_win=8
+[[1;34m23:23:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:50[0m] [139911050921664] socket 0: OOO seq=240 buffered
+[[1;34m23:23:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:50[0m] [139911050921664] socket 0: OOO seq=242 buffered
+[[1;34m23:23:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:50[0m] [139911050921664] socket 0: OOO seq=244 buffered
+[[1;34m23:23:52[0m] [139911042528960] socket 1: SENT_SEGMENT=245 unacked=8
+[[1;34m23:23:52[0m] [139911050921664] socket 0: OOO seq=245 buffered
+[[1;34m23:23:56[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:23:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:56[0m] [139911050921664] socket 1: ACK ack=238 new_win=10
+[[1;34m23:23:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:56[0m] [139911050921664] socket 0: OOO seq=241 buffered
+[[1;34m23:23:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:56[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:58[0m] [139911042528960] socket 1: SENT_SEGMENT=246 unacked=8
+[[1;34m23:23:58[0m] [139911042528960] socket 1: SENT_SEGMENT=247 unacked=9
+[[1;34m23:23:58[0m] [139911042528960] socket 1: SENT_SEGMENT=248 unacked=10
+[[1;34m23:23:58[0m] [139911050921664] socket 0: OOO seq=246 buffered
+[[1;34m23:23:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:23:58[0m] [139911050921664] socket 0: OOO seq=248 buffered
+[[1;34m23:24:02[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:24:02[0m] [139911050921664] socket 0: DATA seq=239 ACK=242 win=6
+[[1;34m23:24:02[0m] [139911050921664] socket 1: ACK ack=242 new_win=6
+[[1;34m23:24:02[0m] [139911050921664] socket 1: ACK ack=242 new_win=6
+[[1;34m23:24:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:02[0m] [139911050921664] socket 1: ACK ack=242 new_win=6
+[[1;34m23:24:02[0m] [139911050921664] socket 0: DATA seq=243 ACK=246 win=2
+[[1;34m23:24:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:02[0m] [139911050921664] socket 1: ACK ack=246 new_win=2
+[[1;34m23:24:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:02[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:02[0m] [139911050921664] socket 0: DATA seq=247 ACK=248 win=0
+[[1;34m23:24:02[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:02[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:03[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=248
+[[1;34m23:24:03[0m] [139911050921664] socket 1: ACK ack=248 new_win=10
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=249 unacked=1
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=250 unacked=2
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=251 unacked=3
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=252 unacked=4
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=253 unacked=5
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=254 unacked=6
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=4294967295 unacked=7
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=0 unacked=8
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=1 unacked=9
+[[1;34m23:24:04[0m] [139911042528960] socket 1: SENT_SEGMENT=2 unacked=10
+[[1;34m23:24:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:04[0m] [139911050921664] socket 0: OOO seq=250 buffered
+[[1;34m23:24:04[0m] [139911050921664] socket 0: OOO seq=251 buffered
+[[1;34m23:24:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:04[0m] [139911050921664] socket 0: OOO seq=254 buffered
+[[1;34m23:24:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:04[0m] [139911050921664] socket 0: OOO seq=0 buffered
+[[1;34m23:24:04[0m] [139911050921664] socket 0: OOO seq=1 buffered
+[[1;34m23:24:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:05[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=248
+[[1;34m23:24:05[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:06[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=248
+[[1;34m23:24:06[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:07[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=248
+[[1;34m23:24:07[0m] [139911050921664] socket 1: ACK ack=248 new_win=10
+[[1;34m23:24:08[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=248
+[[1;34m23:24:08[0m] [139911050921664] socket 1: ACK ack=248 new_win=10
+[[1;34m23:24:09[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=248
+[[1;34m23:24:09[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:10[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:24:10[0m] [139911050921664] socket 0: DATA seq=249 ACK=251 win=7
+[[1;34m23:24:10[0m] [139911050921664] socket 1: ACK ack=251 new_win=7
+[[1;34m23:24:10[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:10[0m] [139911050921664] socket 1: ACK ack=251 new_win=7
+[[1;34m23:24:10[0m] [139911050921664] socket 0: DATA seq=252 ACK=252 win=6
+[[1;34m23:24:10[0m] [139911050921664] socket 0: DATA seq=253 ACK=254 win=4
+[[1;34m23:24:10[0m] [139911050921664] socket 1: ACK ack=252 new_win=6
+[[1;34m23:24:10[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:10[0m] [139911050921664] socket 1: ACK ack=254 new_win=4
+[[1;34m23:24:10[0m] [139911050921664] socket 0: DATA seq=255 ACK=1 win=1
+[[1;34m23:24:10[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:10[0m] [139911050921664] socket 1: ACK ack=1 new_win=1
+[[1;34m23:24:10[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:10[0m] [139911050921664] socket 0: DATA seq=2 ACK=2 win=0
+[[1;34m23:24:10[0m] [139911050921664] socket 1: ACK ack=2 new_win=0
+[[1;34m23:24:11[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=2
+[[1;34m23:24:11[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:12[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=2
+[[1;34m23:24:12[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:13[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=2
+[[1;34m23:24:13[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:14[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=2
+[[1;34m23:24:14[0m] [139911050921664] socket 1: ACK ack=2 new_win=10
+[[1;34m23:24:15[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=2
+[[1;34m23:24:15[0m] [139911050921664] socket 1: ACK ack=2 new_win=10
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=3 unacked=1
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=4 unacked=2
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=5 unacked=3
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=6 unacked=4
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=7 unacked=5
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=8 unacked=6
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=9 unacked=7
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=10 unacked=8
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=11 unacked=9
+[[1;34m23:24:16[0m] [139911042528960] socket 1: SENT_SEGMENT=12 unacked=10
+[[1;34m23:24:16[0m] [139911050921664] socket 0: DATA seq=3 ACK=3 win=9
+[[1;34m23:24:16[0m] [139911050921664] socket 0: DATA seq=4 ACK=4 win=8
+[[1;34m23:24:16[0m] [139911050921664] socket 1: ACK ack=3 new_win=9
+[[1;34m23:24:16[0m] [139911050921664] socket 0: DATA seq=5 ACK=5 win=7
+[[1;34m23:24:16[0m] [139911050921664] socket 1: ACK ack=4 new_win=8
+[[1;34m23:24:16[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:16[0m] [139911050921664] socket 1: ACK ack=5 new_win=7
+[[1;34m23:24:16[0m] [139911050921664] socket 0: OOO seq=7 buffered
+[[1;34m23:24:16[0m] [139911050921664] socket 0: OOO seq=8 buffered
+[[1;34m23:24:16[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:16[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:16[0m] [139911050921664] socket 0: OOO seq=11 buffered
+[[1;34m23:24:16[0m] [139911050921664] socket 0: OOO seq=12 buffered
+[[1;34m23:24:22[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:24:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:22[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:28[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:24:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:34[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:24:34[0m] [139911050921664] socket 0: DATA seq=6 ACK=8 win=7
+[[1;34m23:24:34[0m] [139911050921664] socket 1: ACK ack=8 new_win=7
+[[1;34m23:24:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:34[0m] [139911050921664] socket 1: ACK ack=8 new_win=7
+[[1;34m23:24:34[0m] [139911050921664] socket 0: DATA seq=9 ACK=9 win=6
+[[1;34m23:24:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:34[0m] [139911050921664] socket 1: ACK ack=9 new_win=6
+[[1;34m23:24:36[0m] [139911042528960] socket 1: SENT_SEGMENT=13 unacked=4
+[[1;34m23:24:36[0m] [139911042528960] socket 1: SENT_SEGMENT=14 unacked=5
+[[1;34m23:24:36[0m] [139911042528960] socket 1: SENT_SEGMENT=15 unacked=6
+[[1;34m23:24:36[0m] [139911050921664] socket 0: OOO seq=13 buffered
+[[1;34m23:24:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:36[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:40[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=6 messages
+[[1;34m23:24:40[0m] [139911050921664] socket 0: DATA seq=10 ACK=13 win=6
+[[1;34m23:24:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:40[0m] [139911050921664] socket 1: ACK ack=13 new_win=6
+[[1;34m23:24:40[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:40[0m] [139911050921664] socket 0: DATA seq=14 ACK=14 win=5
+[[1;34m23:24:40[0m] [139911050921664] socket 1: ACK ack=13 new_win=6
+[[1;34m23:24:40[0m] [139911050921664] socket 0: DATA seq=15 ACK=15 win=4
+[[1;34m23:24:40[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:40[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:42[0m] [139911042528960] socket 1: SENT_SEGMENT=16 unacked=3
+[[1;34m23:24:42[0m] [139911042528960] socket 1: SENT_SEGMENT=17 unacked=4
+[[1;34m23:24:42[0m] [139911042528960] socket 1: SENT_SEGMENT=18 unacked=5
+[[1;34m23:24:42[0m] [139911042528960] socket 1: SENT_SEGMENT=19 unacked=6
+[[1;34m23:24:42[0m] [139911050921664] socket 0: DATA seq=16 ACK=16 win=9
+[[1;34m23:24:42[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:42[0m] [139911050921664] socket 1: ACK ack=16 new_win=9
+[[1;34m23:24:42[0m] [139911050921664] socket 0: OOO seq=18 buffered
+[[1;34m23:24:42[0m] [139911050921664] socket 0: OOO seq=19 buffered
+[[1;34m23:24:44[0m] [139911042528960] socket 1: SENT_SEGMENT=20 unacked=4
+[[1;34m23:24:44[0m] [139911042528960] socket 1: SENT_SEGMENT=21 unacked=5
+[[1;34m23:24:44[0m] [139911042528960] socket 1: SENT_SEGMENT=22 unacked=6
+[[1;34m23:24:44[0m] [139911042528960] socket 1: SENT_SEGMENT=23 unacked=7
+[[1;34m23:24:44[0m] [139911042528960] socket 1: SENT_SEGMENT=24 unacked=8
+[[1;34m23:24:44[0m] [139911042528960] socket 1: SENT_SEGMENT=25 unacked=9
+[[1;34m23:24:44[0m] [139911050921664] socket 0: OOO seq=20 buffered
+[[1;34m23:24:44[0m] [139911050921664] socket 0: OOO seq=21 buffered
+[[1;34m23:24:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:44[0m] [139911050921664] socket 0: OOO seq=24 buffered
+[[1;34m23:24:44[0m] [139911050921664] socket 0: OOO seq=25 buffered
+[[1;34m23:24:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:24:46[0m] [139911050921664] socket 0: DATA seq=17 ACK=21 win=5
+[[1;34m23:24:46[0m] [139911050921664] socket 1: ACK ack=21 new_win=5
+[[1;34m23:24:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:46[0m] [139911050921664] socket 1: ACK ack=21 new_win=5
+[[1;34m23:24:46[0m] [139911050921664] socket 0: OOO seq=23 buffered
+[[1;34m23:24:48[0m] [139911042528960] socket 1: SENT_SEGMENT=26 unacked=5
+[[1;34m23:24:48[0m] [139911050921664] socket 0: OOO seq=26 buffered
+[[1;34m23:24:52[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:24:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:58[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:24:58[0m] [139911050921664] socket 0: DATA seq=22 ACK=26 win=5
+[[1;34m23:24:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:58[0m] [139911050921664] socket 1: ACK ack=26 new_win=5
+[[1;34m23:24:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:58[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:24:58[0m] [139911050921664] socket 1: ACK ack=26 new_win=5
+[[1;34m23:25:00[0m] [139911042528960] socket 1: SENT_SEGMENT=27 unacked=1
+[[1;34m23:25:00[0m] [139911042528960] socket 1: SENT_SEGMENT=28 unacked=2
+[[1;34m23:25:00[0m] [139911042528960] socket 1: SENT_SEGMENT=29 unacked=3
+[[1;34m23:25:00[0m] [139911042528960] socket 1: SENT_SEGMENT=30 unacked=4
+[[1;34m23:25:00[0m] [139911042528960] socket 1: SENT_SEGMENT=31 unacked=5
+[[1;34m23:25:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:00[0m] [139911050921664] socket 0: OOO seq=28 buffered
+[[1;34m23:25:00[0m] [139911050921664] socket 0: OOO seq=29 buffered
+[[1;34m23:25:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:00[0m] [139911050921664] socket 0: OOO seq=31 buffered
+[[1;34m23:25:06[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:25:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:06[0m] [139911050921664] socket 0: OOO seq=30 buffered
+[[1;34m23:25:12[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:25:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:18[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:25:18[0m] [139911050921664] socket 0: DATA seq=27 ACK=31 win=5
+[[1;34m23:25:18[0m] [139911050921664] socket 1: ACK ack=31 new_win=5
+[[1;34m23:25:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:18[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:18[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:20[0m] [139911042528960] socket 1: SENT_SEGMENT=32 unacked=1
+[[1;34m23:25:20[0m] [139911042528960] socket 1: SENT_SEGMENT=33 unacked=2
+[[1;34m23:25:20[0m] [139911042528960] socket 1: SENT_SEGMENT=34 unacked=3
+[[1;34m23:25:20[0m] [139911042528960] socket 1: SENT_SEGMENT=35 unacked=4
+[[1;34m23:25:20[0m] [139911042528960] socket 1: SENT_SEGMENT=36 unacked=5
+[[1;34m23:25:20[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:20[0m] [139911050921664] socket 0: OOO seq=33 buffered
+[[1;34m23:25:20[0m] [139911050921664] socket 0: OOO seq=34 buffered
+[[1;34m23:25:20[0m] [139911050921664] socket 0: OOO seq=35 buffered
+[[1;34m23:25:20[0m] [139911050921664] socket 0: OOO seq=36 buffered
+[[1;34m23:25:26[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m23:25:26[0m] [139911050921664] socket 0: DATA seq=32 ACK=36 win=5
+[[1;34m23:25:26[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:26[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:26[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:26[0m] [139911050921664] socket 1: ACK ack=36 new_win=5
+[[1;34m23:25:28[0m] [139911042528960] socket 1: SENT_SEGMENT=37 unacked=1
+[[1;34m23:25:28[0m] [139911042528960] socket 1: SENT_SEGMENT=38 unacked=2
+[[1;34m23:25:28[0m] [139911042528960] socket 1: SENT_SEGMENT=39 unacked=3
+[[1;34m23:25:28[0m] [139911042528960] socket 1: SENT_SEGMENT=40 unacked=4
+[[1;34m23:25:28[0m] [139911042528960] socket 1: SENT_SEGMENT=41 unacked=5
+[[1;34m23:25:28[0m] [139911050921664] socket 0: DATA seq=37 ACK=37 win=9
+[[1;34m23:25:28[0m] [139911050921664] socket 0: DATA seq=38 ACK=38 win=8
+[[1;34m23:25:28[0m] [139911050921664] socket 1: ACK ack=37 new_win=9
+[[1;34m23:25:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:28[0m] [139911050921664] socket 1: ACK ack=38 new_win=8
+[[1;34m23:25:28[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:28[0m] [139911050921664] socket 0: OOO seq=41 buffered
+[[1;34m23:25:30[0m] [139911042528960] socket 1: SENT_SEGMENT=42 unacked=4
+[[1;34m23:25:30[0m] [139911042528960] socket 1: SENT_SEGMENT=43 unacked=5
+[[1;34m23:25:30[0m] [139911042528960] socket 1: SENT_SEGMENT=44 unacked=6
+[[1;34m23:25:30[0m] [139911042528960] socket 1: SENT_SEGMENT=45 unacked=7
+[[1;34m23:25:30[0m] [139911042528960] socket 1: SENT_SEGMENT=46 unacked=8
+[[1;34m23:25:30[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:30[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:30[0m] [139911050921664] socket 0: OOO seq=44 buffered
+[[1;34m23:25:30[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:30[0m] [139911050921664] socket 0: OOO seq=46 buffered
+[[1;34m23:25:34[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:25:34[0m] [139911050921664] socket 0: DATA seq=39 ACK=39 win=9
+[[1;34m23:25:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:34[0m] [139911050921664] socket 1: ACK ack=39 new_win=9
+[[1;34m23:25:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:34[0m] [139911050921664] socket 0: OOO seq=42 buffered
+[[1;34m23:25:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:34[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:36[0m] [139911042528960] socket 1: SENT_SEGMENT=47 unacked=8
+[[1;34m23:25:36[0m] [139911042528960] socket 1: SENT_SEGMENT=48 unacked=9
+[[1;34m23:25:36[0m] [139911050921664] socket 0: OOO seq=47 buffered
+[[1;34m23:25:36[0m] [139911050921664] socket 0: OOO seq=48 buffered
+[[1;34m23:25:40[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:25:40[0m] [139911050921664] socket 0: DATA seq=40 ACK=42 win=7
+[[1;34m23:25:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:40[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:40[0m] [139911050921664] socket 1: ACK ack=42 new_win=7
+[[1;34m23:25:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:40[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:42[0m] [139911042528960] socket 1: SENT_SEGMENT=49 unacked=7
+[[1;34m23:25:42[0m] [139911050921664] socket 0: OOO seq=49 buffered
+[[1;34m23:25:46[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=7 messages
+[[1;34m23:25:46[0m] [139911050921664] socket 0: DATA seq=43 ACK=44 win=8
+[[1;34m23:25:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:46[0m] [139911050921664] socket 1: ACK ack=44 new_win=8
+[[1;34m23:25:46[0m] [139911050921664] socket 0: DATA seq=45 ACK=49 win=3
+[[1;34m23:25:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:46[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:46[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:48[0m] [139911042528960] socket 1: SENT_SEGMENT=50 unacked=6
+[[1;34m23:25:48[0m] [139911042528960] socket 1: SENT_SEGMENT=51 unacked=7
+[[1;34m23:25:48[0m] [139911042528960] socket 1: SENT_SEGMENT=52 unacked=8
+[[1;34m23:25:48[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:48[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:48[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:52[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=8 messages
+[[1;34m23:25:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:52[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:52[0m] [139911050921664] socket 1: ACK ack=49 new_win=10
+[[1;34m23:25:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:52[0m] [139911050921664] socket 1: ACK ack=49 new_win=10
+[[1;34m23:25:52[0m] [139911050921664] socket 0: OOO seq=51 buffered
+[[1;34m23:25:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:54[0m] [139911042528960] socket 1: SENT_SEGMENT=53 unacked=4
+[[1;34m23:25:54[0m] [139911042528960] socket 1: SENT_SEGMENT=54 unacked=5
+[[1;34m23:25:54[0m] [139911042528960] socket 1: SENT_SEGMENT=55 unacked=6
+[[1;34m23:25:54[0m] [139911042528960] socket 1: SENT_SEGMENT=56 unacked=7
+[[1;34m23:25:54[0m] [139911042528960] socket 1: SENT_SEGMENT=57 unacked=8
+[[1;34m23:25:54[0m] [139911042528960] socket 1: SENT_SEGMENT=58 unacked=9
+[[1;34m23:25:54[0m] [139911042528960] socket 1: SENT_SEGMENT=59 unacked=10
+[[1;34m23:25:54[0m] [139911050921664] socket 0: OOO seq=53 buffered
+[[1;34m23:25:54[0m] [139911050921664] socket 0: OOO seq=54 buffered
+[[1;34m23:25:54[0m] [139911050921664] socket 0: OOO seq=55 buffered
+[[1;34m23:25:54[0m] [139911050921664] socket 0: OOO seq=56 buffered
+[[1;34m23:25:54[0m] [139911050921664] socket 0: OOO seq=57 buffered
+[[1;34m23:25:54[0m] [139911050921664] socket 0: OOO seq=58 buffered
+[[1;34m23:25:54[0m] [139911050921664] socket 0: OOO seq=59 buffered
+[[1;34m23:25:58[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:25:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:58[0m] [139911050921664] socket 0: OOO seq=52 buffered
+[[1;34m23:25:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:25:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:04[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:26:04[0m] [139911050921664] socket 0: DATA seq=50 ACK=59 win=0
+[[1;34m23:26:04[0m] [139911050921664] socket 1: ACK ack=59 new_win=0
+[[1;34m23:26:04[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:04[0m] [139911050921664] socket 1: ACK ack=59 new_win=0
+[[1;34m23:26:04[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:04[0m] [139911050921664] socket 1: ACK ack=59 new_win=0
+[[1;34m23:26:04[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:04[0m] [139911050921664] socket 1: ACK ack=59 new_win=0
+[[1;34m23:26:04[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:04[0m] [139911050921664] socket 1: ACK ack=59 new_win=0
+[[1;34m23:26:04[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:05[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:05[0m] [139911050921664] socket 1: ACK ack=59 new_win=10
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=60 unacked=1
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=61 unacked=2
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=62 unacked=3
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=63 unacked=4
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=64 unacked=5
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=65 unacked=6
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=66 unacked=7
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=67 unacked=8
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=68 unacked=9
+[[1;34m23:26:06[0m] [139911042528960] socket 1: SENT_SEGMENT=69 unacked=10
+[[1;34m23:26:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:06[0m] [139911050921664] socket 0: OOO seq=61 buffered
+[[1;34m23:26:06[0m] [139911050921664] socket 0: OOO seq=62 buffered
+[[1;34m23:26:06[0m] [139911050921664] socket 0: OOO seq=63 buffered
+[[1;34m23:26:06[0m] [139911050921664] socket 0: OOO seq=64 buffered
+[[1;34m23:26:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:06[0m] [139911050921664] socket 0: OOO seq=67 buffered
+[[1;34m23:26:06[0m] [139911050921664] socket 0: OOO seq=68 buffered
+[[1;34m23:26:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:07[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:07[0m] [139911050921664] socket 1: ACK ack=59 new_win=10
+[[1;34m23:26:08[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:08[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:09[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:09[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:10[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:10[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:11[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:11[0m] [139911050921664] socket 1: ACK ack=59 new_win=10
+[[1;34m23:26:12[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:26:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:12[0m] [139911050921664] socket 0: OOO seq=66 buffered
+[[1;34m23:26:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:12[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:13[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:13[0m] [139911050921664] socket 1: ACK ack=59 new_win=10
+[[1;34m23:26:14[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:14[0m] [139911050921664] socket 1: ACK ack=59 new_win=10
+[[1;34m23:26:15[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:15[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:16[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:16[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:17[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=59
+[[1;34m23:26:17[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:18[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:26:18[0m] [139911050921664] socket 0: DATA seq=60 ACK=64 win=5
+[[1;34m23:26:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:18[0m] [139911050921664] socket 1: ACK ack=64 new_win=5
+[[1;34m23:26:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:18[0m] [139911050921664] socket 0: DATA seq=65 ACK=68 win=1
+[[1;34m23:26:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:18[0m] [139911050921664] socket 1: ACK ack=68 new_win=1
+[[1;34m23:26:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:18[0m] [139911050921664] socket 1: ACK ack=68 new_win=1
+[[1;34m23:26:18[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:24[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=1 messages
+[[1;34m23:26:24[0m] [139911050921664] socket 0: DATA seq=69 ACK=69 win=9
+[[1;34m23:26:24[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:30[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=1 messages
+[[1;34m23:26:30[0m] [139911050921664] socket 1: ACK ack=69 new_win=10
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=70 unacked=1
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=71 unacked=2
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=72 unacked=3
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=73 unacked=4
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=74 unacked=5
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=75 unacked=6
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=76 unacked=7
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=77 unacked=8
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=78 unacked=9
+[[1;34m23:26:32[0m] [139911042528960] socket 1: SENT_SEGMENT=79 unacked=10
+[[1;34m23:26:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:32[0m] [139911050921664] socket 0: OOO seq=74 buffered
+[[1;34m23:26:32[0m] [139911050921664] socket 0: OOO seq=75 buffered
+[[1;34m23:26:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:32[0m] [139911050921664] socket 0: OOO seq=77 buffered
+[[1;34m23:26:32[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:32[0m] [139911050921664] socket 0: OOO seq=79 buffered
+[[1;34m23:26:38[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:26:38[0m] [139911050921664] socket 0: DATA seq=70 ACK=70 win=9
+[[1;34m23:26:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:38[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:38[0m] [139911050921664] socket 0: OOO seq=72 buffered
+[[1;34m23:26:38[0m] [139911050921664] socket 0: OOO seq=73 buffered
+[[1;34m23:26:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:38[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:38[0m] [139911050921664] socket 0: OOO seq=78 buffered
+[[1;34m23:26:44[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:26:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:44[0m] [139911050921664] socket 1: ACK ack=70 new_win=10
+[[1;34m23:26:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:44[0m] [139911050921664] socket 0: OOO seq=76 buffered
+[[1;34m23:26:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:44[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:46[0m] [139911042528960] socket 1: SENT_SEGMENT=80 unacked=10
+[[1;34m23:26:46[0m] [139911050921664] socket 0: OOO seq=80 buffered
+[[1;34m23:26:50[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=10 messages
+[[1;34m23:26:50[0m] [139911050921664] socket 0: DATA seq=71 ACK=80 win=0
+[[1;34m23:26:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:50[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:50[0m] [139911050921664] socket 1: ACK ack=80 new_win=0
+[[1;34m23:26:50[0m] [139911050921664] socket 1: ACK ack=80 new_win=0
+[[1;34m23:26:50[0m] [139911050921664] socket 1: ACK ack=80 new_win=0
+[[1;34m23:26:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:50[0m] [139911050921664] socket 1: ACK ack=80 new_win=0
+[[1;34m23:26:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:50[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:51[0m] [139911050921664] socket 0: nospace cleared, sent dup ACK ack=80
+[[1;34m23:26:51[0m] [139911050921664] socket 1: ACK ack=80 new_win=10
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=81 unacked=1
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=82 unacked=2
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=83 unacked=3
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=84 unacked=4
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=85 unacked=5
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=86 unacked=6
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=87 unacked=7
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=88 unacked=8
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=89 unacked=9
+[[1;34m23:26:52[0m] [139911042528960] socket 1: SENT_SEGMENT=90 unacked=10
+[[1;34m23:26:52[0m] [139911050921664] socket 0: DATA seq=81 ACK=81 win=9
+[[1;34m23:26:52[0m] [139911050921664] socket 0: DATA seq=82 ACK=82 win=8
+[[1;34m23:26:52[0m] [139911050921664] socket 1: ACK ack=81 new_win=9
+[[1;34m23:26:52[0m] [139911050921664] socket 0: DATA seq=83 ACK=83 win=7
+[[1;34m23:26:52[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:52[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:52[0m] [139911050921664] socket 0: OOO seq=85 buffered
+[[1;34m23:26:52[0m] [139911050921664] socket 0: OOO seq=86 buffered
+[[1;34m23:26:52[0m] [139911050921664] socket 0: OOO seq=87 buffered
+[[1;34m23:26:52[0m] [139911050921664] socket 0: OOO seq=88 buffered
+[[1;34m23:26:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:52[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:58[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=9 messages
+[[1;34m23:26:58[0m] [139911050921664] socket 1: ACK ack=83 new_win=10
+[[1;34m23:26:58[0m] [139911050921664] socket 0: DATA seq=84 ACK=88 win=5
+[[1;34m23:26:58[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:58[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:58[0m] [139911050921664] socket 1: ACK ack=88 new_win=5
+[[1;34m23:26:58[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:26:58[0m] [139911050921664] socket 0: DATA seq=89 ACK=89 win=4
+[[1;34m23:26:58[0m] [139911050921664] socket 1: ACK ack=88 new_win=5
+[[1;34m23:26:58[0m] [139911050921664] socket 0: DATA seq=90 ACK=90 win=3
+[[1;34m23:26:58[0m] [139911050921664] socket 1: ACK ack=89 new_win=4
+[[1;34m23:26:58[0m] [139911050921664] socket 1: ACK ack=90 new_win=3
+[[1;34m23:27:00[0m] [139911042528960] socket 1: SENT_SEGMENT=91 unacked=1
+[[1;34m23:27:00[0m] [139911042528960] socket 1: SENT_SEGMENT=92 unacked=2
+[[1;34m23:27:00[0m] [139911042528960] socket 1: SENT_SEGMENT=93 unacked=3
+[[1;34m23:27:00[0m] [139911050921664] socket 0: DATA seq=91 ACK=91 win=9
+[[1;34m23:27:00[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:27:00[0m] [139911050921664] socket 1: ACK ack=91 new_win=9
+[[1;34m23:27:00[0m] [139911050921664] socket 0: OOO seq=93 buffered
+[[1;34m23:27:06[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=2 messages
+[[1;34m23:27:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:27:06[0m] [139911050921664] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m23:27:12[0m] [139911042528960] socket 1: TIMEOUT_RETRANSMITTING=2 messages
+[[1;34m23:27:12[0m] [139911050921664] socket 0: DATA seq=92 ACK=93 win=8
+[[1;34m23:27:12[0m] [139911050921664] socket 1: PACKET_DROPPED (simulated loss)
+[[1;34m23:27:12[0m] [139911050921664] socket 1: ACK ack=93 new_win=8
+[[1;34m23:27:14[0m] [139911053571904] socket: request to close socket 1 (udp_sock = 11)
+[[1;34m23:27:14[0m] [139911053571904] socket: closed socket 1
+[[1;34m23:27:25[0m] [139911053571904] socket: request to close socket 0 (udp_sock = 10)
+[[1;34m23:27:25[0m] [139911053571904] socket: closed socket 0
+[[1;34m23:27:26[0m] [139911042528960] thread: shut down Sender routine
+[[1;34m23:27:26[0m] [139911050921664] thread: shut down Receiver routine
+[[1;34m23:27:28[0m] [139911034136256] thread: shut down Garbage Collector routine
+[[1;34m23:27:28[0m] [139911053571904] socket: close all open socket fds
+[[1;34m23:27:28[0m] [139911053571904] shm: destroy table mutex
+[[1;34m23:27:28[0m] [139911053571904] shm: destroy system semaphore
+[[1;34m23:27:28[0m] [139911053571904] shm: destroy library semaphore
+[[1;34m23:27:28[0m] [139911053571904] shm: dettach from memory
+[[1;34m23:27:28[0m] [139911053571904] shm: destroy shm segment
+[[1;34m23:27:28[0m] [139911053571904] shm: destroyed socket table shared memory
