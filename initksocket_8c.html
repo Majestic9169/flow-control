@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('initksocket_8c.html',''); initResizabl
 <code>#include &quot;<a class="el" href="kinternal_8h_source.html">kinternal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ksocket_8h_source.html">ksocket.h</a>&quot;</code><br />
 <code>#include &lt;arpa/inet.h&gt;</code><br />
+<code>#include &lt;asm-generic/errno-base.h&gt;</code><br />
 <code>#include &lt;bits/pthreadtypes.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
 <code>#include &lt;fcntl.h&gt;</code><br />
@@ -253,7 +254,7 @@ volatile sig_atomic_t&#160;</td><td class="memItemRight" valign="bottom"><b>is_e
 </div><div class="memdoc">
 
 <p>garbage collector routine </p>
-<p>empty up unterminated sockets once their parent processes are killed</p>
+<p>empty up unterminated sockets once their parent processes are killed, also close the connection to their destination so that it also exits</p>
 <dl class="section note"><dt>Note</dt><dd>assignemnt didn't say anyth abt how often, so I just set freq as every T </dd></dl>
 
 </div>

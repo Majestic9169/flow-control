@@ -344,7 +344,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>-1 on error, due to no message in buffer is ENOMESSAGE</dd></dl>
-<p>pops the oldest message from the recv buffer. Returns immediately n does not block if no msg available. </p>
+<p>pops the oldest message from the recv buffer. Returns immediately n does not block if no msg available.</p>
+<dl class="section return"><dt>Returns</dt><dd>the return value is -1 on errors, or MSG_SIZE on success since the popped packet must always be of size MSG_SIZE</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>the value of length <b>IS NOT</b> set to MSG_SIZE and is essentially ignored by the function </dd></dl>
 
 </div>
 </div>
