@@ -118,25 +118,31 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>T</b>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:a0acb682b8260ab1c60b918599864e2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a516ddd3ab90372e8d67c25228931ac08"><td class="memItemLeft" align="right" valign="top"><a id="a516ddd3ab90372e8d67c25228931ac08" name="a516ddd3ab90372e8d67c25228931ac08"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DROP_PROBAB</b>&#160;&#160;&#160;0.35f</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DROP_PROBAB</b>&#160;&#160;&#160;0.05f</td></tr>
 <tr class="separator:a516ddd3ab90372e8d67c25228931ac08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a516ddd3ab90372e8d67c25228931ac08"><td class="memItemLeft" align="right" valign="top"><a id="a516ddd3ab90372e8d67c25228931ac08" name="a516ddd3ab90372e8d67c25228931ac08"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DROP_PROBAB</b>&#160;&#160;&#160;0.30f</td></tr>
-<tr class="separator:a516ddd3ab90372e8d67c25228931ac08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">custom KTP errors</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>custom error codes <a class="anchor" id="custom_err"></a> These start at 200 to avoid system error overlaps (those go upto ~133) </p>
+</div></td></tr>
 <tr class="memitem:a0bf3e9d049a9238dc4639ec4f9999e4a"><td class="memItemLeft" align="right" valign="top"><a id="a0bf3e9d049a9238dc4639ec4f9999e4a" name="a0bf3e9d049a9238dc4639ec4f9999e4a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ENOSPACE</b>&#160;&#160;&#160;200</td></tr>
+<tr class="memdesc:a0bf3e9d049a9238dc4639ec4f9999e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">No free space available in the required buffer. <br /></td></tr>
 <tr class="separator:a0bf3e9d049a9238dc4639ec4f9999e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab46e1dbfd4cc439ee767cbde32091e8d"><td class="memItemLeft" align="right" valign="top"><a id="ab46e1dbfd4cc439ee767cbde32091e8d" name="ab46e1dbfd4cc439ee767cbde32091e8d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ENOTBOUND</b>&#160;&#160;&#160;201</td></tr>
+<tr class="memdesc:ab46e1dbfd4cc439ee767cbde32091e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The queried address is not bound to the socket. <br /></td></tr>
 <tr class="separator:ab46e1dbfd4cc439ee767cbde32091e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f035de1c8bc89b23d638297fcd891df"><td class="memItemLeft" align="right" valign="top"><a id="a2f035de1c8bc89b23d638297fcd891df" name="a2f035de1c8bc89b23d638297fcd891df"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ENOMESSAGE</b>&#160;&#160;&#160;202</td></tr>
+<tr class="memdesc:a2f035de1c8bc89b23d638297fcd891df"><td class="mdescLeft">&#160;</td><td class="mdescRight">No message is available in the message buffer. <br /></td></tr>
 <tr class="separator:a2f035de1c8bc89b23d638297fcd891df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af8df4af1df48d62aaa7daf89d481bce4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8h.html#af8df4af1df48d62aaa7daf89d481bce4">k_strerr</a> (int err)</td></tr>
+<tr class="memdesc:af8df4af1df48d62aaa7daf89d481bce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">return error messages for custom error codes  <br /></td></tr>
+<tr class="separator:af8df4af1df48d62aaa7daf89d481bce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dd94f29c195c659a0cb63a138389214"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8h.html#a5dd94f29c195c659a0cb63a138389214">k_socket</a> (int domain, int type, int protocol)</td></tr>
-<tr class="memdesc:a5dd94f29c195c659a0cb63a138389214"><td class="mdescLeft">&#160;</td><td class="mdescRight">return error messages for custom error codes  <br /></td></tr>
+<tr class="memdesc:a5dd94f29c195c659a0cb63a138389214"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a KTP socket  <br /></td></tr>
 <tr class="separator:a5dd94f29c195c659a0cb63a138389214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3fc6713af0ddafe05416f1008428f13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8h.html#ac3fc6713af0ddafe05416f1008428f13">k_bind</a> (int sockfd, const struct sockaddr *src_addr, const socklen_t src_addr_len, const struct sockaddr *dst_addr, const socklen_t dst_addr_len)</td></tr>
 <tr class="memdesc:ac3fc6713af0ddafe05416f1008428f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">bind the socket to a client and server address  <br /></td></tr>
@@ -445,15 +451,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>return error messages for custom error codes </p>
-<p>get the string description for the custom errors defined for KTP <a class="el" href="/home/runner/work/flow-control/flow-control/lib/ksocket.h#custom_err">custom_err</a></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">err</td><td>the global error number variable to check (errno)</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>create a KTP socket</p>
+<p>create a KTP socket </p>
 <p>open a udp socket with SOCK_KTP type and create an entry for it in the system shared memory</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -467,6 +465,33 @@ Functions</h2></td></tr>
 <p>request a socket from the "init" process and populate its entries</p>
 <dl class="section warning"><dt>Warning</dt><dd>we can not directly call "socket" from this function as the file desriptor returned will be unique for this process and unuseable by the init process.</dd></dl>
 <p>we will instead request the init process to create an FD for us by signalling a semaphore, and waiting on another semaphore that tells us when it is ready </p>
+
+</div>
+</div>
+<a id="af8df4af1df48d62aaa7daf89d481bce4" name="af8df4af1df48d62aaa7daf89d481bce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8df4af1df48d62aaa7daf89d481bce4">&#9670;&#160;</a></span>k_strerr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * k_strerr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>err</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>return error messages for custom error codes </p>
+<p>get the string description for the custom errors defined for KTP <a class="el" href="ksocket_8h.html#custom_err">custom_err</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">err</td><td>the global error number variable to check (errno) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

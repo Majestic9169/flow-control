@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ooo_5fcount_0',['ooo_count',['../struct____rwnd__t.html#a181cc7382b2d1115200931bfaa12e4ab',1,'__rwnd_t']]],
-  ['ooo_5fdata_1',['ooo_data',['../struct____rwnd__t.html#a0825bf586bccda80f6dcbb837741ae4f',1,'__rwnd_t']]],
-  ['ooo_5fseq_2',['ooo_seq',['../struct____rwnd__t.html#ad5da37b9beff379aacecfec807735175',1,'__rwnd_t']]]
+  ['next_5fseq_0',['next_seq',['../struct____k__socket__t.html#a93a37452c1c84de28bea5a46b6530879',1,'__k_socket_t']]],
+  ['nospace_1',['nospace',['../struct____k__socket__t.html#ad5015629622742261785356ea0ff0a54',1,'__k_socket_t']]]
 ];

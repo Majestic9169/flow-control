@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['last_5facked_5fseq_0',['last_acked_seq',['../struct____k__socket__t.html#ae842cd00e011138b4ed15cb1d9776ec7',1,'__k_socket_t']]],
-  ['last_5fsent_1',['last_sent',['../struct____swnd__t.html#a92a4ad7dcd99ff53d8106fac21bfbe40',1,'__swnd_t']]],
-  ['left_2',['left',['../struct____buf__t.html#a4a25792a23f5d118bf884b1658f3fd28',1,'__buf_t']]],
-  ['lib_5fsem_3',['lib_sem',['../structsocket__table__t.html#a9048a8e58ee3e66d0b462c11e7721961',1,'socket_table_t']]]
+  ['k_5fbind_0',['k_bind',['../ksocket_8c.html#ac3fc6713af0ddafe05416f1008428f13',1,'k_bind(int sockfd, const struct sockaddr *src_addr, const socklen_t src_addr_len, const struct sockaddr *dst_addr, const socklen_t dst_addr_len):&#160;ksocket.c'],['../ksocket_8h.html#ac3fc6713af0ddafe05416f1008428f13',1,'k_bind(int sockfd, const struct sockaddr *src_addr, const socklen_t src_addr_len, const struct sockaddr *dst_addr, const socklen_t dst_addr_len):&#160;ksocket.c']]],
+  ['k_5fclose_1',['k_close',['../ksocket_8c.html#a9ecd38dc6f3a9721ab53ff9a815b5480',1,'k_close(int fd):&#160;ksocket.c'],['../ksocket_8h.html#a9ecd38dc6f3a9721ab53ff9a815b5480',1,'k_close(int fd):&#160;ksocket.c']]],
+  ['k_5frecvfrom_2',['k_recvfrom',['../ksocket_8c.html#ab5f32ef6031ca16aba6b8bb438cd0236',1,'k_recvfrom(int socket, void *buffer, size_t length, int flags, const struct sockaddr *address, socklen_t address_len):&#160;ksocket.c'],['../ksocket_8h.html#ab5f32ef6031ca16aba6b8bb438cd0236',1,'k_recvfrom(int socket, void *buffer, size_t length, int flags, const struct sockaddr *address, socklen_t address_len):&#160;ksocket.c']]],
+  ['k_5fsendto_3',['k_sendto',['../ksocket_8c.html#a517531ef1ba157d1a3ba061f774cddbb',1,'k_sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len):&#160;ksocket.c'],['../ksocket_8h.html#a517531ef1ba157d1a3ba061f774cddbb',1,'k_sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len):&#160;ksocket.c']]],
+  ['k_5fsocket_4',['k_socket',['../ksocket_8c.html#a5dd94f29c195c659a0cb63a138389214',1,'k_socket(int domain, int type, int protocol):&#160;ksocket.c'],['../ksocket_8h.html#a5dd94f29c195c659a0cb63a138389214',1,'k_socket(int domain, int type, int protocol):&#160;ksocket.c']]],
+  ['k_5fstrerr_5',['k_strerr',['../ksocket_8c.html#af8df4af1df48d62aaa7daf89d481bce4',1,'k_strerr(int err):&#160;ksocket.c'],['../ksocket_8h.html#af8df4af1df48d62aaa7daf89d481bce4',1,'k_strerr(int err):&#160;ksocket.c']]],
+  ['kinternal_2eh_6',['kinternal.h',['../kinternal_8h.html',1,'']]],
+  ['ksocket_2ec_7',['ksocket.c',['../ksocket_8c.html',1,'']]],
+  ['ksocket_2eh_8',['ksocket.h',['../ksocket_8h.html',1,'']]]
 ];
