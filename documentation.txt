@@ -1,0 +1,29 @@
+Networks Mini Project 1
+Team: 23CS30033 (Mehul Mathur), 23CS30065 (Tegan Jain)
+
+GitHub repository link: 
+https://github.com/Majestic9169/flow-control
+
+Documentation page (with list and description of functions and structures):
+https://majestic9169.github.io/flow-control
+
+
+Attached is also the zip file containing the current version of the project (as directed in the assignment).
+
+
+To run the project:
+
+1) Recommended: 
+	Clone the github repo by: git clone https://github.com/Majestic9169/flow-control.git
+	
+   Or you can unzip the zip file
+
+2) Open two terminals, say terminal1 and terminal2
+	- In terminal1 do:
+		cd sys; make run
+
+	- In terminal2 do:
+		cd app; make run TESTFILE="../testfile.txt"
+
+   This would test the transfer of testfile from user1 to user2 in terminal2, simultaneouly loggin in terminal1
+		

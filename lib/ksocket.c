@@ -305,13 +305,15 @@ int k_close(int fd) {
    */
   while (1) {
     sem_wait(&t->mtx);
-    int send_empty    = (t->sockets[fd].send_buf.count == 0);
+    int send_empty = (t->sockets[fd].send_buf.count == 0);
     int unacked_empty = (t->sockets[fd].swnd.unacked_count == 0);
     sem_post(&t->mtx);
- 
-    if (send_empty && unacked_empty) break;
- 
-    /* check every T/4 secs (T/4 should be fine ig, lesser would waste time as blocks mtx) */
+
+    if (send_empty && unacked_empty)
+      break;
+
+    /* check every T/4 secs (T/4 should be fine ig, lesser would waste time as
+     * blocks mtx) */
     usleep((T * 1000000) / 4);
   }
 
