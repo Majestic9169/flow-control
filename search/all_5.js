@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['enomessage_0',['ENOMESSAGE',['../ksocket_8h.html#a2f035de1c8bc89b23d638297fcd891df',1,'ksocket.h']]],
-  ['enospace_1',['ENOSPACE',['../ksocket_8h.html#a0bf3e9d049a9238dc4639ec4f9999e4a',1,'ksocket.h']]],
-  ['enotbound_2',['ENOTBOUND',['../ksocket_8h.html#ab46e1dbfd4cc439ee767cbde32091e8d',1,'ksocket.h']]]
+  ['f_5fack_0',['f_ack',['../struct____ktp__header.html#a6168ebc431ddc07c1fb68140a3772f84',1,'__ktp_header']]],
+  ['f_5fsyn_1',['f_syn',['../struct____ktp__header.html#ac7658c74291db5de2a707d0b1889a2d1',1,'__ktp_header']]],
+  ['frsvd_2',['frsvd',['../struct____ktp__header.html#a3d310d7a8730d8f086be37e039efe225',1,'__ktp_header']]]
 ];

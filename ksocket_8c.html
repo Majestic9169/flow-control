@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('ksocket_8c.html',''); initResizable();
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5dd94f29c195c659a0cb63a138389214"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#a5dd94f29c195c659a0cb63a138389214">k_socket</a> (int domain, int type, int protocol)</td></tr>
-<tr class="memdesc:a5dd94f29c195c659a0cb63a138389214"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a KTP socket  <br /></td></tr>
+<tr class="memdesc:a5dd94f29c195c659a0cb63a138389214"><td class="mdescLeft">&#160;</td><td class="mdescRight">return error messages for custom error codes  <br /></td></tr>
 <tr class="separator:a5dd94f29c195c659a0cb63a138389214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3fc6713af0ddafe05416f1008428f13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#ac3fc6713af0ddafe05416f1008428f13">k_bind</a> (int sockfd, const struct sockaddr *src_addr, const socklen_t src_addr_len, const struct sockaddr *dst_addr, const socklen_t dst_addr_len)</td></tr>
 <tr class="memdesc:ac3fc6713af0ddafe05416f1008428f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">bind the socket to a client and server address  <br /></td></tr>
@@ -148,8 +148,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a9f23d7f40c70150a30f5ca9006dd6fba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsocket__table__t.html">socket_table_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#a9f23d7f40c70150a30f5ca9006dd6fba">attach_table</a> (const char *name, int mode)</td></tr>
 <tr class="memdesc:a9f23d7f40c70150a30f5ca9006dd6fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">attach to socktable  <br /></td></tr>
 <tr class="separator:a9f23d7f40c70150a30f5ca9006dd6fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8df4af1df48d62aaa7daf89d481bce4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ksocket_8c.html#af8df4af1df48d62aaa7daf89d481bce4">k_strerr</a> (int err)</td></tr>
-<tr class="memdesc:af8df4af1df48d62aaa7daf89d481bce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">return error messages for custom error codes  <br /></td></tr>
+<tr class="memitem:af8df4af1df48d62aaa7daf89d481bce4"><td class="memItemLeft" align="right" valign="top"><a id="af8df4af1df48d62aaa7daf89d481bce4" name="af8df4af1df48d62aaa7daf89d481bce4"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>k_strerr</b> (int err)</td></tr>
 <tr class="separator:af8df4af1df48d62aaa7daf89d481bce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -466,37 +466,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>create a KTP socket </p>
+<p>return error messages for custom error codes </p>
 <p>request a socket from the "init" process and populate its entries</p>
 <dl class="section warning"><dt>Warning</dt><dd>we can not directly call "socket" from this function as the file desriptor returned will be unique for this process and unuseable by the init process.</dd></dl>
 <p>we will instead request the init process to create an FD for us by signalling a semaphore, and waiting on another semaphore that tells us when it is ready </p>
-
-</div>
-</div>
-<a id="af8df4af1df48d62aaa7daf89d481bce4" name="af8df4af1df48d62aaa7daf89d481bce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8df4af1df48d62aaa7daf89d481bce4">&#9670;&#160;</a></span>k_strerr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * k_strerr </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>err</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>return error messages for custom error codes </p>
-<p>get the string description for the custom errors defined for KTP <a class="el" href="ksocket_8h.html#custom_err">custom_err</a></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">err</td><td>the global error number variable to check (errno) </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
