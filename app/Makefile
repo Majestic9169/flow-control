@@ -5,7 +5,7 @@ CFLAGS := -Wall -g -ggdb \
 					-Wfloat-equal \
 					-O2 -I../lib/
 
-TESTFILE := ../testfile_small.txt
+TESTFILE := ../payload.png
 
 .PHONY: all clean run
 
