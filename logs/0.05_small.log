@@ -1,0 +1,60 @@
+./ksocketd
+[[1;34m22:11:33[0m] [140458532443968] shm: created shm segment /ktp_socket_table
+[[1;34m22:11:33[0m] [140458532443968] shm: resized shm segment
+[[1;34m22:11:33[0m] [140458532443968] shm: attached to shm segment
+[[1;34m22:11:33[0m] [140458532443968] shm: initialised table mutex
+[[1;34m22:11:33[0m] [140458532443968] shm: initialised library semaphore
+[[1;34m22:11:33[0m] [140458532443968] shm: initialised daemon semaphore
+[[1;34m22:11:33[0m] [140458532443968] shm: initialised socket table with 0 sockets currently active
+[[1;34m22:11:33[0m] [140458529793728] thread: starting Receiver routine
+[[1;34m22:11:33[0m] [140458513008320] thread: starting Garbage Collector routine
+[[1;34m22:11:33[0m] [140458521401024] thread: starting Sender routine
+[[1;34m22:11:37[0m] [140458532443968] socket: request for new socket 0 by pid 8436
+[[1;34m22:11:37[0m] [140458532443968] socket: created new socket 0 (udp_sock = 10)
+[[1;34m22:11:38[0m] [140458532443968] socket: request to bind socket 0 to 0.0.0.0:9001
+[[1;34m22:11:38[0m] [140458532443968] socket: bound socket 0
+[[1;34m22:11:40[0m] [140458532443968] socket: request for new socket 1 by pid 8453
+[[1;34m22:11:40[0m] [140458532443968] socket: created new socket 1 (udp_sock = 11)
+[[1;34m22:11:41[0m] [140458532443968] socket: request to bind socket 1 to 0.0.0.0:9000
+[[1;34m22:11:41[0m] [140458532443968] socket: bound socket 1
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=1 unacked=1
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=2 unacked=2
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=3 unacked=3
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=4 unacked=4
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=5 unacked=5
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=6 unacked=6
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=7 unacked=7
+[[1;34m22:11:41[0m] [140458521401024] socket 1: SENT_SEGMENT=8 unacked=8
+[[1;34m22:11:41[0m] [140458529793728] socket 0: DATA seq=1 ACK=1 win=9
+[[1;34m22:11:41[0m] [140458529793728] socket 0: DATA seq=2 ACK=2 win=8
+[[1;34m22:11:41[0m] [140458529793728] socket 1: ACK ack=1 new_win=9
+[[1;34m22:11:41[0m] [140458529793728] socket 0: DATA seq=3 ACK=3 win=7
+[[1;34m22:11:41[0m] [140458529793728] socket 1: ACK ack=2 new_win=8
+[[1;34m22:11:41[0m] [140458529793728] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m22:11:41[0m] [140458529793728] socket 1: ACK ack=3 new_win=7
+[[1;34m22:11:41[0m] [140458529793728] socket 0: OOO seq=5 buffered
+[[1;34m22:11:41[0m] [140458529793728] socket 0: OOO seq=6 buffered
+[[1;34m22:11:41[0m] [140458529793728] socket 0: PACKET_DROPPED (simulated loss)
+[[1;34m22:11:41[0m] [140458529793728] socket 0: OOO seq=8 buffered
+[[1;34m22:11:47[0m] [140458521401024] socket 1: TIMEOUT_RETRANSMITTING=5 messages
+[[1;34m22:11:47[0m] [140458529793728] socket 0: DATA seq=4 ACK=6 win=7
+[[1;34m22:11:47[0m] [140458529793728] socket 1: ACK ack=6 new_win=7
+[[1;34m22:11:47[0m] [140458529793728] socket 1: ACK ack=6 new_win=7
+[[1;34m22:11:47[0m] [140458529793728] socket 0: DATA seq=7 ACK=8 win=5
+[[1;34m22:11:47[0m] [140458529793728] socket 1: ACK ack=6 new_win=7
+[[1;34m22:11:47[0m] [140458529793728] socket 1: ACK ack=8 new_win=5
+[[1;34m22:11:47[0m] [140458529793728] socket 1: ACK ack=8 new_win=5
+[[1;34m22:11:48[0m] [140458532443968] socket: request to close socket 1 (udp_sock = 11)
+[[1;34m22:11:48[0m] [140458532443968] socket: closed socket 1
+[[1;34m22:11:52[0m] [140458532443968] socket: request to close socket 0 (udp_sock = 10)
+[[1;34m22:11:52[0m] [140458532443968] socket: closed socket 0
+[[1;34m22:11:55[0m] [140458521401024] thread: shut down Sender routine
+[[1;34m22:11:55[0m] [140458529793728] thread: shut down Receiver routine
+[[1;34m22:11:58[0m] [140458513008320] thread: shut down Garbage Collector routine
+[[1;34m22:11:58[0m] [140458532443968] socket: close all open socket fds
+[[1;34m22:11:58[0m] [140458532443968] shm: destroy table mutex
+[[1;34m22:11:58[0m] [140458532443968] shm: destroy system semaphore
+[[1;34m22:11:58[0m] [140458532443968] shm: destroy library semaphore
+[[1;34m22:11:58[0m] [140458532443968] shm: dettach from memory
+[[1;34m22:11:58[0m] [140458532443968] shm: destroy shm segment
+[[1;34m22:11:58[0m] [140458532443968] shm: destroyed socket table shared memory

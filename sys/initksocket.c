@@ -207,7 +207,7 @@ void *recv_routine(void *args) {
         continue;
 
       if (dropMessage(DROP_PROBAB)) {
-        INFO("socket %d: packet dropped (simulated loss)", i);
+        INFO("socket %d: PACKET_DROPPED (simulated loss)", i);
         continue;
       }
 
@@ -335,7 +335,7 @@ void *send_routine(void *args) {
             (double)(current.tv_usec - sock->swnd.last_sent.tv_usec) * 1e-6;
 
         if (elapsed > (double)T) {
-          INFO("socket %d: timeout, retransmitting %u messages", i,
+          INFO("socket %d: TIMEOUT_RETRANSMITTING=%u messages", i,
                sock->swnd.unacked_count);
 
           for (int j = 0; j < (int)sock->swnd.unacked_count; j++) {
@@ -387,7 +387,7 @@ void *send_routine(void *args) {
 
         sock->swnd.unacked_count++;
         sock->next_seq++;
-        INFO("socket %d: sent seq=%u unacked=%u", i, sock->next_seq - 1,
+        INFO("socket %d: SENT_SEGMENT=%u unacked=%u", i, sock->next_seq - 1,
              sock->swnd.unacked_count);
       }
     }
@@ -509,8 +509,8 @@ int main(void) {
           INFO("socket: created new socket %d (udp_sock = %d)", i, sockfd);
 
           break;
-        } 
-        else if (socktable->info[i] == BIND_REQ) { /* check for bind request */
+        } else if (socktable->info[i] ==
+                   BIND_REQ) { /* check for bind request */
           if (socktable->info[i] == BIND_REQ) {
             char ipstr[INET_ADDRSTRLEN];
             struct sockaddr_in ipv4 = socktable->sockets[i].src_addr;
@@ -529,15 +529,15 @@ int main(void) {
 
             INFO("socket: bound socket %d", i);
           }
-        } 
-        else if (!socktable->sockets[i].is_free &&
+        } else if (!socktable->sockets[i].is_free &&
                    socktable->info[i] == CLOSE_REQ) {
-          /* handle close request and close the underlying UDP fd and free slot */
+          /* handle close request and close the underlying UDP fd and free slot
+           */
           INFO("socket: request to close socket %d (udp_sock = %d)", i,
                socktable->sockets[i].udp_sockfd);
- 
+
           close(socktable->sockets[i].udp_sockfd);
- 
+
           /* zero out the entire slot for safety*/
           memset(&socktable->sockets[i], 0, sizeof(__k_socket_t));
           socktable->sockets[i].is_free = 1;
@@ -545,11 +545,11 @@ int main(void) {
           init_buf(&socktable->sockets[i].recv_buf);
           socktable->info[i] = UNUSED;
           socktable->count--;
- 
+
           INFO("socket: closed socket %d", i);
- 
+
           break;
-        } 
+        }
       }
       sem_post(&socktable->lib_sem);
     } else {
