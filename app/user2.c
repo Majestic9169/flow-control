@@ -18,7 +18,7 @@
 #define LOG(...) (printf("[INFO]: "), printf(__VA_ARGS__))
 #define RECV_LOG(...) (printf("[RECV]: "), printf(__VA_ARGS__))
 #define SLEEP_TIME 1000
-#define MAX_WAIT 10
+#define MAX_WAIT 30
 
 volatile sig_atomic_t is_exit = 0;
 
