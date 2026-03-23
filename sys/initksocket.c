@@ -17,10 +17,12 @@
 #include <signal.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/mman.h>
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <time.h>
 #include <unistd.h>
 
 volatile sig_atomic_t is_exit = 0;
@@ -450,9 +452,11 @@ int main(void) {
    * setting up IPC resources and signal handlers
    * @{
    */
+  srand(time(NULL));
   signal(SIGINT, sigint_handler);
 
-  /* cleanup any segment of sock table in shared mem from prev forcekill/crash
+  /**
+   * cleanup any segment of sock table in shared mem from prev forcekill/crash
    */
   shm_unlink(SOCKTABLE_NAME);
 
