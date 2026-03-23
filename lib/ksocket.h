@@ -120,12 +120,12 @@ int k_close(int fd);
 
 /** @brief drop a msg with a certain probab p
  *
- * @details To simulate unreliable link, this function generates 
- * a random num between 0 and 1 and if that num is less than p, 
+ * @details To simulate unreliable link, this function generates
+ * a random num between 0 and 1 and if that num is less than p,
  * then drop the msg.
  *
  * @param p probability of dropping (float)
- * 
+ *
  * @return 1 if the msg to be dropped, else 0
  */
 int dropMessage(float p);

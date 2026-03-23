@@ -202,7 +202,8 @@ ssize_t k_sendto(int socket, const void *message, size_t length, int flags,
                  const struct sockaddr *dest_addr, socklen_t dest_len) {
 
   /* to supress the unused params warning */
-  (void)flags; (void)dest_len;
+  (void)flags;
+  (void)dest_len;
 
   struct sockaddr_in *ipv4 = (struct sockaddr_in *)dest_addr;
 
@@ -239,12 +240,20 @@ ssize_t k_sendto(int socket, const void *message, size_t length, int flags,
 /**
  * @details pops the oldest message from the recv buffer.
  * Returns immediately n does not block if no msg available.
+ *
+ * @return the return value is -1 on errors, or MSG_SIZE on success since the
+ * popped packet must always be of size MSG_SIZE
+ *
+ * @note the value of length **IS NOT** set to MSG_SIZE and is essentially
+ * ignored by the function
  */
 ssize_t k_recvfrom(int socket, void *buffer, size_t length, int flags,
                    const struct sockaddr *address, socklen_t address_len) {
 
   /* to supress the unused params warning */
-  (void)flags; (void)address; (void)address_len;
+  (void)flags;
+  (void)address;
+  (void)address_len;
 
   /* grab table */
   socket_table_t *t = attach_table(SOCKTABLE_NAME, 0644);
@@ -255,17 +264,20 @@ ssize_t k_recvfrom(int socket, void *buffer, size_t length, int flags,
   /* grab mutex before touching recv buffer */
   sem_wait(&t->mtx);
 
-  /* pop oldest message and pop_buf sets ENOMESSAGE if no msg in our msg buffr */
+  /* pop oldest message and pop_buf sets ENOMESSAGE if no msg in our msg buffr
+   */
   if (pop_buf(&t->sockets[socket].recv_buf, buffer) == -1) {
+    int savederrno = errno;
     sem_post(&t->mtx);
     munmap(t, sizeof(socket_table_t));
+    errno = savederrno;
     return -1;
   }
 
   sem_post(&t->mtx);
   munmap(t, sizeof(socket_table_t));
 
-  return (ssize_t)length;
+  return 512;
 }
 
 /**
@@ -304,6 +316,4 @@ int k_close(int fd) {
 /**
  * @details drop message with a probab p to simulate unreliable link
  */
-int dropMessage(float p) {
-  return ((float)rand() / RAND_MAX) < p ? 1 : 0;
-}
+int dropMessage(float p) { return ((float)rand() / RAND_MAX) < p ? 1 : 0; }

@@ -1,5 +1,9 @@
 docs/**
-ksocketd
+**/ksocketd
 **/*.o
 **/*.out
 **/*.a
+**/user1
+**/user2
+**/sender
+**/receiver

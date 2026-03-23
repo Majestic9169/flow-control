@@ -9,18 +9,17 @@ TESTFILE := testfile.txt
 
 .PHONY: all clean run
 
-all: user1 user2
+all: sender receiver
 
-user1: ./user1.c ../lib/libksocket.a
+sender: ./user1.c ../lib/libksocket.a
 	${CC} ${CFLAGS} $< -o $@ -lksocket -L../lib/
 
-user2: ./user2.c ../lib/libksocket.a
+receiver: ./user2.c ../lib/libksocket.a
 	${CC} ${CFLAGS} $< -o $@ -lksocket -L../lib/
 
 run: all
-	./user2 9001 127.0.0.1 9000 received.bin 2>user2.log &
-	./user1 9000 127.0.0.1 9001 ${TESTFILE}
-	kill %1 2>/dev/null; true
+	./receiver 9001 127.0.0.1 9000 &
+	./sender 9000 127.0.0.1 9001 ${TESTFILE}
 
 clean:
-	-rm user1 user2 received.bin
+	-@rm user1 user2 received.bin sender receiver
