@@ -14,7 +14,7 @@
 #define SOCK_KTP 42
 #define MSG_SIZE 512
 #define T 5
-#define DROP_PROBAB 0.40f
+#define DROP_PROBAB 0.35f
 
 /**
  * @brief custom error codes

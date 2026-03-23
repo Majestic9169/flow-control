@@ -36,6 +36,16 @@ Attached is also the tarball containing the current version of the project (as d
 └── testfile.txt             # a larger one > 100KB
 ```
 
+[Doxygen](https://www.doxygen.nl/index.html) was used to generate documentation from the code comments for this project. The docs are currently hosted on Github pages where they are built with a workflow everytime this project is updated. 
+
+To build them locally you can do
+
+```bash
+doxygen Doxyfile
+open docs/html/index.html # open in your local browser (recommended)
+cd docs/latex && make     # to genertate a pdf version (will need many latex packages)
+```
+
 ## Performance Table
 
 A script [performance_report.py](./performance_report.py) is provided and our logs for the run with various probabilities are given in [./logs](./logs/). Run the script from this directory to get the P table for the various logs
@@ -66,10 +76,13 @@ Prob       | Sent   | Retrans  | Drops  | Avg Sends/Chunk
     tar xzf TEGAN_23CS30065_MEHUL_23CS30033.tar.gz
     ```
 
+    ```bash
+    cd flow-control/
+    ```
+
 1. Build the library
 
     ```bash
-    cd flow-control/
     cd lib/
     make # this builds the ksocket.a library
     ```
