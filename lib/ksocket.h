@@ -14,7 +14,11 @@
 #define SOCK_KTP 42
 #define MSG_SIZE 512
 #define T 5
+<<<<<<< HEAD
 #define DROP_PROBAB 0.35f
+=======
+#define DROP_PROBAB 0.30f
+>>>>>>> 68f1195 (chore(logs): add 0.25 log)
 
 /**
  * @brief custom error codes
