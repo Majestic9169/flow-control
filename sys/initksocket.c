@@ -180,7 +180,7 @@ void *recv_routine(void *args) {
         __k_socket_t *sock = &socktable->sockets[i];
 
         if (sock->nospace && sock->recv_buf.count < WIN_SIZE) {
-          sock->nospace = 0;
+          // sock->nospace = 0; (already handeled later)
           send_ack(sock, sock->last_acked_seq);
           INFO("socket %d: nospace cleared, sent dup ACK ack=%u", i,
                sock->last_acked_seq);
@@ -509,7 +509,8 @@ int main(void) {
           INFO("socket: created new socket %d (udp_sock = %d)", i, sockfd);
 
           break;
-        } else { /* check for bind request */
+        } 
+        else if (socktable->info[i] == BIND_REQ) { /* check for bind request */
           if (socktable->info[i] == BIND_REQ) {
             char ipstr[INET_ADDRSTRLEN];
             struct sockaddr_in ipv4 = socktable->sockets[i].src_addr;
@@ -528,7 +529,27 @@ int main(void) {
 
             INFO("socket: bound socket %d", i);
           }
-        }
+        } 
+        else if (!socktable->sockets[i].is_free &&
+                   socktable->info[i] == CLOSE_REQ) {
+          /* handle close request and close the underlying UDP fd and free slot */
+          INFO("socket: request to close socket %d (udp_sock = %d)", i,
+               socktable->sockets[i].udp_sockfd);
+ 
+          close(socktable->sockets[i].udp_sockfd);
+ 
+          /* zero out the entire slot for safety*/
+          memset(&socktable->sockets[i], 0, sizeof(__k_socket_t));
+          socktable->sockets[i].is_free = 1;
+          init_buf(&socktable->sockets[i].send_buf);
+          init_buf(&socktable->sockets[i].recv_buf);
+          socktable->info[i] = UNUSED;
+          socktable->count--;
+ 
+          INFO("socket: closed socket %d", i);
+ 
+          break;
+        } 
       }
       sem_post(&socktable->lib_sem);
     } else {
